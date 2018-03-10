@@ -17,6 +17,9 @@ gem "jekyll", "~> 3.7.3"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
+  gem "bootstrap", "~> 4.0.0"
+  gem "jekyll-font-awesome-sass"
+  gem "font-awesome-sass", "~> 4.7.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
