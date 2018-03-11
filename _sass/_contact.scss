@@ -5,7 +5,7 @@ section.contact {
         margin-top: 0;
         margin-bottom: 25px;
         i {
-            color: $brand-google-plus;
+            color: $theme-secondary;
         }
     }
     ul.list-social {
@@ -20,27 +20,19 @@ section.contact {
                 color: white;
                 border-radius: 100%;
             }
-            &.social-twitter {
+            &.social-slack {
                 a {
-                    background-color: $brand-twitter;
+                    background-color: $brand-slack;
                     &:hover {
-                        background-color: darken($brand-twitter, 5%);
+                        background-color: darken($brand-slack, 5%);
                     }
                 }
             }
-            &.social-facebook {
+            &.social-github {
                 a {
-                    background-color: $brand-facebook;
+                    background-color: $brand-github;
                     &:hover {
-                        background-color: darken($brand-facebook, 5%);
-                    }
-                }
-            }
-            &.social-google-plus {
-                a {
-                    background-color: $brand-google-plus;
-                    &:hover {
-                        background-color: darken($brand-google-plus, 5%);
+                        background-color: darken($brand-github, 5%);
                     }
                 }
             }

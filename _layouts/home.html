@@ -116,23 +116,17 @@ layout: default
 
 <section class="contact bg-primary" id="contact">
   <div class="container">
-    <h2>We
-      <i class="fa fa-heart"></i>
-      new friends!</h2>
+    {% t marketing.contributions_welcome %}
+    <p>{% t marketing.contrib_text %}</p>
     <ul class="list-inline list-social">
-      <li class="list-inline-item social-twitter">
-        <a href="#">
-          <i class="fa fa-twitter"></i>
+      <li class="list-inline-item social-slack">
+        <a href="{{ site.slackin_url }}">
+          <i class="fa fa-slack"></i>
         </a>
       </li>
-      <li class="list-inline-item social-facebook">
-        <a href="#">
-          <i class="fa fa-facebook"></i>
-        </a>
-      </li>
-      <li class="list-inline-item social-google-plus">
-        <a href="#">
-          <i class="fa fa-google-plus"></i>
+      <li class="list-inline-item social-github">
+        <a href="{{ site.github_url }}">
+          <i class="fa fa-github"></i>
         </a>
       </li>
     </ul>
