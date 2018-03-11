@@ -22,6 +22,7 @@ group :jekyll_plugins do
   gem "bootstrap", "~> 4.0.0"
   gem "jekyll-font-awesome-sass"
   gem "font-awesome-sass", "~> 4.7.0"
+  gem "jekyll-multiple-languages-plugin"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
