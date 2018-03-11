@@ -1,0 +1,17 @@
+global:
+  german: Deutsch
+  english: English
+  title: PDF Archiver
+  menu: Menu
+jumps:
+  download: download
+  features: features
+  contact: contact
+pages:
+  home: Home
+  changelog: Changelog
+marketing:
+  masthead_message: "Tag and archive your documents using a simple yet powerful naming scheme—with PDF Archiver."
+  cta_1: "Get ahead of the chaos."
+  cta_2: "Start archiving now."
+  start_btn: "Let's Get Started!"
