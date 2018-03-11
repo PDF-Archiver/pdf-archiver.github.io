@@ -3,6 +3,7 @@ global:
   english: English
   title: PDF Archivar
   menu: Menü
+  copyright: "&copy; Julian Kahnert 2018. Alle Rechte vorbehalten."
 jumps:
   download: Herunterladen
   features: Funktionen
@@ -10,6 +11,7 @@ jumps:
 pages:
   home: Home
   changelog: Changelog
+  imprint: Impressum
 marketing:
   masthead_message: "Verschlagworte und archiviere deine Dokumente nach einem einfachen aber effektiven Schema—mit dem PDF Archivar"
   cta_1: "Raus aus dem Chaos."

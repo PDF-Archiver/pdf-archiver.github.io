@@ -3,6 +3,7 @@ global:
   english: English
   title: PDF Archiver
   menu: Menu
+  copyright: "&copy; Julian Kahnert 2018. All Rights Reserved."
 jumps:
   download: download
   features: features
@@ -10,6 +11,7 @@ jumps:
 pages:
   home: Home
   changelog: Changelog
+  imprint: Imprint
 marketing:
   masthead_message: "Tag and archive your documents using a simple yet powerful naming scheme—with PDF Archiver."
   cta_1: "Get ahead of the chaos."
