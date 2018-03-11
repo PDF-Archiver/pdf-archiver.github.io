@@ -24,6 +24,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "pdf-archiver.io"
 twitter_username: jekyllrb
 github_username:  jekyll
+slackin_url: 'https://slackin-pdf-archiver.herokuapp.com'
+github_url: 'https://github.com/PDF-Archiver/PDF-Archiver'
 
 # Build settings
 markdown: kramdown

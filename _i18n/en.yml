@@ -18,6 +18,8 @@ marketing:
   cta_2: "Start archiving now."
   start_btn: "Let's Get Started!"
   availability: "PDF Archiver is available for macOS and is sold on the Mac App Store."
+  contributions_welcome: '<h2>We <i class="fa fa-heart"></i> contributions!</h2>'
+  contrib_text: 'Tell us what you like or ask questions about PDF Archiver on our Slack.<br />Or if you want to contribute with code: Pull Requests are open on GitHub!'
   download_now: "Download Now!"
   image_app_store_badge: "/assets/img/mac-app-store-badge-en.svg"
   image_screenshot_1: "/assets/img/demo-screen-1.jpg"
