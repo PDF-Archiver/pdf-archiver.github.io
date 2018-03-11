@@ -17,10 +17,7 @@ layout: default
             <div class="device">
               <div class="screen">
                 <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                <img src="assets/img/demo-screen-1.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="button">
-                <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                <img src="{{ "/assets/img/demo-screen-1.jpg" | prepend: site.baseurl_root }}" class="img-fluid" alt="">
               </div>
             </div>
           </div>
@@ -37,8 +34,8 @@ layout: default
         <h2 class="section-heading">Discover what all the buzz is about!</h2>
         <p>Our app is available on any mobile device! Download now to get started!</p>
         <div class="badges">
-          <a class="badge-link" href="#"><img src="assets/img/google-play-badge.svg" alt=""></a>
-          <a class="badge-link" href="#"><img src="assets/img/app-store-badge.svg" alt=""></a>
+          {% capture badge_link %}{{ site.baseurl_root }}/assets/img/mac-app-store-badge-{{site.lang}}.svg{% endcapture %}
+          <a class="badge-link" href="#"><img src="{{ badge_link }}" alt=""></a>
         </div>
       </div>
     </div>
