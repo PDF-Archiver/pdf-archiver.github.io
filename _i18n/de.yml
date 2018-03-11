@@ -1,0 +1,17 @@
+global:
+  german: Deutsch
+  english: English
+  title: PDF Archivar
+  menu: Menü
+jumps:
+  download: Herunterladen
+  features: Funktionen
+  contact: Kontakt
+pages:
+  home: Home
+  changelog: Changelog
+marketing:
+  masthead_message: "Verschlagworte und archiviere deine Dokumente nach einem einfachen aber effektiven Schema—mit dem PDF Archivar"
+  cta_1: "Raus aus dem Chaos."
+  cta_2: "Archiviere jetzt deinen Papierkram."
+  start_btn: "Jetzt anfangen!"
