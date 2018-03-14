@@ -1,1 +1,0 @@
-Changelog of the Archiver
