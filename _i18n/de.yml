@@ -10,7 +10,8 @@ jumps:
   contact: Kontakt
 pages:
   home: Home
-  changelog: Changelog
+  changelog: Versionen
+  faq: FAQ
   imprint: Impressum
 marketing:
   masthead_message: "Verschlagworte und archiviere deine Dokumente nach einem einfachen aber effektiven Schema—mit dem PDF Archivar"
