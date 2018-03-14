@@ -39,7 +39,11 @@ font-awesome:
   assets: true
 languages: ["en", "de"]
 exclude_from_localizations: ["assets",]
-
+collections:
+  changelog:
+    output: false
+  faq:
+    output: false
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
