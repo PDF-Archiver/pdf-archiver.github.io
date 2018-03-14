@@ -1,0 +1,12 @@
+section.app_version {
+	padding: 20px 0;
+	h2 {
+		font-size: 2rem;
+	}
+
+	@include media-breakpoint-up(lg) {
+		h2 {
+			font-size: 2.5rem;
+		}
+	}
+}

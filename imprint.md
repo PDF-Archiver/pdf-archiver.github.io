@@ -8,4 +8,4 @@ permalink:   /imprint
 permalink_de:   /impressum/
 ---
 
-{% translate_file imprint/imprint.md %}
+{% translate_file imprint.md %}
