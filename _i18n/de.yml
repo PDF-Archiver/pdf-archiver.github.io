@@ -19,7 +19,7 @@ marketing:
   cta_2: "Archiviere jetzt deinen Papierkram."
   start_btn: "Jetzt anfangen!"
   availability: "Der PDF Archivar ist für macOS verfügbar und kann im Mac App Store erworben werden."
-  contributions_welcome: '<h2>Wir <i class="fa fa-heart"></i> deinem Beitrag!</h2>'
+  contributions_welcome: '<h2>Wir <i class="fa fa-heart"></i> deinen Beitrag!</h2>'
   contrib_text: 'Erzähle uns was dir gefällt oder stelle uns Fragen zum PDF Archivar in unseren Slack.<br />Wenn du gern Code beitragen möchtest: Pull Requests kannst du über GitHub stellen!'
   download_now: "Jetzt herunterladen!"
   image_app_store_badge: "/assets/img/mac-app-store-badge-de.svg"
