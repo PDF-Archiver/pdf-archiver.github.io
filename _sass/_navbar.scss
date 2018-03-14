@@ -7,8 +7,7 @@
     .navbar-brand {
         color: $theme-primary;
         @include heading-font;
-        &:hover,
-        &:focus {
+        &:hover {
             color: darken($theme-primary, 10%);
         }
     }
@@ -43,9 +42,8 @@
         border-color: transparent;
         background-color: transparent;
         .navbar-brand {
-            color: fade(white, 70%);
-            &:hover,
-            &:focus {
+            color: fade-out(white, .3);
+            &:hover {
                 color: white;
             }
         }
@@ -61,8 +59,7 @@
             background-color: white;
             .navbar-brand {
                 color: $gray-darker;
-                &:hover,
-                &:focus {
+                &:hover {
                     color: $theme-primary;
                 }
             }

@@ -7,9 +7,9 @@ header.masthead {
     padding-bottom: 100px;
 
     color: white;
-    background: $theme-secondary;
-    background: -webkit-linear-gradient(to right, $theme-secondary, $theme-tertiary);
-    background: linear-gradient(to right, $theme-secondary, $theme-tertiary);
+    background: $theme-primary;
+    background: -webkit-linear-gradient(to right, $theme-primary, $theme-tertiary);
+    background: linear-gradient(to right, $theme-primary, $theme-tertiary);
     .header-content {
         max-width: 500px;
         margin-bottom: 100px;
