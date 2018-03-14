@@ -5,7 +5,7 @@ namespace: imprint
 
 layout: page
 permalink:   /imprint
-permalink_de:   /impressum/
+permalink_de:   /imprint/
 ---
 
 {% translate_file imprint.md %}
