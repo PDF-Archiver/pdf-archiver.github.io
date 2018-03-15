@@ -25,4 +25,6 @@ group :jekyll_plugins do
   gem "jekyll-multiple-languages-plugin"
 end
 
+# Test rendered HTML files to make sure they're accurate
+gem 'html-proofer'
 
