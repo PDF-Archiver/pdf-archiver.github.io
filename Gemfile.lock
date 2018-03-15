@@ -115,7 +115,6 @@ DEPENDENCIES
   jekyll-multiple-languages-plugin
   jekyll-seo-tag
   jekyll-sitemap
-  tzinfo-data
 
 BUNDLED WITH
    1.16.1
