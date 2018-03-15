@@ -18,6 +18,7 @@ deploy:
   github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
   keep-history: false
   local-dir: _site
+  target-branch: master
   on:
-    branch: master
+    branch: develop
 
