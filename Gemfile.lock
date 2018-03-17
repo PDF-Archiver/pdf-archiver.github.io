@@ -53,6 +53,7 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
+    jekyll-email-protect (1.0.3)
     jekyll-feed (0.9.3)
       jekyll (~> 3.3)
     jekyll-font-awesome-sass (0.1.0)
@@ -110,6 +111,7 @@ DEPENDENCIES
   font-awesome-sass (~> 4.7.0)
   html-proofer
   jekyll (~> 3.7.3)
+  jekyll-email-protect
   jekyll-feed (~> 0.6)
   jekyll-font-awesome-sass
   jekyll-multiple-languages-plugin

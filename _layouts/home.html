@@ -107,19 +107,54 @@ layout: default
 
 <section class="contact bg-primary" id="contact">
   <div class="container">
-    {% t marketing.contributions_welcome %}
-    <p>{% t marketing.contrib_text %}</p>
-    <ul class="list-inline list-social">
-      <li class="list-inline-item social-slack">
-        <a href="{{ site.slackin_url }}">
-          <i class="fa fa-slack"></i>
-        </a>
-      </li>
-      <li class="list-inline-item social-github">
-        <a href="{{ site.github_url }}">
-          <i class="fa fa-github"></i>
-        </a>
-      </li>
-    </ul>
+    <div class="row">
+      <div class="col mb-5">
+        <h2>{% t marketing.need_help %}</h2>
+        <p>{% t marketing.need_help_text %}</p>
+        <ul class="list-inline list-social">
+          <li class="list-inline-item social-faq">
+            <a href="{{ site.faq_url }}">
+              <span class="pull-together">
+                <i class="fa fa-question"></i>
+                <i class="fa fa-exclamation fa-lg"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item social-slack">
+            <a href="{{ site.slackin_url }}">
+              <i class="fa fa-slack"></i>
+            </a>
+          </li>
+          <li class="list-inline-item social-email">
+            <a href="mailto:{{ site.support_email | encode_email }}">
+              <i class="fa fa-envelope"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h2>{% t marketing.contributions_welcome %}</h2>
+        <p>{% t marketing.contrib_text %}</p>
+        <ul class="list-inline list-social">
+          <li class="list-inline-item social-slack">
+            <a href="{{ site.slackin_url }}">
+              <i class="fa fa-slack"></i>
+            </a>
+          </li>
+          <li class="list-inline-item social-github">
+            <a href="{{ site.github_url }}">
+              <i class="fa fa-github"></i>
+            </a>
+          </li>
+          <li class="list-inline-item social-email">
+            <a href="mailto:{{ site.feature_requests_email | encode_email }}">
+              <i class="fa fa-envelope"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>

@@ -23,6 +23,7 @@ group :jekyll_plugins do
   gem "jekyll-font-awesome-sass"
   gem "font-awesome-sass", "~> 4.7.0"
   gem "jekyll-multiple-languages-plugin"
+  gem "jekyll-email-protect"
 end
 
 # Test rendered HTML files to make sure they're accurate

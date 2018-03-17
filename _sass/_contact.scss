@@ -8,6 +8,18 @@ section.contact {
             color: $theme-secondary;
         }
     }
+    p {
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+
+        br {
+            display: none;
+            @include media-breakpoint-up(md) {
+                display: initial;
+            }
+        }
+    }
     ul.list-social {
         margin-bottom: 0;
         li {
@@ -33,6 +45,22 @@ section.contact {
                     background-color: $brand-github;
                     &:hover {
                         background-color: darken($brand-github, 5%);
+                    }
+                }
+            }
+            &.social-email {
+                a {
+                    background-color: $brand-email;
+                    &:hover {
+                        background-color: darken($brand-email, 5%);
+                    }
+                }
+            }
+            &.social-faq {
+                a {
+                    background-color: $brand-faq;
+                    &:hover {
+                        background-color: darken($brand-faq, 5%);
                     }
                 }
             }
