@@ -3,7 +3,8 @@ global:
   english: English
   title: PDF Archiver
   menu: Menü
-  copyright: "&copy; Julian Kahnert 2018. Alle Rechte vorbehalten."
+  copyright: '&copy; <a href="https://juliankahnert.de">Julian Kahnert</a> 2018. Alle Rechte vorbehalten.'
+  website_attribution: 'Webseite von <a href="https://janw.xyz">Jan Willhaus</a>.'
 jumps:
   download: Herunterladen
   features: Funktionen
