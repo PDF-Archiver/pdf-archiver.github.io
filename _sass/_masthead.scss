@@ -19,13 +19,8 @@ header.masthead {
             font-size: 30px;
         }
     }
-    .device-container {
-        max-width: 325px;
-        margin-right: auto;
-        margin-left: auto;
-        .screen img {
-            border-radius: 3px;
-        }
+    .container {
+        max-width: 1000px;
     }
     @media (min-width: 992px) {
         height: 100vh;
@@ -40,8 +35,8 @@ header.masthead {
                 font-size: 36px;
             }
         }
-        .device-container {
-            max-width: 325px;
+        .container {
+            max-width: 1140px;
         }
     }
 }

@@ -25,7 +25,6 @@ marketing:
   contrib_text: 'Erzähle uns was dir gefällt oder stelle uns Fragen zum PDF Archivar in unseren Slack. <br />Wenn du gern Code beitragen möchtest: Pull Requests kannst du über GitHub stellen!'
   download_now: "Jetzt herunterladen!"
   image_app_store_badge: "/assets/img/mac-app-store-badge-de.svg"
-  image_screenshot_1: "/assets/img/screenshot-de.png"
-  image_screenshot_2: "/assets/img/screenshot-de.png"
+  image_screenshot_1: "/assets/img/demo-screen-de.png"
   need_help: 'Brauchst du Hilfe?'
   need_help_text: 'Wir wollen, dass du den PDF Archiver so produktiv wie möglich nutzen kannst. <br />Die am häufigsten gestellten Fragen, werden auf der FAQ-Seite beantwortet. <br />Wenn dir das nicht weiterhilft, komm in unserem #helpdesk Slack-Channel. <br />Du kannst uns auch eine E-Mail schreiben.'
