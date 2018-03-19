@@ -5,6 +5,7 @@ global:
   menu: Menu
   copyright: '&copy; <a href="https://juliankahnert.de">Julian Kahnert</a> 2018. All Rights Reserved.'
   website_attribution: 'Website by <a href="https://janwillhaus.de">Jan Willhaus</a>.'
+  app_store_uri: https://itunes.apple.com/app/pdf-archiver/id1352719750
 jumps:
   download: Download
   features: Features
