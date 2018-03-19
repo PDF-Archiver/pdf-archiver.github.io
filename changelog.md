@@ -8,8 +8,8 @@ permalink:   /changelog
 permalink_de:   /changelog
 ---
 
-{%- for version in site.changelog -%}
-<section class="app_version">
+{%- for version in site.changelog reversed -%}
+<section class="app_version mb-5">
   {%- assign date_format = site.date_format | default: "%Y-%m-%d" -%}
   <h2 id="version{{ version.slug }}">
       {{ version.title | escape }}
