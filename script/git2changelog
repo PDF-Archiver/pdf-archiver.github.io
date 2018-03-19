@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+GIT_DIR=../pdf-archiver/.git
+CHANGELOG_PATH=_changelog
+RELEVANT_COMMIT_PREFIX='CHANGE:'
+
+tag_list=$(git --git-dir="${GIT_DIR}" for-each-ref \
+	--sort=taggerdate \
+	--format '%(taggerdate:short);%(refname:short);%(*authorname)' \
+	refs/tags)
+prev_ref=''
+
+for tag in $tag_list
+do
+	tag_date=$(echo $tag | cut -f1 -d';')
+	tag_ref=$(echo $tag | cut -f2 -d';')
+	tag_author=$(echo $tag | cut -f3 -d';')
+	md_filename=${CHANGELOG_PATH}/${tag_date}_${tag_ref}.md
+
+	if [ -n "$prev_ref" ] && [ ! -f "$md_filename" ]
+	then
+		echo Processing $tag_ref
+		cat << EOF > "${md_filename}"
+---
+title: Version ${tag_ref}
+date: ${tag_date}
+author: ${tag_author}
+---
+
+### Summary
+
+INSERT VERSION NOTES HERE.
+
+### Detailed Changes
+
+EOF
+		git --git-dir="${GIT_DIR}" log \
+			--no-merges ${tag_ref} \
+			--not ${prev_ref} \
+			--format='* %s' >> "${md_filename}"
+	fi
+	prev_ref=$tag_ref
+
+done
