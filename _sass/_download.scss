@@ -6,6 +6,14 @@ section.download {
         font-size: 50px;
         margin-top: 0;
     }
+    p {
+        br {
+            display: none;
+            @include media-breakpoint-up(md) {
+                display: initial;
+            }
+        }
+    }
     .badges {
         .badge-link {
             display: block;

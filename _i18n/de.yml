@@ -21,7 +21,8 @@ marketing:
   cta_1: "Raus aus dem Chaos."
   cta_2: "Archiviere jetzt deinen Papierkram."
   start_btn: "Jetzt anfangen!"
-  availability: "Der PDF Archiver ist für macOS verfügbar und kann im Mac App Store erworben werden."
+  download_headline: 'So einfach kann das papierlose Büro sein!'
+  availability: "Der PDF Archiver ist für macOS verfügbar. <br />Du kannst ihn im Mac App Store erwerben."
   contributions_welcome: 'Wir <i class="fa fa-heart"></i> deinen Beitrag!'
   contrib_text: 'Erzähle uns was dir gefällt oder stelle uns Fragen zum PDF Archivar in unseren Slack. <br />Wenn du gern Code beitragen möchtest: Pull Requests kannst du über GitHub stellen!'
   download_now: "Jetzt herunterladen!"
