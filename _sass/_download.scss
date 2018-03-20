@@ -3,6 +3,7 @@ section.download {
     @include bg-gradient($theme-tertiary);
     position: relative;
     padding: 150px 0;
+    min-height: calc(100vh - 56px);
     h2 {
         font-size: 50px;
         margin-top: 0;
