@@ -7,9 +7,7 @@ header.pagehead {
     min-height: 160px;
 
     color: white;
-    background: $theme-primary;
-    background: -webkit-linear-gradient(to right, $theme-primary, $theme-tertiary);
-    background: linear-gradient(to right, $theme-primary, $theme-tertiary);
+    @include bg-gradient($theme-primary);
     @media (min-width: 992px) {
         .header-content {
             margin-bottom: 0;
