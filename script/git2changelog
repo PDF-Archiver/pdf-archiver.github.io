@@ -2,8 +2,9 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-GIT_DIR=../pdf-archiver/.git
-CHANGELOG_PATH=_changelog
+CURRENT_TOPLEVEL=$(git rev-parse --show-toplevel)
+GIT_DIR="${CURRENT_TOPLEVEL}/../pdf-archiver/.git"
+CHANGELOG_PATH="${CURRENT_TOPLEVEL}/_changelog"
 RELEVANT_COMMIT_PREFIX='CHANGE:'
 
 tag_list=$(git --git-dir="${GIT_DIR}" for-each-ref \
