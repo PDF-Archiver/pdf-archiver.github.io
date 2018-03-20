@@ -1,5 +1,6 @@
 // Styling for the download section
 section.download {
+    @include bg-gradient($theme-tertiary);
     position: relative;
     padding: 150px 0;
     h2 {

@@ -6,10 +6,8 @@ header.masthead {
     padding-top: 150px;
     padding-bottom: 100px;
 
+    @include bg-gradient($theme-primary);
     color: white;
-    background: $theme-primary;
-    background: -webkit-linear-gradient(to right, $theme-primary, $theme-tertiary);
-    background: linear-gradient(to right, $theme-primary, $theme-tertiary);
     .header-content {
         max-width: 500px;
         margin-bottom: 100px;

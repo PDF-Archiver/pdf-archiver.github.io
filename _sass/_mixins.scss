@@ -12,6 +12,12 @@
     background-size: cover;
 }
 
+@mixin bg-gradient($color) {
+    background: $color;
+    background: -webkit-linear-gradient($color, darken($color, 5%));
+    background: linear-gradient($color, darken($color, 5%));
+}
+
 @mixin button-variant($color, $background, $border) {
     color: $color;
     border-color: $border;
