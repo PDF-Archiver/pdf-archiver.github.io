@@ -29,18 +29,20 @@
     &:focus,
     &:active,
     &.active {
-        color: white;
-        border-color: $theme-primary;
-        background-color: $theme-primary;
+        color:  $theme-primary;
+        border-color: $theme-tertiary;
+        background-color: $theme-tertiary;
     }
 }
 
 .btn {
     border-radius: 300px;
-    @include alt-font;
+    @include body-font;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .btn-xl {
-    font-size: 11px;
-    padding: 15px 45px;
+    font-size: 14px;
+    padding: 17px 45px 15px 45px;
 }
