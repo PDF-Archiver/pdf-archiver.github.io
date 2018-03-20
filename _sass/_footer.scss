@@ -3,7 +3,7 @@ footer {
     padding: 25px 0;
     text-align: center;
     color: fade-out(white, .7);
-    background-color: $gray-darker;
+    @include bg-gradient($theme-quaternary);
     p {
         font-size: 12px;
         margin: 0;
