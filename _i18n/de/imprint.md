@@ -1,6 +1,11 @@
 ## Angaben gemäß § 5 TMG:
 **Julian Kahnert**<br>
-[mail@pdf-archiver.io](mailto:mail@pdf-archiver.io)
+Haarenufer 37<br>
+26122 Oldenburg
+
+## Kontakt
+Telefon: +49 (0) 441 55979822<br>
+E-Mail: [mail@pdf-archiver.io](mailto:mail@pdf-archiver.io)
 
 ## Haftung für Inhalte
 Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
