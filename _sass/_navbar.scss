@@ -19,8 +19,8 @@
     }
     .navbar-nav {
         > li {
-            > a {
-                font-size: 11px;
+            > a, .dropdown-menu > a {
+                font-size: 12px;
                 @include alt-font;
                 &.active {
                     color: $theme-primary !important;
@@ -43,14 +43,14 @@
         border-color: transparent;
         background-color: transparent;
         .navbar-brand {
-            color: fade-out(white, .3);
+            color: fade-out(white, .2);
             &:hover {
                 color: white;
             }
         }
         .navbar-nav > li > a,
         .navbar-nav > li > a:focus {
-            color: fade-out(white, .3);
+            color: fade-out(white, .2);
             &:hover {
                 color: white;
             }
