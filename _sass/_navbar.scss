@@ -13,6 +13,7 @@
     }
     .navbar-toggler {
         font-size: 12px;
+        @include alt-font;
         padding: 8px 10px;
         color: $gray-darker;
     }
