@@ -80,6 +80,7 @@
 
 @mixin alt-font {
     font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+    font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
