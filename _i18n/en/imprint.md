@@ -1,7 +1,4 @@
-**Julian Kahnert**<br>
-Haarenufer 37<br>
-26122 Oldenburg<br>
-Germany
+**Julian Kahnert**
 
 ## Contact
 Telefon: +49 (0) 441 55979822<br>
