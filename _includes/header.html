@@ -18,6 +18,18 @@
           <a class="nav-link js-scroll-trigger" href="{{ site.baseurl }}/#contact">{% t jumps.contact %}</a>
         </li>
       </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarLanguageDropdownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{site.lang}}
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarLanguageDropdownLink">
+            {% capture link_de %}{{ site.baseurl_root }}de{{ page.url}}{% endcapture %}
+            <a class="dropdown-item" href="{{ link_de }}" >{% t global.german %}</a>
+            {% capture link_en %}{{ site.baseurl_root }}{{ page.url  }}{% endcapture %}
+            <a class="dropdown-item" href="{{ link_en }}" >{% t global.english %}</a>
+          </div>
+        </li>
     </div>
   </div>
 </nav>
