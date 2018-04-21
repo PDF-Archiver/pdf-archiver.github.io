@@ -27,6 +27,7 @@ slackin_url: 'https://slackin-pdf-archiver.herokuapp.com'
 github_url: 'https://github.com/PDF-Archiver/PDF-Archiver'
 faq_url: 'https://github.com/PDF-Archiver/PDF-Archiver/wiki/FAQs'
 support_email: 'support@pdf-archiver.mailclark.ai'
+faq_email: 'faq@pdf-archiver.io'
 feature_requests_email: 'feature-request@pdf-archiver.mailclark.ai'
 
 # Build settings
