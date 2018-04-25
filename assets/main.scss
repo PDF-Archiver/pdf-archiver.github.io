@@ -3,10 +3,14 @@
 ---
 
 $fa-font-path: "../assets/fonts/font-awesome/";
+$simple-line-font-path: "../assets/fonts/";
+
 @import "bootstrap";
 @import "font-awesome";
 
 @import "new-age";
+@import "simple-line-icons";
+
 
 .pull-together {
   letter-spacing: -3px;
