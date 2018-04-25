@@ -12,7 +12,7 @@
         }
     }
     .navbar-toggler {
-        font-size: 12px;
+        font-size: 14px;
         @include alt-font;
         padding: 8px 10px;
         color: $gray-darker;
@@ -20,7 +20,7 @@
     .navbar-nav {
         > li {
             > a, .dropdown-menu > a {
-                font-size: 12px;
+                font-size: 14px;
                 @include alt-font;
                 &.active {
                     color: $theme-primary !important;

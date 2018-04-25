@@ -2,8 +2,39 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-$fa-font-path: "../assets/fonts/font-awesome/";
-$simple-line-font-path: "../assets/fonts/";
+$font-path: "../assets/fonts/";
+$fa-font-path: $font-path + "font-awesome/";
+$simple-line-font-path: $font-path;
+
+
+/* muli-regular - latin */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 400;
+  src: url($font-path +'muli-v11-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Muli Regular'), local('Muli-Regular'),
+       url('#{$font-path}muli-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$font-path}muli-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('#{$font-path}muli-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('#{$font-path}muli-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('#{$font-path}muli-v11-latin-regular.svg#Muli') format('svg'); /* Legacy iOS */
+}
+
+/* catamaran-200 - latin */
+@font-face {
+  font-family: 'Catamaran';
+  font-style: normal;
+  font-weight: 200;
+  src: url('#{$font-path}catamaran-v4-latin-200.eot'); /* IE9 Compat Modes */
+  src: local('Catamaran ExtraLight'), local('Catamaran-ExtraLight'),
+       url('#{$font-path}catamaran-v4-latin-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$font-path}catamaran-v4-latin-200.woff2') format('woff2'), /* Super Modern Browsers */
+       url('#{$font-path}catamaran-v4-latin-200.woff') format('woff'), /* Modern Browsers */
+       url('#{$font-path}catamaran-v4-latin-200.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('#{$font-path}catamaran-v4-latin-200.svg#Catamaran') format('svg'); /* Legacy iOS */
+}
+
 
 @import "bootstrap";
 @import "font-awesome";
