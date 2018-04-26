@@ -1,5 +1,9 @@
+**English Version:** [Imprint](/imprint/)
+
 ## Angaben gemäß § 5 TMG:
-**Julian Kahnert**
+**Julian Kahnert**<br>
+Haarenufer 37<br>
+26122 Oldenburg
 
 ## Kontakt
 Telefon: +49 (0) 441 55979822<br>
