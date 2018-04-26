@@ -19,7 +19,7 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
   gem "jekyll-seo-tag"
   gem "jekyll-sitemap"
-  gem "bootstrap", "~> 4.0.0"
+  gem "bootstrap", "~> 4.1.0"
   gem "jekyll-font-awesome-sass"
   gem "font-awesome-sass", "~> 4.7.0"
   gem "jekyll-multiple-languages-plugin"
