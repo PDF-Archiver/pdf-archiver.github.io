@@ -29,12 +29,12 @@ hr.light {
     border-color: white;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
     @include heading-font;
 }
 
@@ -45,7 +45,7 @@ p {
 }
 
 section {
-    padding: 100px 0;
+    padding: 50px 0;
     h2 {
         font-size: 50px;
     }

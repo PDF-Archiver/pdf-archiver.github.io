@@ -11,7 +11,7 @@ permalink:   /faq
 
 {%- for faq in sorted_faqs -%}
   <section class="faq_question">
-    <h2>{{ faq.title }}</h2>
+    <h2 class="h3">{{ faq.title }}</h2>
     {{ faq.content }}
   </section>
 {%- endfor -%}
