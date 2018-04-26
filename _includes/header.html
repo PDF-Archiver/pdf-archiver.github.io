@@ -24,10 +24,18 @@
             {{site.lang}}
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarLanguageDropdownLink">
-            {% capture link_de %}{{ site.baseurl_root }}de{{ page.url}}{% endcapture %}
-            <a class="dropdown-item" href="{{ link_de }}" >{% t global.german %}</a>
-            {% capture link_en %}{{ site.baseurl_root }}{{ page.url  }}{% endcapture %}
-            <a class="dropdown-item" href="{{ link_en }}" >{% t global.english %}</a>
+            {% if site.lang == "de" %}
+              <a class="dropdown-item disabled" href="#" >{% t global.german %}</a>
+            {% else %}
+              {% capture link_de %}{{ site.baseurl_root }}de{{ page.url}}{% endcapture %}
+              <a class="dropdown-item" href="{{ link_de }}" >{% t global.german %}</a>
+            {% endif %}
+            {% if site.lang == "en" %}
+              <a class="dropdown-item disabled" href="#" >{% t global.english %}</a>
+            {% else %}
+              {% capture link_en %}{{ site.baseurl_root }}{{ page.url  }}{% endcapture %}
+              <a class="dropdown-item" href="{{ link_en }}" >{% t global.english %}</a>
+            {% endif %}
           </div>
         </li>
     </div>

@@ -1,4 +1,5 @@
 global:
+  select_language: Sprache auswählen
   german: Deutsch
   english: English
   title: PDF Archiver
