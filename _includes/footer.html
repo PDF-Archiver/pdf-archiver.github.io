@@ -12,6 +12,10 @@
           {% t pages.faq %}</a>
       </li>
       <li class="list-inline-item">
+        <a href="{% translate_link privacy %}">
+          {% t pages.privacy %}</a>
+      </li>
+      <li class="list-inline-item">
         <a href="{% translate_link imprint %}">
           {% t pages.imprint %}</a>
       </li>
@@ -20,20 +24,18 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"
-        integrity="sha256-uz0BcnPtSHZ02XZthAHPRYIoWWrcwMOmAk9ErnFQkNs="
-        crossorigin="anonymous">
-</script>
+<script src="{{ "/assets/js/jquery.min.js" | prepend: site.baseurl_root }} "
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="></script>
+
+<script src="{{ "/assets/js/popper.min.js" | prepend: site.baseurl_root }} "
+  integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"></script>
+
+<script src="{{ "/assets/js/bootstrap.min.js" | prepend: site.baseurl_root }} "
+  integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"></script>
 
 <!-- Plugin JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"
-        integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k="
-        crossorigin="anonymous">
-</script>
+<script src="{{ "/assets/js/jquery.easing.min.js" | prepend: site.baseurl_root }} "
+        integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k="></script>
 
 <!-- Custom scripts for this template -->
 <script src="{{ "/assets/js/main.js" | prepend: site.baseurl_root }} "></script>
