@@ -56,3 +56,8 @@ $simple-line-font-path: $font-path;
 .faq_question {
   padding: 20px 0;
 }
+
+table {
+  @extend .table;
+}
+
