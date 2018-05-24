@@ -35,6 +35,7 @@ $simple-line-font-path: $font-path;
        url('#{$font-path}catamaran-v4-latin-200.svg#Catamaran') format('svg'); /* Legacy iOS */
 }
 
+$font-family-monospace: Monaco, Consolas, "Courier New", monospace !default;
 
 @import "bootstrap";
 @import "font-awesome";
@@ -59,5 +60,9 @@ $simple-line-font-path: $font-path;
 
 table {
   @extend .table;
+}
+
+kbd {
+  font-size: 100%;
 }
 
