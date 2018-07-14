@@ -23,8 +23,8 @@ marketing:
   cta_1: "Get ahead of the chaos."
   cta_2: "Start archiving now."
   start_btn: "Let's Get Started!"
-  download_headline: 'Discover how easy a paperless office can be!'
-  availability: "PDF Archiver is available for macOS. <br />It is sold on the Mac App Store."
+  download_headline: 'Try it for free!'
+  availability: "PDF Archiver respects your privacy and avoids advertising platforms. <br />To support the project, we offer a subscription model with a 1-month free trail."
   contributions_welcome: 'We <i class="fa fa-heart"></i> contributions!'
   contrib_text: 'Tell us what you like or ask questions about PDF Archiver on our Slack. <br />Or if you want to contribute with code: Pull Requests are open on GitHub!'
   download_now: "Download Now!"
