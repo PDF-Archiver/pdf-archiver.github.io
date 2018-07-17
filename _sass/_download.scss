@@ -3,10 +3,10 @@ section.download {
     @include bg-gradient($theme-tertiary);
     position: relative;
     padding: 150px 0;
-    min-height: calc(100vh - 56px);
     h2 {
         font-size: 50px;
         margin-top: 0;
+        text-align: center;
     }
     p {
         br {
@@ -30,11 +30,6 @@ section.download {
                 display: inline-block;
                 margin-bottom: 0;
             }
-        }
-    }
-    @media(min-width: 768px) {
-        h2 {
-            font-size: 70px;
         }
     }
 }
