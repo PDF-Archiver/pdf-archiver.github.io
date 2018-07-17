@@ -7,6 +7,7 @@ global:
   copyright: '&copy; <a href="https://juliankahnert.de">Julian Kahnert</a> 2018. Alle Rechte vorbehalten.'
   website_attribution: 'Webseite von <a href="https://janw.xyz">Jan Willhaus</a>.'
   app_store_uri: https://itunes.apple.com/de/app/pdf-archiver/id1352719750
+  image_app_icon: "/assets/img/AppIcon.svg"
 jumps:
   download: Herunterladen
   features: Funktionen

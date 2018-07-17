@@ -20,13 +20,16 @@ layout: default
 
 <section class="download text-center" id="download">
   <div class="container">
-    <div class="row">
-      <div class="col-md-8 mx-auto">
-        <h2 class="section-heading mt-5">{% t marketing.download_headline %}</h2>
+    <h2 class="section-heading mb-5">{% t marketing.download_headline %}</h2>
+    <div class="row align-items-center h-200">
+      <div class="col-md-1 mx-auto">
+        <a class="badge-link" href="{% t global.app_store_uri %}">
+            <img width="160px" src="{{ site.baseurl_root }}{% t global.image_app_icon %}" alt=""><br/><br/>
+            <img src="{{ site.baseurl_root }}{% t marketing.image_app_store_badge %}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5 mx-auto">
         <p>{% t marketing.availability %}</p>
-        <div class="badges">
-          <a class="badge-link" href="{% t global.app_store_uri %}"><img src="{{ site.baseurl_root }}{% t marketing.image_app_store_badge %}" alt=""></a>
-        </div>
       </div>
     </div>
   </div>
