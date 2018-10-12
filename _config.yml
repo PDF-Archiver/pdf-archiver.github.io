@@ -23,9 +23,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "pdf-archiver.io"
 twitter_username: jekyllrb
 github_username:  jekyll
-slackin_url: 'https://slackin-pdf-archiver.herokuapp.com'
+slackin_url: 'https://pdf-archiver.slack.com/'
 github_url: 'https://github.com/PDF-Archiver/PDF-Archiver'
-faq_url: 'https://github.com/PDF-Archiver/PDF-Archiver/wiki/FAQs'
+faq_url: '/faq'
 support_email: 'support@pdf-archiver.mailclark.ai'
 faq_email: 'faq@pdf-archiver.io'
 feature_requests_email: 'feature-request@pdf-archiver.mailclark.ai'
