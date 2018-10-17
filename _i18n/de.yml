@@ -19,6 +19,23 @@ pages:
   imprint: Impressum
   privacy: Datenschutzerklärung
   err404: 404. Nicht gefunden.
+
+features:
+  title: Sortieren Sie Ihren Papierkram - mit Spaß an der Sache
+  subtitle: Das kann der PDF Archiver!
+
+  feature1: Automatisierte Strukturierung
+  feature1_description: Ihre Dokumente werden in einer einfachen Ordnerstruktur organisiert.
+
+  feature2: Die Leistungsfähigkeit von Tagging
+  feature2_description: Kennzeichnen Sie Ihre PDF-Dokumente mit Schlüsselwörtern, um sie zu gruppieren.
+
+  feature3: Eingebettete Vorschau
+  feature3_description: Sehen Sie eine Vorschau, während Sie ihre Dokumente bearbeiten.
+
+  feature4: Open Source
+  feature4_description: Der PDF Archiver ist unter CC BY-NC-SA 4.0 lizenziert und kann auf GitHub angesehen werden.
+
 marketing:
   masthead_message: "Verschlagworte und archiviere deine Dokumente nach einem einfachen aber effektiven Schema—mit dem PDF Archiver"
   cta_1: "Raus aus dem Chaos."
