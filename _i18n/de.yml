@@ -50,3 +50,12 @@ marketing:
   image_screenshot_1: "/assets/img/demo-screen-de.png"
   need_help: 'Brauchst du Hilfe?'
   need_help_text: 'Wir wollen, dass du den PDF Archiver so produktiv wie möglich nutzen kannst. <br />Die am häufigsten gestellten Fragen, werden auf der FAQ-Seite beantwortet. <br />Wenn dir das nicht weiterhilft, komm in unserem #helpdesk Slack-Channel. <br />Du kannst uns auch eine E-Mail schreiben.'
+testimonials:
+
+  image_3: "/assets/avatars/user3.jpg"
+  user_3: "Jörg"
+  statement_3: "Mit Hilfe von PDF Archiver habe ich meinen Buchhaltung optimiert."
+
+  image_4: "/assets/avatars/user4.jpg"
+  user_4: "Tim"
+  statement_4: "Durch die einheitliche Sortierung aller Dokumente habe ich endlich Ordnung in die PDF Dateien auf meinem Computer bekommen."
