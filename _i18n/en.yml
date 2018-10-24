@@ -50,3 +50,21 @@ marketing:
   image_screenshot_1: "/assets/img/demo-screen-en.png"
   need_help: 'Do you need help?'
   need_help_text: 'We want you to be as productive as possible using the PDF Archiver. <br />The most frequent questions have been answered on our FAQ page. <br />If that does not help you, join our #helpdesk Slack channel. <br />You can also write us an email.'
+testimonials:
+  headline: What Users Say
+
+  image_1: "/assets/avatars/user1.jpg"
+  user_1: "Sir Apfelot"
+  statement_1: "With the PDF Archiver I have finally managed to bring some order and structure to my PDF collection with documents, contracts and other documents that I have been building since 2014."
+
+  image_2: "/assets/avatars/user2.jpg"
+  user_2: "Jörg P."
+  statement_2: "Until now, all PDFs with cryptic file names were stored in a single folder. With the help of PDF Archiver I have finally been able to structure my accounting."
+
+  image_3: "/assets/avatars/user3.jpg"
+  user_3: "Tim D."
+  statement_3: "By the uniform sorting of all documents I finally got order into the PDF files on my computer."
+
+  image_4: "/assets/avatars/user4.png"
+  user_4: "iFun"
+  statement_4: "The Mac app uses a simple file name convention, which simply notes keywords, data and descriptions in the file name of the documents and can therefore be used largely independently of the operating system, cloud provider and Mac or PC application."

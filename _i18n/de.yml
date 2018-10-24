@@ -50,3 +50,21 @@ marketing:
   image_screenshot_1: "/assets/img/demo-screen-de.png"
   need_help: 'Brauchst du Hilfe?'
   need_help_text: 'Wir wollen, dass du den PDF Archiver so produktiv wie möglich nutzen kannst. <br />Die am häufigsten gestellten Fragen, werden auf der FAQ-Seite beantwortet. <br />Wenn dir das nicht weiterhilft, komm in unserem #helpdesk Slack-Channel. <br />Du kannst uns auch eine E-Mail schreiben.'
+testimonials:
+  headline: Was Nutzer sagen
+
+  image_1: "/assets/avatars/user1.jpg"
+  user_1: "Sir Apfelot"
+  statement_1: "Mit dem PDF Archiver habe ich es endlich geschafft, ein bisschen Ordnung und Struktur in meine PDF-Sammlung mit Belegen, Verträgen und anderen Dokumenten zu bringen, die ich seit 2014 aufgebaut habe."
+
+  image_2: "/assets/avatars/user2.jpg"
+  user_2: "Jörg P."
+  statement_2: "Bisher lagen alle PDFs mit kryptischen Dateinamen in einem einzigen Ordner. Mit Hilfe von PDF Archiver habe ich meine Buchhaltung endlich strukturieren können."
+
+  image_3: "/assets/avatars/user3.jpg"
+  user_3: "Tim D."
+  statement_3: "Durch die einheitliche Sortierung aller Dokumente habe ich endlich Ordnung in die PDF Dateien auf meinem Computer bekommen."
+
+  image_4: "/assets/avatars/user4.png"
+  user_4: "iFun"
+  statement_4: "Die Mac-App bedient sich einer einfachen Dateinamen-Konvention, die Schlagwörter, Daten und Beschreibungen einfach im Dateinamen der Dokumente notiert und so weitgehend unabhängig von Betriebssystem, Cloud-Anbieter und Mac- bzw. PC-Anwendung eingesetzt werden kann."
