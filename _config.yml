@@ -16,9 +16,7 @@
 title: PDF Archiver
 author: Julian Kahnert
 email: pdf-archiver@juliankahnert.de
-description: >- # this means to ignore newlines until "baseurl:"
-  Tag and archive your scanned documents using a simple yet powerful
-  naming scheme—with PDF Archiver.
+description: Scan it. Tag it. Find it.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "pdf-archiver.io"
 twitter_username: jekyllrb
