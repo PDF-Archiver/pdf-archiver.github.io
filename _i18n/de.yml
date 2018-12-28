@@ -6,7 +6,8 @@ global:
   menu: Menü
   copyright: '&copy; <a href="https://juliankahnert.de">Julian Kahnert</a> 2018. Alle Rechte vorbehalten.'
   website_attribution: 'Webseite von <a href="https://janw.xyz">Jan Willhaus</a>.'
-  app_store_uri: https://itunes.apple.com/de/app/pdf-archiver/id1352719750
+  macos_app_store_uri: https://itunes.apple.com/de/app/pdf-archiver/id1352719750
+  ios_app_store_uri: https://itunes.apple.com/de/app/pdf-archive-viewer/id1433801905
   image_app_icon: "/assets/img/AppIcon.svg"
 jumps:
   download: Herunterladen
@@ -46,7 +47,8 @@ marketing:
   contributions_welcome: 'Wir <i class="fa fa-heart"></i> deinen Beitrag!'
   contrib_text: 'Erzähle uns was dir gefällt oder stelle uns Fragen zum PDF Archivar in unseren Slack. <br />Wenn du gern Code beitragen möchtest: Pull Requests kannst du über GitHub stellen!'
   download_now: "Jetzt herunterladen!"
-  image_app_store_badge: "/assets/img/mac-app-store-badge-de.svg"
+  image_macos_app_store_badge: "https://linkmaker.itunes.apple.com/de-de/badge-lrg.svg?releaseDate=2018-02-28T00:00:00Z&kind=desktopapp&bubble=macos_apps"
+  image_ios_app_store_badge: "https://linkmaker.itunes.apple.com/assets/shared/badges/de-de/appstore-lrg.svg"
   image_screenshot_1: "/assets/img/demo-screen-de.png"
   need_help: 'Brauchst du Hilfe?'
   need_help_text: 'Wir wollen, dass du den PDF Archiver so produktiv wie möglich nutzen kannst. <br />Die am häufigsten gestellten Fragen, werden auf der FAQ-Seite beantwortet. <br />Wenn dir das nicht weiterhilft, komm in unserem #helpdesk Slack-Channel. <br />Du kannst uns auch eine E-Mail schreiben.'
