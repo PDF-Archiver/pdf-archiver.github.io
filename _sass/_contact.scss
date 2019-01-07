@@ -33,11 +33,11 @@ section.contact {
                 color: white;
                 border-radius: 100%;
             }
-            &.social-slack {
+            &.social-discord {
                 a {
-                    background-color: $brand-slack;
+                    background-color: $brand-discord;
                     &:hover {
-                        background-color: darken($brand-slack, 5%);
+                        background-color: darken($brand-discord, 5%);
                     }
                 }
             }

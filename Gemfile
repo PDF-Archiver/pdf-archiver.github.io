@@ -16,12 +16,12 @@ gem "jekyll", ">= 3.7.4"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.6"
+  gem "jekyll-feed"
   gem "jekyll-seo-tag"
   gem "jekyll-sitemap"
-  gem "bootstrap", ">= 4.1.2"
+  gem "bootstrap"
   gem "jekyll-font-awesome-sass"
-  gem "font-awesome-sass", "~> 4.7.0"
+  gem "font-awesome-sass"
   gem "jekyll-multiple-languages-plugin"
   gem "jekyll-email-protect"
 end
