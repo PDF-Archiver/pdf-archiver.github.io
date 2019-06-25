@@ -2,8 +2,8 @@
 
 ## Angaben gemäß § 5 TMG:
 **Julian Kahnert**<br>
-Haarenufer 37<br>
-26122 Oldenburg
+Wechloyer Tor 7<br>
+26129 Oldenburg
 
 ## Kontakt
 Telefon: +49 (0) 441 55979822<br>

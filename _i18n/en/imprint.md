@@ -2,8 +2,8 @@
 
 <h2>Information provided according to Sec. 5 German Telemedia Act (TMG):</h2>
 **Julian Kahnert**<br>
-Haarenufer 37<br>
-26122 Oldenburg
+Wechloyer Tor 7<br>
+26129 Oldenburg
 
 <h2>Contact:</h2>
 Telephone: +49 (0) 441 55979822<br>
