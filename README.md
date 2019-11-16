@@ -19,3 +19,8 @@ bundle exec jekyll serve
 ```
 
 from the toplevel directory of the website repository. `jekyll serve` should suffice when your Ruby environment is in your `PATH`.
+
+
+## Automatic Deployment
+
+Changes will be pushed automatically by GitHub Actions.
