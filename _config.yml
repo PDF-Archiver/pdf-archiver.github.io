@@ -36,6 +36,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-multiple-languages-plugin
+  - jekyll-email-protect
 font-awesome:
   assets: true
 languages: ["en", "de"]
