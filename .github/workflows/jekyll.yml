@@ -1,6 +1,9 @@
 name: Jekyll site CI
 
-on: [push]
+on:
+  push:
+    branches:
+    - develop
 
 jobs:
   build:
@@ -14,3 +17,15 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+
+    - name: Build the site in the jekyll/builder container
+      run: mkdir page && cp -R _site/* page/ && cp CNAME page/
+
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v2
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: develop # The branch the action should deploy from.
+        BRANCH: master # The branch the action should deploy to.
+        FOLDER: page # The folder the action should deploy.
+        # BUILD_SCRIPT: mkdir page && mv _site page/
