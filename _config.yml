@@ -32,13 +32,10 @@ feature_requests_email: 'feature-request@pdf-archiver.io'
 markdown: kramdown
 plugins:
   - jekyll-feed
-  - jekyll-font-awesome-sass
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-multiple-languages-plugin
   - jekyll-email-protect
-font-awesome:
-  assets: true
 languages: ["en", "de"]
 exclude_from_localizations: ["assets",]
 collections:

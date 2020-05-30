@@ -1,0 +1,44 @@
+current directory: /usr/local/bundle/gems/nokogumbo-2.0.2/ext/nokogumbo
+/usr/local/bin/ruby -I /usr/local/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200530-30-10et7op.rb extconf.rb
+checking for xmlNewDoc() in -lxml2... yes
+checking for nokogiri.h in /usr/local/bundle/gems/nokogiri-1.10.9/ext/nokogiri... yes
+creating Makefile
+
+current directory: /usr/local/bundle/gems/nokogumbo-2.0.2/ext/nokogumbo
+make "DESTDIR=" clean
+
+current directory: /usr/local/bundle/gems/nokogumbo-2.0.2/ext/nokogumbo
+make "DESTDIR="
+compiling nokogumbo.c
+In file included from nokogumbo.c:53:
+/usr/local/bundle/gems/nokogiri-1.10.9/ext/nokogiri/nokogiri.h:13: warning: "_GNU_SOURCE" redefined
+ #define _GNU_SOURCE
+ 
+In file included from /usr/local/include/ruby-2.6.0/ruby/ruby.h:24,
+                 from /usr/local/include/ruby-2.6.0/ruby.h:33,
+                 from nokogumbo.c:22:
+/usr/local/include/ruby-2.6.0/x86_64-linux-musl/ruby/config.h:16: note: this is the location of the previous definition
+ #define _GNU_SOURCE 1
+ 
+compiling ./../../gumbo-parser/src/string_buffer.c
+compiling ./../../gumbo-parser/src/svg_attrs.c
+compiling ./../../gumbo-parser/src/ascii.c
+compiling ./../../gumbo-parser/src/util.c
+compiling ./../../gumbo-parser/src/svg_tags.c
+compiling ./../../gumbo-parser/src/vector.c
+compiling ./../../gumbo-parser/src/attribute.c
+compiling ./../../gumbo-parser/src/token_buffer.c
+compiling ./../../gumbo-parser/src/char_ref.c
+compiling ./../../gumbo-parser/src/utf8.c
+compiling ./../../gumbo-parser/src/error.c
+compiling ./../../gumbo-parser/src/tag.c
+compiling ./../../gumbo-parser/src/parser.c
+compiling ./../../gumbo-parser/src/foreign_attrs.c
+compiling ./../../gumbo-parser/src/tokenizer.c
+compiling ./../../gumbo-parser/src/string_piece.c
+compiling ./../../gumbo-parser/src/tag_lookup.c
+linking shared-object nokogumbo/nokogumbo.so
+
+current directory: /usr/local/bundle/gems/nokogumbo-2.0.2/ext/nokogumbo
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 nokogumbo.so ./.gem.20200530-30-s1zn08/nokogumbo

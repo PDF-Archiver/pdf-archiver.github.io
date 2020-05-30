@@ -20,8 +20,6 @@ group :jekyll_plugins do
   gem "jekyll-seo-tag"
   gem "jekyll-sitemap"
   gem "bootstrap"
-  gem "jekyll-font-awesome-sass"
-  gem "font-awesome-sass"
   gem "jekyll-multiple-languages-plugin"
   gem "jekyll-email-protect"
 end

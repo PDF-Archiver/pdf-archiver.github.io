@@ -4,6 +4,16 @@ Files that are used to build the [PDF Archiver's](https://pdf-archiver.github.io
 
 ## Requirements and dev environment
 
+Docker:
+```bash
+export JEKYLL_VERSION=3.8
+docker run --rm \
+  -p 4000:4000 --volume="$PWD:/srv/jekyll" \
+  --volume="$PWD/vendor/bundle:/usr/local/bundle" \
+  -it jekyll/jekyll:$JEKYLL_VERSION \
+  jekyll serve --incremental
+```
+
 As per Jekyll's Quick-start instructions, a functioning build-environment can be set up the following way. This implies a working Ruby environment (already present on a Mac).
 
 ```

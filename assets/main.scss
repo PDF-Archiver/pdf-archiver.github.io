@@ -3,7 +3,6 @@
 ---
 
 $font-path: "../assets/fonts/";
-$fa-font-path: $font-path + "font-awesome/";
 $simple-line-font-path: $font-path;
 
 
@@ -38,8 +37,6 @@ $simple-line-font-path: $font-path;
 $font-family-monospace: Monaco, Consolas, "Courier New", monospace !default;
 
 @import "bootstrap";
-@import "font-awesome";
-
 @import "new-age";
 @import "simple-line-icons";
 
