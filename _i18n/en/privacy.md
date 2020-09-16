@@ -1,4 +1,4 @@
-**German Version:** [Datenschutzerklärung](/de/privacy/)
+**German Version:** [Datenschutzerklärung](https://pdf-archiver.io/de/privacy/)
 
 ## 1. An overview of data protection
 ### General
