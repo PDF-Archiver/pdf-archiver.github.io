@@ -30,7 +30,11 @@ feature_requests_email: 'feature-request@pdf-archiver.io'
 
 # Build settings
 markdown: kramdown
-include: [".well-known"]
+include:
+    - ".well-known"
+exclude:
+    - "vendor"
+    - "script"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -38,7 +42,7 @@ plugins:
   - jekyll-multiple-languages-plugin
   - jekyll-email-protect
 languages: ["en", "de"]
-exclude_from_localizations: ["assets",]
+exclude_from_localizations: ["assets",".well-known",]
 collections:
   changelog:
     output: false
