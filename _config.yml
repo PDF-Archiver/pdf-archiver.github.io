@@ -30,6 +30,7 @@ feature_requests_email: 'feature-request@pdf-archiver.io'
 
 # Build settings
 markdown: kramdown
+include: [".well-known"]
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
