@@ -6,8 +6,7 @@ global:
   menu: Menü
   copyright: '&copy; <a href="https://juliankahnert.de">Julian Kahnert</a> 2019. Alle Rechte vorbehalten.'
   website_attribution: 'Webseite von JW.'
-  macos_app_store_uri: https://apps.apple.com/de/app/pdf-archiver/id1352719750
-  ios_app_store_uri: https://apps.apple.com/de/app/pdf-archiver/id1433801905
+  app_store_uri: https://apps.apple.com/de/app/pdf-archiver/id1433801905
   image_app_icon: "/assets/img/AppIcon.svg"
 jumps:
   download: Herunterladen
@@ -44,7 +43,7 @@ marketing:
   cta_2: "Archiviere jetzt deinen Papierkram."
   start_btn: "Jetzt anfangen!"
   download_headline: 'Kostenlos testen!'
-  availability: "PDF Archiver respektiert deine Privatsphäre und vermeidet Werbeplattformen. <br />Zur Unterstützung des Projektes wird ein Abomodell mit 1-monatiger Testphase angeboten."
+  availability: "PDF Archiver respektiert deine Privatsphäre und vermeidet Werbeplattformen. <br />Zur Unterstützung des Projektes wird ein Abomodell mit 2-wöchiger Testphase angeboten."
   contributions_welcome: 'Wir <i class="fa fa-heart"></i> deinen Beitrag!'
   contrib_text: 'Erzähle uns was dir gefällt oder stelle uns Fragen zum PDF Archiver in unseren Discord. <br />Wenn du gern Code beitragen möchtest: Pull Requests kannst du über GitHub stellen!'
   download_now: "Jetzt herunterladen!"
