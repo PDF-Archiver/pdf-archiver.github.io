@@ -22,7 +22,7 @@ jobs:
       run: mkdir page && cp -R _site/* page/ && cp CNAME page/ && touch page/.nojekyll && cp -r .well-known page/
 
     - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@4.1.0
+      uses: JamesIves/github-pages-deploy-action@4.1.1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: master # The branch the action should deploy to.
