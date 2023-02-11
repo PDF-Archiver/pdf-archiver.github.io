@@ -3,36 +3,23 @@ name: Jekyll site CI
 on:
   push:
     branches:
-    - develop
+      - develop
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/cache@v2
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-        restore-keys: |
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
             ${{ runner.os }}-gems-
-    - uses: helaili/jekyll-action@v2
-      env:
-        JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        target_branch: 'master'
- 
-    - name: Move files to 'page' folder
-      run: mkdir page && cp -R _site/* page/ && cp CNAME page/ && touch page/.nojekyll && cp -r .well-known page/
-
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@v4.4.1
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: master # The branch the action should deploy to.
-        FOLDER: page # The folder the action should deploy.
-        CLEAN: true # Automatically remove deleted files from the deploy branch
-
+      - uses: helaili/jekyll-action@v2
+        env:
+          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target_branch: "master"
