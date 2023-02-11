@@ -16,7 +16,7 @@ jobs:
       run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:4 /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+        jekyll/builder:3 /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
 
     - name: Move files to 'page' folder
       run: mkdir page && cp -R _site/* page/ && cp CNAME page/ && touch page/.nojekyll && cp -r .well-known page/
