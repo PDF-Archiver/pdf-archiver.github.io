@@ -21,5 +21,7 @@ jobs:
         env:
           JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
         with:
+          # workaround for this: https://github.com/helaili/jekyll-action/issues/164
+          pre_build_commands: git config --global http.version HTTP/1.1; apk fetch git-lfs;
           token: ${{ secrets.GITHUB_TOKEN }}
           target_branch: "master"
