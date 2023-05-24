@@ -14,3 +14,4 @@ Attention: Before you make such changes to your archive, you should create a bac
 More information:
 
 - [Apple: Share files](https://support.apple.com/en-us/guide/iphone/iph17f9f92a6/ios)
+- [Blog Post](https://juliankahnert.de/posts/2023-05-24--pdf-archiver-sharing/)
