@@ -4,7 +4,7 @@ global:
   english: English
   title: PDF Archiver
   menu: Menü
-  copyright: '&copy; <a href="https://juliankahnert.de">Julian Kahnert</a> 2023. Alle Rechte vorbehalten.'
+  copyright: '&copy; <a href="https://juliankahnert.de">Julian Kahnert</a> 2024. Alle Rechte vorbehalten.'
   website_attribution: "Webseite von JW."
   app_store_uri: https://apps.apple.com/de/app/pdf-archiver/id1433801905
   image_app_icon: "/assets/img/AppIcon.svg"
