@@ -2,9 +2,6 @@
 This site and the mobile applications and services available in connection with this site and mobile application (the “App”) are made available to you by PDF Archiver (“We”) subject to these Terms of Service, including those set forth in the [Privacy Policy](https://pdf-archiver.io/privacy) (the “Terms”). By accessing, using or downloading any materials from the App, you agree to follow and be bound by the Terms, which may be updated by us from time to time without notice to you. You can review the most current version of the Terms at any time here. We and third party providers may make improvements and/or changes in the products, services, mobile applications, features, programs, and prices described in this App at any time without notice. Certain provisions of the Terms may be supplemented or superseded by expressly designated legal notices or terms located on particular pages at this App. The App is not intended for and is not designed to attract children under 13 years of age. If you do not agree with the Terms, please do not use this App. BY CONTINUING TO USE THE APP, YOU ARE INDICATING YOUR AGREEMENT TO THE TERMS AND ALL REVISIONS THEREOF.
 We reserve the right at any time and from time to time to modify or discontinue, temporarily or permanently, the App or any portion thereof with or without notice. You agree that we shall not be liable to you or to any third party for any modification, suspension or discontinuance of the App or any portion thereof.
 
-## Account registration
-Some functionality requires you to complete an account-registration form. You agree that we may use your User Data to provide services on the App, and you represent that you are of legal age to form a binding contract and are not a person barred from receiving services under the laws of any applicable jurisdiction. We have the right to suspend or terminate your account and refuse any and all current or future use of the App at any time.
-
 ## Subscription payments, renewals, and cancellation
 If you choose to buy a PDF Archiver subscription, payment will be charged to your Apple ID account at the confirmation of purchase. The subscription automatically renews unless it is canceled at least 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours prior to the end of the current period. You can manage and cancel your subscriptions by going to your account settings on the App Store after purchase.
 All purchases are final. PDF Archiver cannot issue refunds for purchases charged to your Apple ID.
@@ -39,3 +36,25 @@ This App is controlled by PDF Archiver from its offices within the United States
 
 ## General
 You agree that no joint venture, partnership, employment, or agency relationship exists between you and PDF Archiver as a result of the Terms or your use of the App. The Terms constitute the entire agreement between you and PDF Archiver with respect to your use of the App. The failure of us to exercise or enforce any right or provision of the Terms shall not constitute a waiver of such right or provision. If any provision of the Terms is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties’ intentions as reflected in the provision, and the other provisions of the Terms remain in full force and effect. You may not assign, delegate or otherwise transfer your account or your obligations under these Terms without the prior written consent of us. We have the right, in its sole discretion, to transfer or assign all or any part of its rights under these Terms and will have the right to delegate or use third party contractors to fulfill its duties and obligations under these Terms and in connection with the App. Our notice to you via email, regular mail, or notices or links on the App shall constitute acceptable notice to you under the Terms. A printed version of the Terms and of any notice given in electronic form shall be admissible in judicial or administrative proceedings based upon or relating to the Terms to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form. Section titles and headings in the Terms are for convenience only and have no legal or contractual effect. Any rights not expressly granted herein are reserved.
+
+## Claims for defects (warranty)
+
+The app is continuously tested by the provider in order to exclude faulty behaviour.
+
+The provider makes the app available in its current version. Notwithstanding claims for defects, the user has no claim to the maintenance or creation of a specific condition and/or functional scope of the app.
+
+Warranty claims are excluded if users have not installed the latest version of the app and this results in functional restrictions or a lack of compatibility.
+
+The provider assumes no guarantees in the legal sense with regard to the app.
+
+## Liability
+
+User claims for damages are excluded. Excluded from this are claims for damages by users arising from injury to life, limb or health or from the breach of essential contractual obligations (cardinal obligations) as well as liability for other damages based on an intentional or grossly negligent breach of duty by the provider, its legal representatives or vicarious agents. Essential contractual obligations are those whose fulfilment is necessary to achieve the objective of the contract.
+
+In the event of a breach of material contractual obligations, the provider shall only be liable for foreseeable damage typical of the contract if this was caused by simple negligence, unless the user's claims for damages are based on injury to life, limb or health.
+
+The limitations of the two previous paragraphs also apply in favour of the legal representatives and vicarious agents of the provider if claims are asserted directly against them.
+
+The liability of the provider under the Product Liability Act and within the scope of application of §44a TKG remains unaffected.
+
+Liability for the restoration of user data is otherwise limited to the necessary costs of restoration that would have been incurred even with regular and appropriate data backup measures.
