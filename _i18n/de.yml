@@ -14,11 +14,11 @@ jumps:
   contact: Kontakt
 pages:
   home: Home
-  changelog: Versionen
   faq: FAQ
   imprint: Impressum
   privacy: Datenschutzerklärung
   terms: AGBs
+  press: Presse
   err404: 404. Nicht gefunden.
 
 features:
