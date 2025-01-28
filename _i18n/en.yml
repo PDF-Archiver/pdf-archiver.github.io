@@ -45,13 +45,13 @@ marketing:
   download_headline: "Try it for free!"
   availability: "PDF Archiver respects your privacy and avoids advertising platforms. <br />To support the project, we offer a subscription model with a 2-week free trial."
   contributions_welcome: 'We <i class="fa fa-heart"></i> contributions!'
-  contrib_text: "Tell us what you like or ask questions about PDF Archiver on our Discord. <br />Or if you want to contribute with code: Pull Requests are open on GitHub!"
+  contrib_text: "Tell us what you like or ask questions about PDF Archiver on Mastodon. <br />Or if you want to contribute with code: Pull Requests are open on GitHub!"
   download_now: "Download Now!"
   image_macos_app_store_badge: "https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2018-02-28T00:00:00Z&kind=desktopapp&bubble=macos_apps"
   image_ios_app_store_badge: "https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg"
   image_screenshot_1: "/assets/img/demo-screen-en.png"
   need_help: "Do you need help?"
-  need_help_text: "We want you to be as productive as possible using the PDF Archiver. <br />The most frequent questions have been answered on our FAQ page. <br />If that does not help you, join our #helpdesk Discord channel. <br />You can also write us an email."
+  need_help_text: "We want you to be as productive as possible using the PDF Archiver. <br />The most frequent questions have been answered on our FAQ page. <br />If that does not help you, contact us on Mastodon. <br />You can also write us an email."
 testimonials:
   headline: What Users Say
 

@@ -33,11 +33,11 @@ section.contact {
                 color: white;
                 border-radius: 100%;
             }
-            &.social-discord {
+            &.social-mastodon {
                 a {
-                    background-color: $brand-discord;
+                    background-color: $brand-mastodon;
                     &:hover {
-                        background-color: darken($brand-discord, 5%);
+                        background-color: darken($brand-mastodon, 5%);
                     }
                 }
             }

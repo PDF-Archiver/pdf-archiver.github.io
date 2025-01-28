@@ -3,224 +3,289 @@ layout: default
 ---
 
 <header class="masthead">
-  <div class="container h-100">
-    <div class="row h-100">
-      <div class="col-lg-4 my-auto">
-        <div class="header-content mx-auto">
-          <h1 class="mb-5">{% t marketing.masthead_message %}</h1>
-          <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">{% t marketing.download_now %}</a>
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-lg-4 my-auto">
+                <div class="header-content mx-auto">
+                    <h1 class="mb-5">{% t marketing.masthead_message %}</h1>
+                    <a
+                        href="#download"
+                        class="btn btn-outline btn-xl js-scroll-trigger"
+                        >{% t marketing.download_now %}</a
+                    >
+                </div>
+            </div>
+            <div class="col-lg-8 my-auto">
+                <img
+                    src="{{site.baseurl_root}}{% t marketing.image_screenshot_1 %}"
+                    class="img-fluid crop-img"
+                    alt=""
+                />
+            </div>
         </div>
-      </div>
-      <div class="col-lg-8 my-auto">
-        <img src="{{site.baseurl_root}}{% t marketing.image_screenshot_1 %}" class="img-fluid crop-img" alt="">
-      </div>
     </div>
-  </div>
-  <div class="verification-links">
-    <a rel="me" href="https://chaos.social/@jtk">Mastodon</a>
-  </div>
+    <div class="verification-links">
+        <a rel="me" href="https://chaos.social/@jtk">Mastodon</a>
+    </div>
 </header>
 
 <section class="download text-center" id="download">
-  <div class="container">
-    <div class="section-heading text-center">
-      <h2>{% t marketing.download_headline %}</h2>
-      <hr>
-      <br>
-    </div>
-    <div class="row">
-      <div class="col-md-12 col-lg-8 offset-lg-2 my-auto">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="feature-item">
-                <a class="badge-link" target="_blank" rel="noopener noreferrer" href="{% t global.app_store_uri %}">
-                    <img src="{{ site.baseurl_root }}{% t global.image_app_icon %}" alt="" width="160px"><br><br>
-                </a>
-                <a class="badge-link" target="_blank" rel="noopener noreferrer" href="{% t global.app_store_uri %}">
-                    <img src="{{ site.baseurl_root }}{% t marketing.image_ios_app_store_badge %}" alt="">
-                </a>
-                <!-- <a class="badge-link" target="_blank" rel="noopener noreferrer" href="{% t global.app_store_uri %}">
+    <div class="container">
+        <div class="section-heading text-center">
+            <h2>{% t marketing.download_headline %}</h2>
+            <hr />
+            <br />
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-8 offset-lg-2 my-auto">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <a
+                                    class="badge-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href="{% t global.app_store_uri %}"
+                                >
+                                    <img
+                                        src="{{ site.baseurl_root }}{% t global.image_app_icon %}"
+                                        alt=""
+                                        width="160px"
+                                    /><br /><br />
+                                </a>
+                                <a
+                                    class="badge-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href="{% t global.app_store_uri %}"
+                                >
+                                    <img
+                                        src="{{ site.baseurl_root }}{% t marketing.image_ios_app_store_badge %}"
+                                        alt=""
+                                    />
+                                </a>
+                                <!-- <a class="badge-link" target="_blank" rel="noopener noreferrer" href="{% t global.app_store_uri %}">
                     <img src="{{ site.baseurl_root }}{% t marketing.image_macos_app_store_badge %}" alt="">
                 </a> -->
-              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <br />
+                                <h3>Privacy by Design</h3>
+                                <p class="text-muted">
+                                    {% t marketing.availability %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-              <div class="feature-item">
-                <br>
-                <h3>Privacy by Design</h3>
-                <p class="text-muted">{% t marketing.availability %}</p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <section class="features" id="features">
-  <div class="container">
-    <div class="section-heading text-center">
-      <h2>{% t features.title %}</h2>
-      <p class="text-muted">{% t features.subtitle %}</p>
-      <hr>
-    </div>
-    <div class="row">
-      <div class="col-md-12 col-lg-8 offset-lg-2 my-auto">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="feature-item">
-                <i class="icon-folder-alt text-primary"></i>
-                <h3>{% t features.feature1 %}</h3>
-                <p class="text-muted">{% t features.feature1_description %}</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="feature-item">
-                <i class="icon-folder-alt text-primary"></i>
-                <h3>{% t features.feature2 %}</h3>
-                <p class="text-muted">{% t features.feature2_description %}</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="feature-item">
-                <i class="icon-folder-alt text-primary"></i>
-                <h3>{% t features.feature3 %}</h3>
-                <p class="text-muted">{% t features.feature3_description %}</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="feature-item">
-                <i class="icon-folder-alt text-primary"></i>
-                <h3>{% t features.feature4 %}</h3>
-                <p class="text-muted">{% t features.feature4_description %}</p>
-              </div>
-            </div>
-          </div>
+    <div class="container">
+        <div class="section-heading text-center">
+            <h2>{% t features.title %}</h2>
+            <p class="text-muted">{% t features.subtitle %}</p>
+            <hr />
         </div>
-      </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-8 offset-lg-2 my-auto">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <i class="icon-folder-alt text-primary"></i>
+                                <h3>{% t features.feature1 %}</h3>
+                                <p class="text-muted">
+                                    {% t features.feature1_description %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <i class="icon-folder-alt text-primary"></i>
+                                <h3>{% t features.feature2 %}</h3>
+                                <p class="text-muted">
+                                    {% t features.feature2_description %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <i class="icon-folder-alt text-primary"></i>
+                                <h3>{% t features.feature3 %}</h3>
+                                <p class="text-muted">
+                                    {% t features.feature3_description %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <i class="icon-folder-alt text-primary"></i>
+                                <h3>{% t features.feature4 %}</h3>
+                                <p class="text-muted">
+                                    {% t features.feature4_description %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <section class="cta">
-  <div class="cta-content">
-    <div class="container">
-      <h2>{% t marketing.cta_1 %}<br>{% t marketing.cta_2 %}</h2>
-      <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">{% t marketing.start_btn %}</a>
+    <div class="cta-content">
+        <div class="container">
+            <h2>{% t marketing.cta_1 %}<br />{% t marketing.cta_2 %}</h2>
+            <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger"
+                >{% t marketing.start_btn %}</a
+            >
+        </div>
     </div>
-  </div>
-  <div class="overlay"></div>
+    <div class="overlay"></div>
 </section>
 
 <section class="download testimonials">
-  <div class="container">
-    <h2 class="mb-5">{% t testimonials.headline %}</h2>
-    <div class="row">
-      <div class="col-sm-6 align-middle">
-        <div class="row align-items-center h-100">
-          <div class="col-6 offset-3 offset-sm-0 col-sm-4">
-            <img class="rounded-circle w-100 mb-3" src="{{ site.baseurl_root }}{% t testimonials.image_1 %}" alt="First slide">
-          </div>
-          <div class="col-sm-8 align-middle">
-            <span><em>"{% t testimonials.statement_1 %}"</em></span>
-            <br><br>
-            <span><strong>{% t testimonials.user_1 %}</strong></span>
-          </div>
+    <div class="container">
+        <h2 class="mb-5">{% t testimonials.headline %}</h2>
+        <div class="row">
+            <div class="col-sm-6 align-middle">
+                <div class="row align-items-center h-100">
+                    <div class="col-6 offset-3 offset-sm-0 col-sm-4">
+                        <img
+                            class="rounded-circle w-100 mb-3"
+                            src="{{ site.baseurl_root }}{% t testimonials.image_1 %}"
+                            alt="First slide"
+                        />
+                    </div>
+                    <div class="col-sm-8 align-middle">
+                        <span><em>"{% t testimonials.statement_1 %}"</em></span>
+                        <br /><br />
+                        <span
+                            ><strong>{% t testimonials.user_1 %}</strong></span
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 align-middle">
+                <div class="row align-items-center h-100">
+                    <div class="col-6 offset-3 offset-sm-0 col-sm-4">
+                        <img
+                            class="rounded-circle w-100 mb-3"
+                            src="{{ site.baseurl_root }}{% t testimonials.image_2 %}"
+                            alt="First slide"
+                        />
+                    </div>
+                    <div class="col-sm-8 align-middle">
+                        <span><em>"{% t testimonials.statement_2 %}"</em></span>
+                        <br /><br />
+                        <span
+                            ><strong>{% t testimonials.user_2 %}</strong></span
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 align-middle">
+                <div class="row align-items-center h-100">
+                    <div class="col-6 offset-3 offset-sm-0 col-sm-4">
+                        <img
+                            class="rounded-circle w-100 mb-3"
+                            src="{{ site.baseurl_root }}{% t testimonials.image_3 %}"
+                            alt="First slide"
+                        />
+                    </div>
+                    <div class="col-sm-8 align-middle">
+                        <span><em>"{% t testimonials.statement_3 %}"</em></span>
+                        <br /><br />
+                        <span
+                            ><strong>{% t testimonials.user_3 %}</strong></span
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 align-middle">
+                <div class="row align-items-center h-100">
+                    <div class="col-6 offset-3 offset-sm-0 col-sm-4">
+                        <img
+                            class="rounded-circle w-100 mb-3"
+                            src="{{ site.baseurl_root }}{% t testimonials.image_4 %}"
+                            alt="First slide"
+                        />
+                    </div>
+                    <div class="col-sm-8 align-middle">
+                        <span><em>"{% t testimonials.statement_4 %}"</em></span>
+                        <br /><br />
+                        <span
+                            ><strong>{% t testimonials.user_4 %}</strong></span
+                        >
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-sm-6 align-middle">
-        <div class="row align-items-center h-100">
-          <div class="col-6 offset-3 offset-sm-0 col-sm-4">
-            <img class="rounded-circle w-100 mb-3" src="{{ site.baseurl_root }}{% t testimonials.image_2 %}" alt="First slide">
-          </div>
-          <div class="col-sm-8 align-middle">
-            <span><em>"{% t testimonials.statement_2 %}"</em></span>
-            <br><br>
-            <span><strong>{% t testimonials.user_2 %}</strong></span>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 align-middle">
-        <div class="row align-items-center h-100">
-          <div class="col-6 offset-3 offset-sm-0 col-sm-4">
-            <img class="rounded-circle w-100 mb-3" src="{{ site.baseurl_root }}{% t testimonials.image_3 %}" alt="First slide">
-          </div>
-          <div class="col-sm-8 align-middle">
-            <span><em>"{% t testimonials.statement_3 %}"</em></span>
-            <br><br>
-            <span><strong>{% t testimonials.user_3 %}</strong></span>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 align-middle">
-        <div class="row align-items-center h-100">
-          <div class="col-6 offset-3 offset-sm-0 col-sm-4">
-            <img class="rounded-circle w-100 mb-3" src="{{ site.baseurl_root }}{% t testimonials.image_4 %}" alt="First slide">
-          </div>
-          <div class="col-sm-8 align-middle">
-            <span><em>"{% t testimonials.statement_4 %}"</em></span>
-            <br><br>
-            <span><strong>{% t testimonials.user_4 %}</strong></span>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <section class="contact bg-primary" id="contact">
-  <div class="container">
-    <div class="row">
-      <div class="col mb-5">
-        <h2>{% t marketing.need_help %}</h2>
-        <p>{% t marketing.need_help_text %}</p>
-        <ul class="list-inline list-social">
-          <li class="list-inline-item social-faq">
-            <a href="{{ site.faq_url }}">
-              <span class="pull-together">
-                <i class="fa fa-question"></i>
-                <i class="fa fa-exclamation fa-lg"></i>
-              </span>
-            </a>
-          </li>
-          <li class="list-inline-item social-discord">
-            <a href="{{ site.discord_url }}">
-              <i class="fab fa-discord"></i>
-            </a>
-          </li>
-          <li class="list-inline-item social-email">
-            <a href="mailto:{{ site.support_email | encode_email }}">
-              <i class="fa fa-envelope"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col mb-5">
+                <h2>{% t marketing.need_help %}</h2>
+                <p>{% t marketing.need_help_text %}</p>
+                <ul class="list-inline list-social">
+                    <li class="list-inline-item social-faq">
+                        <a href="{{ site.faq_url }}">
+                            <span class="pull-together">
+                                <i class="fa fa-question"></i>
+                                <i class="fa fa-exclamation fa-lg"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item social-mastodon">
+                        <a href="{{ site.mastodon_url }}">
+                            <i class="fab fa-mastodon"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item social-email">
+                        <a
+                            href="mailto:{{ site.support_email | encode_email }}"
+                        >
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>{% t marketing.contributions_welcome %}</h2>
+                <p>{% t marketing.contrib_text %}</p>
+                <ul class="list-inline list-social">
+                    <li class="list-inline-item social-mastodon">
+                        <a href="{{ site.mastodon_url }}">
+                            <i class="fab fa-mastodon"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item social-github">
+                        <a href="{{ site.github_url }}">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item social-email">
+                        <a
+                            href="mailto:{{ site.feature_requests_email | encode_email }}"
+                        >
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="row">
-      <div class="col">
-        <h2>{% t marketing.contributions_welcome %}</h2>
-        <p>{% t marketing.contrib_text %}</p>
-        <ul class="list-inline list-social">
-          <li class="list-inline-item social-discord">
-            <a href="{{ site.discord_url }}">
-              <i class="fab fa-discord"></i>
-            </a>
-          </li>
-          <li class="list-inline-item social-github">
-            <a href="{{ site.github_url }}">
-              <i class="fab fa-github"></i>
-            </a>
-          </li>
-          <li class="list-inline-item social-email">
-            <a href="mailto:{{ site.feature_requests_email | encode_email }}">
-              <i class="fa fa-envelope"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </section>
