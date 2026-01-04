@@ -2,7 +2,6 @@
 title: What happens to my documents after my subscription is cancelled?
 ---
 
-All your PDFs will be saved in the selected folder.
-That's why you have full access to all documents even after the subscription.
+All your PDFs are stored in your selected folder (iCloud Drive, local, or custom folder) and remain accessible even if your subscription ends.
 
-Only the app usage is not possible afterwards.
+**Important:** While you can always access your documents through the Files app or Finder, you'll need an active subscription or lifetime purchase to continue using the PDF Archiver app features.
