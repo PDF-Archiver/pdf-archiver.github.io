@@ -14,3 +14,5 @@ order: 01
     * **Tags** - Select from suggestions or create new tags (automatically converted to lowercase)
 * Save the document by pressing the *Save* button or <kbd>⌘ s</kbd> (macOS)
 * Tagged documents will be moved to the Archive folder and organized by year
+
+For more details, see the [blog post about PDF Archiver](https://juliankahnert.de/posts/2018-03-03--pdf-archiver/).
