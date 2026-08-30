@@ -37,9 +37,7 @@ extension Node where Context == HTML.BodyContext {
                            in language: SiteLanguage,
                            context: PublishingContext<PDFArchiverWebsite>) -> Node {
         let strings = language.strings
-        // A path without a counterpart in the current language is left out, which is how the
-        // German footer loses the English-only changelog.
-        let footerPaths: [Path] = ["faq", "privacy", "terms", "imprint", "press", "changelog"]
+        let footerPaths: [Path] = ["faq", "privacy", "terms", "imprint", "press"]
         let year = Calendar.current.component(.year, from: Date())
 
         return .footer(
@@ -89,8 +87,8 @@ private extension Node where Context == HTML.BodyContext {
     }
 }
 
-/// The other language's version of a location. Content that exists in English only — the
-/// changelog — falls back to that language's home page instead of a dead link.
+/// The other language's version of a location, falling back to that language's home page
+/// when there is no counterpart.
 private func counterpart(of path: Path,
                          in language: SiteLanguage,
                          context: PublishingContext<PDFArchiverWebsite>) -> Path {

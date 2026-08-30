@@ -1,4 +1,3 @@
-import Foundation
 import Plot
 import Publish
 
@@ -16,19 +15,6 @@ extension Node where Context == HTML.BodyContext {
                 entry.body
             )
         })
-    }
-
-    static func changelogList(for items: [Item<PDFArchiverWebsite>]) -> Node {
-        .ul(
-            .class("changelog"),
-            .forEach(items) { item in
-                .li(
-                    .a(.href(item.path.absoluteString), .text(item.title)),
-                    .text(" — "),
-                    .text(item.date.formatted(.iso8601.year().month().day().dateSeparator(.dash)))
-                )
-            }
-        )
     }
 }
 

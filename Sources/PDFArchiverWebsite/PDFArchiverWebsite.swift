@@ -9,7 +9,6 @@ import Publish
 struct PDFArchiverWebsite: Website {
     enum SectionID: String, WebsiteSectionID {
         case faq
-        case changelog
     }
 
     struct ItemMetadata: WebsiteItemMetadata {}

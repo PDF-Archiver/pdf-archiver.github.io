@@ -2,15 +2,6 @@ import Foundation
 import Publish
 
 extension PublishingStep where Site == PDFArchiverWebsite {
-    /// Changelog dates are plain `yyyy-MM-dd`. The locale has to be set first: assigning it
-    /// afterwards makes `DateFormatter` re-derive the format from the locale's own template.
-    static func configureDateParsing() -> Self {
-        step(named: "Configure date parsing") { context in
-            context.dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            context.dateFormatter.dateFormat = "yyyy-MM-dd"
-        }
-    }
-
     /// Markdown pages keep their file name, so `Content/de/index.md` would land on `/de/index`.
     static func moveGermanIndexPageToLanguageRoot() -> Self {
         step(named: "Move the German index page to /de") { context in

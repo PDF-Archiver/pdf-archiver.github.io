@@ -10,11 +10,9 @@ enum SiteGenerator {
             .copyFiles(at: "root-resources"),
             // Folder traversal skips dotted folders, so the App Site Association file is copied by name.
             .copyFile(at: "root-resources/.well-known/apple-app-site-association", to: ".well-known"),
-            .configureDateParsing(),
             .addMarkdownFiles(),
             .moveGermanIndexPageToLanguageRoot(),
             .sortItems(in: .faq, by: \.path),
-            .sortItems(in: .changelog, by: \.date, order: .descending),
             .generateHTML(withTheme: .pdfArchiver),
             .generateSiteMap(excluding: ["404"]),
             .moveNotFoundPageToRoot()

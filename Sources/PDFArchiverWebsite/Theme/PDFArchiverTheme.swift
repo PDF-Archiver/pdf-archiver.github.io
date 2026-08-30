@@ -15,18 +15,10 @@ private struct PDFArchiverHTMLFactory: HTMLFactory {
     }
 
     func makeSectionHTML(for section: Section<Site>, context: PublishingContext<Site>) throws -> HTML {
-        switch section.id {
-        case .faq:
-            return document(for: section, context: context,
-                            body: .articlePage(title: section.title,
-                                               intro: section.body.node,
-                                               content: .faqEntries(in: .english, context: context)))
-        case .changelog:
-            return document(for: section, context: context,
-                            body: .articlePage(title: section.title,
-                                               intro: section.body.node,
-                                               content: .changelogList(for: section.items)))
-        }
+        document(for: section, context: context,
+                 body: .articlePage(title: section.title,
+                                    intro: section.body.node,
+                                    content: .faqEntries(in: .english, context: context)))
     }
 
     func makeItemHTML(for item: Item<Site>, context: PublishingContext<Site>) throws -> HTML {

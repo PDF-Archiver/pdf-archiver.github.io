@@ -634,16 +634,6 @@ pre {
     scroll-margin-top: 1.5rem;
 }
 
-.changelog {
-    padding: 0;
-    list-style: none;
-}
-
-.changelog li {
-    padding-block: 0.5rem;
-    border-bottom: 1px solid var(--rule);
-}
-
 /* ---------- Footer ---------- */
 
 .site-footer {
