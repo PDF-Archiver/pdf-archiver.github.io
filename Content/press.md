@@ -54,8 +54,8 @@ Julian Kahnert is a software developer working in Swift and, on the infrastructu
 | 2021-02-03 | appgefahren | [PDF Archiver: Dokument-Verwaltung führt neue Finanzierungs-Option ein](https://www.appgefahren.de/pdf-archiver-dokument-verwaltung-fuehrt-neue-finanzierungs-option-ein-294420.html) |
 | 2018-07-17 | Sir Apfelot | [PDF Archiver im Test: PDFs verschlagworten, ordnen und archivieren](https://www.sir-apfelot.de/pdf-archiver-22021/) |
 | 2018-07-14 | Caschys Blog | [PDF Archiver: Dokumentenverwaltung führt Abo-Modell ein](https://stadt-bremerhaven.de/pdf-archiver-dokumentenverwaltung-fuehrt-abo-modell-ein/) |
+| 2018-05-22 | The Mac Observer | [How to Archive PDFs with PDF Archiver](https://www.macobserver.com/reviews/quick-look/review-pdf-archiver/) |
 | 2018-03-06 | iFun | [PDF Archiver: Open-Source-Projekt zur Langzeit-Archivierung](https://www.ifun.de/pdf-archiver-open-source-projekt-zur-langzeit-archivierung-119547/) |
-| — | The Mac Observer | [How to Archive PDFs with PDF Archiver](https://www.macobserver.com/reviews/quick-look/review-pdf-archiver/) |
 | — | Netzwelt | [PDF Archiver](https://www.netzwelt.de/download/24613-pdf-archiver.html) |
 
 ## Usage
