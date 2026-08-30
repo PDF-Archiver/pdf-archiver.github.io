@@ -1,18 +1,17 @@
 ---
 title: What is the basic workflow?
-order: 01
 ---
 
-* Start **PDF Archiver**
-* Set your storage location in **Settings** (iCloud Drive, Local, or Custom Folder)
-* Navigate to the **Inbox** tab to see untagged documents
-* Import documents via camera scan or file import
-* Tap/select a document to tag it
-* Fill in the document attributes (use <kbd>↹</kbd> on macOS to switch fields):
-    * **Date** - Select the document date (or use "Today" button)
-    * **Specification** - Write a meaningful description (automatically converted to lowercase with dashes)
-    * **Tags** - Select from suggestions or create new tags (automatically converted to lowercase)
-* Save the document by pressing the *Save* button or <kbd>⌘ s</kbd> (macOS)
-* Tagged documents will be moved to the Archive folder and organized by year
+- Open PDF Archiver.
+- Choose where your archive lives: **Settings → Storage** (iCloud Drive, a local folder, or a folder you pick).
+- Open the **Inbox** tab to see untagged documents.
+- Add documents with the camera or by importing files.
+- Select a document to tag it, and fill in its three fields.
+- Save with the **Save** button or <kbd>⌘S</kbd> on the Mac.
+- The document is renamed and moved into your archive, sorted by year.
 
-For more details, see the [blog post about PDF Archiver](https://juliankahnert.de/posts/2018-03-03--pdf-archiver/).
+The three fields — on the Mac, <kbd>↹</kbd> moves to the next one:
+
+- **Date** — the date of the document.
+- **Description** — a short, meaningful description. Converted to lowercase with dashes automatically.
+- **Tags** — pick from the suggestions or add your own. Converted to lowercase automatically.

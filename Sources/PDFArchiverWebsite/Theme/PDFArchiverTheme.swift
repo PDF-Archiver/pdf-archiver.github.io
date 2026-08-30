@@ -2,7 +2,6 @@ import Plot
 import Publish
 
 extension Theme where Site == PDFArchiverWebsite {
-    /// Neutral, semantic scaffolding. The visual design is deliberately left to a later step.
     static var pdfArchiver: Self {
         Theme(htmlFactory: PDFArchiverHTMLFactory())
     }
@@ -16,21 +15,23 @@ private struct PDFArchiverHTMLFactory: HTMLFactory {
     }
 
     func makeSectionHTML(for section: Section<Site>, context: PublishingContext<Site>) throws -> HTML {
-        let heading = Node<HTML.BodyContext>.group(.h1(.text(section.title)), section.body.node)
-
         switch section.id {
         case .faq:
             return document(for: section, context: context,
-                            body: .group(heading, .faqEntries(in: context)))
+                            body: .articlePage(title: section.title,
+                                               intro: section.body.node,
+                                               content: .faqEntries(in: .english, context: context)))
         case .changelog:
             return document(for: section, context: context,
-                            body: .group(heading, .changelogList(for: section.items)))
+                            body: .articlePage(title: section.title,
+                                               intro: section.body.node,
+                                               content: .changelogList(for: section.items)))
         }
     }
 
     func makeItemHTML(for item: Item<Site>, context: PublishingContext<Site>) throws -> HTML {
         document(for: item, context: context,
-                 body: .article(.h1(.text(item.title)), item.body.node))
+                 body: .articlePage(title: item.title, intro: item.body.node, content: .empty))
     }
 
     func makePageHTML(for page: Page, context: PublishingContext<Site>) throws -> HTML {
@@ -63,16 +64,34 @@ private extension PDFArchiverHTMLFactory {
         )
     }
 
-    /// German counterparts of the two English root locations that are not plain Markdown pages:
-    /// the home page is generated from the translated strings, the FAQ from the FAQ section.
+    /// The two German locations that are not plain Markdown pages: the home page is generated
+    /// from the translated strings, the FAQ collects the entries below `de/faq`.
     func body(for page: Page, context: PublishingContext<Site>) -> Node<HTML.BodyContext> {
         switch page.path {
         case "de":
             return .homeContent(in: .german, on: context.site)
         case "de/faq":
-            return .group(.h1(.text(page.title)), page.body.node, .faqEntries(in: context))
+            return .articlePage(title: page.title,
+                                intro: page.body.node,
+                                content: .faqEntries(in: .german, context: context))
         default:
-            return .group(.h1(.text(page.title)), page.body.node)
+            return .articlePage(title: page.title, intro: page.body.node, content: .empty)
         }
+    }
+}
+
+private extension Node where Context == HTML.BodyContext {
+    /// The shared layout for everything that is not the home page: a heading and running text
+    /// on a single paper band.
+    static func articlePage(title: String, intro: Node, content: Node) -> Node {
+        .section(
+            .class("band band-paper"),
+            .div(
+                .class("wrap narrow prose"),
+                .h1(.text(title)),
+                intro,
+                content
+            )
+        )
     }
 }

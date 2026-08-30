@@ -1,52 +1,80 @@
-/// Every translated string on the site, in one language.
+/// Every translated string on the home page and in the site chrome, in one language.
 ///
-/// Some values carry inline HTML — line breaks, links, icons — and are rendered raw. Page titles
-/// are not in here: they live in the front matter of the content files.
+/// Page titles and body copy of the content pages are not in here — they live in the front matter
+/// and body of the Markdown files.
 struct SiteStrings {
-    struct Feature {
+    /// One of the four steps the page is built around: Scan it, Tag it, Find it, Keep it.
+    struct Step {
         let title: String
+        let lead: String
+        let body: [String]
+    }
+
+    /// The example filename, split into the three parts the naming scheme is made of.
+    struct FilenameExample {
+        let date: String
         let description: String
+        let tags: String
+        let dateLabel: String
+        let descriptionLabel: String
+        let tagsLabel: String
+    }
+
+    struct Promise {
+        let title: String
+        let body: String
     }
 
     struct Testimonial {
-        let imagePath: String
-        let name: String
+        let source: String
         let statement: String
     }
 
+    let siteTitle: String
     let selectLanguage: String
+    let navigationLabel: String
     let germanName: String
     let englishName: String
-    let siteTitle: String
-    let navigationLabel: String
-    let copyright: String
-    let websiteAttribution: String
+
+    let navFeatures: String
+    let navFAQ: String
+    let navDownload: String
     let appStoreURL: String
-    let appIconPath: String
+    let downloadButton: String
 
-    let homeLabel: String
-    let downloadLabel: String
-    let featuresLabel: String
-    let contactLabel: String
+    let heroLead: String
+    let trustLine: String
 
-    let featuresTitle: String
-    let featuresSubtitle: String
-    let features: [Feature]
+    /// Scan it, Tag it, Find it — the three steps of the workflow.
+    let workflowSteps: [Step]
+    /// Keep it — the payoff, rendered on its own band with the filename breakdown.
+    let keepStep: Step
+    let filenameExample: FilenameExample
+    let archiveTree: String
+    let searchChips: [String]
 
-    let mastheadMessage: String
-    let callToActionHeadline: String
-    let callToActionSubheadline: String
-    let startButton: String
-    let downloadHeadline: String
-    let availability: String
-    let contributionsWelcome: String
-    let contributionText: String
-    let downloadNow: String
-    let appStoreBadgeImageURL: String
-    let screenshotPath: String
-    let needHelpTitle: String
-    let needHelpText: String
+    let promisesTitle: String
+    let promises: [Promise]
 
-    let testimonialsHeadline: String
+    let trialTitle: String
+    let trialLead: String
+    let trialBody: String
+    let trialNote: String
+
+    let platformsTitle: String
+    let platformsBody: String
+
+    let testimonialsTitle: String
     let testimonials: [Testimonial]
+
+    let helpTitle: String
+    let helpBody: String
+    let helpFAQLink: String
+    let helpFallback: String
+
+    let noTracking: String
+    let copyrightHolder: String
+
+    /// The headline is the same in both languages — the claim is not translated.
+    let heroHeadline = "Scan it. Tag it. Find it."
 }

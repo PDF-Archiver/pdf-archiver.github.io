@@ -1,3 +1,4 @@
+import Foundation
 import Plot
 import Publish
 
@@ -9,21 +10,26 @@ extension Node where Context == HTML.BodyContext {
         let homeURL = language.homePath.absoluteString
 
         return .header(
-            .a(
-                .class("site-name"),
-                .href(homeURL),
-                .img(.src(strings.appIconPath), .decorative, .width(20)),
-                .text(strings.siteTitle)
-            ),
-            .nav(
-                .attribute(named: "aria-label", value: strings.navigationLabel),
-                .ul(
-                    .li(.a(.href("\(homeURL)#download"), .text(strings.downloadLabel))),
-                    .li(.a(.href("\(homeURL)#features"), .text(strings.featuresLabel))),
-                    .li(.a(.href("\(homeURL)#contact"), .text(strings.contactLabel)))
-                )
-            ),
-            .languageSwitcher(for: path, in: language, context: context)
+            .class("site-header"),
+            .div(
+                .class("wrap site-header-inner"),
+                .a(
+                    .class("site-name"),
+                    .href(homeURL),
+                    .img(.class("site-icon"), .src("/assets/img/AppIcon.svg"), .decorative),
+                    .text(strings.siteTitle)
+                ),
+                .nav(
+                    .class("site-nav"),
+                    .attribute(named: "aria-label", value: strings.navigationLabel),
+                    .ul(
+                        .li(.a(.href("\(homeURL)#features"), .text(strings.navFeatures))),
+                        .li(.a(.href(language.path(for: "faq").absoluteString), .text(strings.navFAQ))),
+                        .li(.a(.class("nav-cta"), .href(strings.appStoreURL), .text(strings.navDownload)))
+                    )
+                ),
+                .languageSwitcher(for: path, in: language, context: context)
+            )
         )
     }
 
@@ -34,19 +40,26 @@ extension Node where Context == HTML.BodyContext {
         // A path without a counterpart in the current language is left out, which is how the
         // German footer loses the English-only changelog.
         let footerPaths: [Path] = ["faq", "privacy", "terms", "imprint", "press", "changelog"]
+        let year = Calendar.current.component(.year, from: Date())
 
         return .footer(
-            .p(.raw(strings.copyright)),
-            .p(.text(strings.websiteAttribution)),
-            .ul(
-                .class("footer-links"),
-                .forEach(footerPaths) { sharedPath in
-                    let target = language.path(for: sharedPath)
+            .class("site-footer"),
+            .div(
+                .class("wrap"),
+                .ul(
+                    .class("footer-links"),
+                    .forEach(footerPaths) { sharedPath in
+                        let target = language.path(for: sharedPath)
 
-                    return .unwrap(locationTitle(at: target, in: context)) { title in
-                        .li(.a(.href(target.absoluteString), .text(title)))
-                    }
-                }
+                        return .unwrap(locationTitle(at: target, in: context)) { title in
+                            .li(.a(.href(target.absoluteString), .text(title)))
+                        }
+                    },
+                    .li(.a(.href(context.site.githubURL.absoluteString), .text("GitHub"))),
+                    .li(.a(.href(context.site.mastodonURL.absoluteString), .text("Mastodon")))
+                ),
+                .p(.class("no-tracking"), .text(strings.noTracking)),
+                .p(.class("copyright"), .text("© \(strings.copyrightHolder) \(year)"))
             )
         )
     }
@@ -59,6 +72,7 @@ private extension Node where Context == HTML.BodyContext {
         let strings = language.strings
 
         return .nav(
+            .class("language-nav"),
             .attribute(named: "aria-label", value: strings.selectLanguage),
             .ul(
                 .class("language-switcher"),
@@ -75,8 +89,8 @@ private extension Node where Context == HTML.BodyContext {
     }
 }
 
-/// The other language's version of a location. Content that exists in English only — FAQ entries
-/// and the changelog — falls back to that language's home page instead of a dead link.
+/// The other language's version of a location. Content that exists in English only — the
+/// changelog — falls back to that language's home page instead of a dead link.
 private func counterpart(of path: Path,
                          in language: SiteLanguage,
                          context: PublishingContext<PDFArchiverWebsite>) -> Path {
