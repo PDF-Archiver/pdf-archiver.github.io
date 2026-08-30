@@ -43,6 +43,9 @@ jobs:
         if: github.event_name != 'pull_request'
         with:
           path: Output
+          # Without this the action tars with --exclude=.[^/]*, which drops
+          # .well-known/apple-app-site-association and breaks universal links.
+          include-hidden-files: true
 
   deploy:
     needs: build
