@@ -1,3 +1,7 @@
+---
+title: AGBs
+---
+
 ## Nutzungsbedingungen
 
 Diese Website und die in Verbindung mit dieser Website und der mobilen Anwendung verfügbaren mobilen Anwendungen und Dienste (die "App") werden Ihnen von PDF Archiver ("wir") gemäß diesen Nutzungsbedingungen zur Verfügung gestellt, einschließlich derjenigen, die in der [Datenschutzerklärung](https://pdf-archiver.io/privacy) dargelegt sind. Mit dem Zugriff auf, der Nutzung oder dem Herunterladen von Materialien aus der App erklären Sie sich damit einverstanden, die Bedingungen zu befolgen und an sie gebunden zu sein, die von uns von Zeit zu Zeit ohne vorherige Ankündigung aktualisiert werden können. Die jeweils aktuellste Version der Nutzungsbedingungen können Sie hier jederzeit einsehen. Wir und Drittanbieter können jederzeit und ohne Vorankündigung Verbesserungen und/oder Änderungen an den in dieser App beschriebenen Produkten, Dienstleistungen, mobilen Anwendungen, Funktionen, Programmen und Preisen vornehmen. Bestimmte Bestimmungen der Bedingungen können durch ausdrücklich benannte rechtliche Hinweise oder Bedingungen auf bestimmten Seiten dieser App ergänzt oder ersetzt werden. Die App ist nicht für Kinder unter 13 Jahren bestimmt und wurde nicht entwickelt, um Kinder unter 13 Jahren anzuziehen. Wenn Sie mit den Bedingungen nicht einverstanden sind, verwenden Sie bitte diese App nicht. DURCH DIE WEITERE NUTZUNG DER APP ERKLÄREN SIE SICH MIT DEN BEDINGUNGEN UND ALLEN ÄNDERUNGEN EINVERSTANDEN.

@@ -1,3 +1,7 @@
+---
+title: Privacy Policy
+---
+
 **German Version:** [Datenschutzerklärung](https://pdf-archiver.io/de/privacy/)
 
 ## 1. An overview of data protection

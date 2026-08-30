@@ -1,3 +1,7 @@
+---
+title: Press
+---
+
 ## Contact
 
 [press@pdf-archiver.io](mailto:press@pdf-archiver.io)
