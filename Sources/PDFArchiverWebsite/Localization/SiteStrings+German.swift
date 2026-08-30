@@ -24,7 +24,7 @@ extension SiteStrings {
         workflowLead: "Kein Workflow zum Lernen. Halten, prüfen, fertig.",
         steps: [
             Step(
-                tag: "01_scan",
+                tag: "1",
                 title: "Scan it.",
                 lead: "Halte dein iPhone über die Seite.",
                 body: """
@@ -33,7 +33,7 @@ extension SiteStrings {
                 """
             ),
             Step(
-                tag: "02_tag",
+                tag: "2",
                 title: "Tag it.",
                 lead: "Datum, Beschreibung, Tags.",
                 body: """
@@ -43,7 +43,7 @@ extension SiteStrings {
                 """
             ),
             Step(
-                tag: "03_find",
+                tag: "3",
                 title: "Find it.",
                 lead: "Such nach einem Tag oder dem Text im Dokument.",
                 body: """
@@ -54,7 +54,7 @@ extension SiteStrings {
         ],
         searchChips: ["_rechnung", "-mietvertrag", "energie"],
 
-        spotlightTitle: "Auf Mac, iPhone, iPad und Apple Vision Pro.",
+        spotlightTitle: "Auf Mac, iPhone und iPad.",
         spotlightBody: [
             """
             Widgets zeigen, was noch ungetaggt ist. Kurzbefehle automatisieren, was du oft machst. \
@@ -170,7 +170,6 @@ extension SiteStrings {
         helpFAQLink: "Zu den FAQ",
         helpFallback: "Kommst du nicht weiter? Schreib uns auf Mastodon oder per E-Mail.",
 
-        noTracking: "Diese Website setzt keine Cookies und lädt keine Tracker.",
         copyrightHolder: "Julian Kahnert"
     )
 }

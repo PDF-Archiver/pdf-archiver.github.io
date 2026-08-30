@@ -27,8 +27,29 @@ extension Node where Context == HTML.BodyContext {
                         .li(.a(.href(language.path(for: "faq").absoluteString), .text(strings.navFAQ))),
                         .li(.a(.class("nav-cta"), .href(strings.appStoreURL), .text(strings.navDownload)))
                     )
-                ),
-                .languageSwitcher(for: path, in: language, context: context)
+                )
+            )
+        )
+    }
+
+    /// A small toggle pinned to the right edge of the page, out of the header's way.
+    static func languageToggle(for path: Path,
+                               in language: SiteLanguage,
+                               context: PublishingContext<PDFArchiverWebsite>) -> Node {
+        let strings = language.strings
+
+        return .nav(
+            .class("language-toggle"),
+            .attribute(named: "aria-label", value: strings.selectLanguage),
+            .ul(
+                .forEach(SiteLanguage.allCases) { other in
+                    .li(.a(
+                        .href(counterpart(of: path, in: other, context: context).absoluteString),
+                        .attribute(named: "hreflang", value: other.rawValue),
+                        .if(other == language, .attribute(named: "aria-current", value: "page")),
+                        .text(other.rawValue.uppercased())
+                    ))
+                }
             )
         )
     }
@@ -56,32 +77,7 @@ extension Node where Context == HTML.BodyContext {
                     .li(.a(.href(context.site.githubURL.absoluteString), .text("GitHub"))),
                     .li(.a(.href(context.site.mastodonURL.absoluteString), .text("Mastodon")))
                 ),
-                .p(.class("no-tracking"), .text(strings.noTracking)),
                 .p(.class("copyright"), .text("© \(strings.copyrightHolder) \(year)"))
-            )
-        )
-    }
-}
-
-private extension Node where Context == HTML.BodyContext {
-    static func languageSwitcher(for path: Path,
-                                 in language: SiteLanguage,
-                                 context: PublishingContext<PDFArchiverWebsite>) -> Node {
-        let strings = language.strings
-
-        return .nav(
-            .class("language-nav"),
-            .attribute(named: "aria-label", value: strings.selectLanguage),
-            .ul(
-                .class("language-switcher"),
-                .forEach(SiteLanguage.allCases) { other in
-                    .li(.a(
-                        .href(counterpart(of: path, in: other, context: context).absoluteString),
-                        .attribute(named: "hreflang", value: other.rawValue),
-                        .if(other == language, .attribute(named: "aria-current", value: "page")),
-                        .text(other == .german ? strings.germanName : strings.englishName)
-                    ))
-                }
             )
         )
     }

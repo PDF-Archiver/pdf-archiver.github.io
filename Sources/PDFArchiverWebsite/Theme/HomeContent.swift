@@ -60,6 +60,7 @@ private extension Node where Context == HTML.BodyContext {
                     .class("sig-card"),
                     .div(
                         .class("sig-line-wrap"),
+                        .style("--sig-chars: \(strings.filenameExample.characterCount)"),
                         .span(.class("sig-reveal"), .signatureLine(strings.filenameExample))
                     )
                 )
@@ -88,9 +89,8 @@ private extension Node where Context == HTML.BodyContext {
         )
     }
 
-    /// The separator of the naming scheme, reused as the page's section divider.
     static func grammarRule() -> Node {
-        .p(.class("grammar-rule wrap"), .span(.text("__")))
+        .hr(.class("divider wrap"))
     }
 
     static func workflow(_ strings: SiteStrings) -> Node {

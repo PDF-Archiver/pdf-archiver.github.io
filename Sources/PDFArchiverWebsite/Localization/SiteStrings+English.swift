@@ -24,7 +24,7 @@ extension SiteStrings {
         workflowLead: "No workflow to learn. Point, check, done.",
         steps: [
             Step(
-                tag: "01_scan",
+                tag: "1",
                 title: "Scan it.",
                 lead: "Point your iPhone at the page.",
                 body: """
@@ -33,7 +33,7 @@ extension SiteStrings {
                 """
             ),
             Step(
-                tag: "02_tag",
+                tag: "2",
                 title: "Tag it.",
                 lead: "Date, description, tags.",
                 body: """
@@ -43,7 +43,7 @@ extension SiteStrings {
                 """
             ),
             Step(
-                tag: "03_find",
+                tag: "3",
                 title: "Find it.",
                 lead: "Search a tag, or the text inside.",
                 body: """
@@ -54,7 +54,7 @@ extension SiteStrings {
         ],
         searchChips: ["_bill", "-lease", "energy"],
 
-        spotlightTitle: "On Mac, iPhone, iPad and Apple Vision Pro.",
+        spotlightTitle: "On Mac, iPhone and iPad.",
         spotlightBody: [
             """
             Widgets show what's still untagged. Shortcuts automate what you do often. The share \
@@ -169,7 +169,6 @@ extension SiteStrings {
         helpFAQLink: "Read the FAQ",
         helpFallback: "Still stuck? Write to us on Mastodon or send an email.",
 
-        noTracking: "This website sets no cookies and loads no trackers.",
         copyrightHolder: "Julian Kahnert"
     )
 }

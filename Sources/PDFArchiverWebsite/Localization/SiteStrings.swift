@@ -5,7 +5,7 @@
 struct SiteStrings {
     /// One of the three steps the workflow section is built from.
     struct Step {
-        /// The step's marker in the filename's own vocabulary, e.g. `01_scan`. Not translated.
+        /// The step's number. Not translated.
         let tag: String
         let title: String
         let lead: String
@@ -20,6 +20,12 @@ struct SiteStrings {
         let dateLabel: String
         let descriptionLabel: String
         let tagsLabel: String
+
+        /// Length of the rendered filename, including the separators and the extension.
+        /// The hero sizes its type from this, so a longer translation still fits the card.
+        var characterCount: Int {
+            date.count + 2 + description.count + 2 + tags.count + 4
+        }
     }
 
     struct Promise {
@@ -83,6 +89,5 @@ struct SiteStrings {
     let helpFAQLink: String
     let helpFallback: String
 
-    let noTracking: String
     let copyrightHolder: String
 }
