@@ -206,9 +206,11 @@ pre {
     display: flex;
     align-items: center;
     gap: clamp(1rem, 4vw, 2.5rem);
+    border: 1px solid transparent;
     border-radius: 999px;
     background: transparent;
     transition:
+        border-color 0.4s ease,
         max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
         padding-block 0.4s cubic-bezier(0.4, 0, 0.2, 1),
         padding-inline 0.4s cubic-bezier(0.4, 0, 0.2, 1),
@@ -226,13 +228,13 @@ pre {
     padding-block: 0.55rem;
     padding-inline: 1.2rem 0.55rem;
     gap: clamp(0.75rem, 3vw, 1.75rem);
+    border-color: var(--rule);
     background: color-mix(in srgb, var(--card) 97%, transparent);
     backdrop-filter: blur(24px) saturate(1.6);
     -webkit-backdrop-filter: blur(24px) saturate(1.6);
     box-shadow:
         0 10px 20px -8px rgba(20, 28, 39, 0.22),
-        0 28px 55px -22px rgba(20, 28, 39, 0.4),
-        inset 0 0 0 1px color-mix(in srgb, var(--ink) 16%, transparent);
+        0 28px 55px -22px rgba(20, 28, 39, 0.4);
 }
 
 .site-name {
@@ -563,6 +565,7 @@ pre {
 
 .spotlight {
     background: var(--surface-sunk);
+    border: 1px solid var(--rule);
     border-radius: 1.5rem;
     padding: clamp(2rem, 5vw, 3.5rem);
     display: grid;
@@ -815,6 +818,7 @@ pre {
 .trial {
     text-align: center;
     padding: clamp(2.5rem, 6vw, 4rem);
+    border: 1px solid var(--rule);
     border-radius: 1.5rem;
     background: var(--surface-sunk);
 }
