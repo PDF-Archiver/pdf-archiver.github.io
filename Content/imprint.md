@@ -1,5 +1,6 @@
 ---
 title: Imprint
+description: Who runs PDF Archiver: the operator behind pdf-archiver.io, with postal address and contact details.
 ---
 
 ## Information provided according to Sec. 5 German Telemedia Act (TMG):

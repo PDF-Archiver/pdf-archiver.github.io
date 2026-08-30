@@ -1,5 +1,6 @@
 ---
 title: AGBs
+description: Die Allgemeinen Geschäftsbedingungen für PDF Archiver — Lizenz, Testphase, Kauf und Haftungsgrenzen.
 ---
 
 ## Nutzungsbedingungen
