@@ -6,10 +6,9 @@ extension Node where Context == HTML.DocumentContext {
                          on site: PDFArchiverWebsite,
                          in language: SiteLanguage) -> Node {
         let strings = language.strings
-        // The home pages are titled after the site itself — no point in naming it twice.
-        let isSiteTitle = location.title.isEmpty || location.title == strings.siteTitle
-        let title = isSiteTitle ? "\(strings.heroTitleLead) \(strings.heroTitleAccent) — \(strings.siteTitle)"
-                                : "\(location.title) | \(strings.siteTitle)"
+        // Both home pages sit at their language root, so the shared path is the empty one.
+        let isHome = SiteLanguage.sharedPath(of: location.path).string.isEmpty
+        let title = isHome ? strings.homeTitle : "\(location.title) | \(strings.siteTitle)"
         let description = location.description.isEmpty ? language.metaDescription : location.description
 
         return .head(
@@ -18,7 +17,7 @@ extension Node where Context == HTML.DocumentContext {
             .title(title),
             .description(description),
             .siteName(site.name),
-            .url(site.url(for: location)),
+            .url(site.canonicalURL(for: location.path)),
             .unwrap(location.imagePath ?? site.imagePath) { .socialImageLink(site.url(for: $0)) },
             .meta(.name("twitter:card"), .content("summary_large_image")),
             .meta(.name("apple-itunes-app"),
@@ -35,27 +34,36 @@ extension Node where Context == HTML.DocumentContext {
             .link(.rel(.manifest), .href("/assets/img/favicon/site.webmanifest")),
             .link(.rel(.maskIcon), .color("#ca414f"), .href("/assets/img/favicon/safari-pinned-tab.svg")),
             .link(.rel(.shortcutIcon), .href("/assets/img/favicon/favicon.ico")),
-            .alternateLanguageLinks(for: location.path),
+            .alternateLanguageLinks(for: location.path, on: site),
             .stylesheet("/css/styles.css"),
             // Adds `.is-scrolled` to the header, which morphs it into a floating pill.
             .script(.src("/assets/js/header-morph.js"), .defer()),
-            .structuredData(for: site, in: language)
+            // Only the home page is the application; on the FAQ and the legal pages the same
+            // markup would claim that a privacy policy is downloadable software.
+            .if(isHome, .structuredData(for: site, in: language))
         )
     }
 }
 
 private extension Node where Context == HTML.HeadContext {
     /// `hreflang` links let search engines pair the two language versions of a page.
-    static func alternateLanguageLinks(for path: Path) -> Node {
+    /// Google ignores the whole set unless every URL is absolute, so they go through `canonicalURL`.
+    static func alternateLanguageLinks(for path: Path, on site: PDFArchiverWebsite) -> Node {
         let sharedPath = SiteLanguage.sharedPath(of: path)
 
-        return .group(SiteLanguage.allCases.map { language in
+        func link(to language: SiteLanguage, as code: String) -> Node {
             .link(
                 .rel(.alternate),
-                .href(language.path(for: sharedPath).absoluteString),
-                .attribute(named: "hreflang", value: language.rawValue)
+                .href(site.canonicalURL(for: language.path(for: sharedPath))),
+                .attribute(named: "hreflang", value: code)
             )
-        })
+        }
+
+        return .group(
+            .group(SiteLanguage.allCases.map { link(to: $0, as: $0.rawValue) }),
+            // Everyone the two languages do not cover lands on the English version.
+            link(to: .english, as: "x-default")
+        )
     }
 
     /// Deliberately without price or rating: both live in the App Store, and a stale number in

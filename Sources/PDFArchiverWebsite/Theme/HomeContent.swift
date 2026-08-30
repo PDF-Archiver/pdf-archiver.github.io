@@ -142,7 +142,13 @@ private extension Node where Context == HTML.BodyContext {
                     .img(
                         .class("spotlight-shot"),
                         .src(strings.spotlightImagePath),
-                        .alt(strings.spotlightImageAlt)
+                        .alt(strings.spotlightImageAlt),
+                        // The intrinsic size of the screenshot: it reserves the box before the
+                        // image arrives, so the section below it does not jump.
+                        .attribute(named: "width", value: "1320"),
+                        .attribute(named: "height", value: "2868"),
+                        .attribute(named: "loading", value: "lazy"),
+                        .attribute(named: "decoding", value: "async")
                     )
                 )
             )
@@ -274,7 +280,7 @@ private extension Node where Context == HTML.BodyContext {
                     .class("help-cta"),
                     .a(
                         .class("button button-ghost"),
-                        .href(language.path(for: "faq").absoluteString),
+                        .href(language.path(for: "faq").directoryPath),
                         .text(strings.helpFAQLink)
                     )
                 ),
