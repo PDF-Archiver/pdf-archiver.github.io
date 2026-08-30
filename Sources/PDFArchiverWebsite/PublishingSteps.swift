@@ -2,6 +2,28 @@ import Foundation
 import Publish
 
 extension PublishingStep where Site == PDFArchiverWebsite {
+    /// Zips `presskit/` into the output instead of versioning the archive, which would grow the
+    /// repository by its full size on every asset change.
+    static func buildPressKitArchive() -> Self {
+        step(named: "Build the press kit archive") { context in
+            let root = try context.folder(at: "")
+            let destination = try context.outputFolder(at: "").path + "presskit.zip"
+
+            let zip = Process()
+            zip.executableURL = URL(fileURLWithPath: "/usr/bin/zip")
+            // -X drops the resource forks and __MACOSX entries the Finder would add.
+            zip.arguments = ["-r", "-q", "-X", destination, "presskit"]
+            zip.currentDirectoryURL = URL(fileURLWithPath: root.path)
+
+            try zip.run()
+            zip.waitUntilExit()
+
+            guard zip.terminationStatus == 0 else {
+                throw PressKitError.zipFailed(status: zip.terminationStatus)
+            }
+        }
+    }
+
     /// Markdown pages keep their file name, so `Content/de/index.md` would land on `/de/index`.
     static func moveGermanIndexPageToLanguageRoot() -> Self {
         step(named: "Move the German index page to /de") { context in
@@ -18,4 +40,8 @@ extension PublishingStep where Site == PDFArchiverWebsite {
             try context.outputFolder(at: "404").delete()
         }
     }
+}
+
+enum PressKitError: Error {
+    case zipFailed(status: Int32)
 }

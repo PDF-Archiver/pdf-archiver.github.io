@@ -1,0 +1,93 @@
+# PDF Archiver — Presskit
+
+Alles in diesem Kit darf in redaktioneller Berichterstattung über PDF Archiver frei verwendet
+werden. Fragen, Rezensionsexemplare und weiteres Material: **press@pdf-archiver.io**
+
+---
+
+## In einem Absatz
+
+PDF Archiver scannt, verschlagwortet und archiviert Dokumente auf Mac, iPhone und iPad. Datum,
+Beschreibung und Tags stehen im Dateinamen, dadurch bleibt ein Archiv im Finder und über Spotlight
+durchsuchbar — mit oder ohne die App. Texterkennung und Vorschläge laufen vollständig auf dem
+Gerät. Open Source, seit 2018 von einem Entwickler gepflegt.
+
+---
+
+## Fakten
+
+| | |
+|---|---|
+| Name | PDF Archiver |
+| Entwickler | Julian Kahnert |
+| Kategorie | Produktivität / Dokumentenverwaltung |
+| Plattformen | iPhone, iPad (iOS 18+), Mac (macOS 15.6+), Apple Vision Pro (visionOS 2.0+) |
+| Erstveröffentlichung | Februar 2018 |
+| Sprachen | Deutsch, Englisch |
+| Lizenz | Open Source, Quellcode auf GitHub |
+| Preis | Gratis-Download mit zwei Wochen Testphase. Abo oder einmaliger Kauf — aktuelle Preise im App Store |
+| App Store | https://apps.apple.com/de/app/pdf-archiver/id1433801905 |
+| Website | https://pdf-archiver.io |
+| Quellcode | https://github.com/PDF-Archiver/PDF-Archiver |
+| Kontakt | press@pdf-archiver.io |
+
+---
+
+## Was die App macht
+
+**In einem Satz:** PDF Archiver macht aus einem Stapel Scans ein Archiv, das auch ohne die App
+durchsuchbar bleibt.
+
+**So funktioniert es:** Du scannst ein Dokument oder legst ein PDF hinein. PDF Archiver erkennt den
+Text auf deinem Gerät und schlägt Datum, Beschreibung und Tags vor. Du bestätigst, die Datei wird
+umbenannt — `2026-03-12--stromabrechnung__energie_rechnung.pdf` — und in einen nach Jahren
+sortierten Ordner einsortiert.
+
+**Warum das wichtig ist:** Die Metadaten stehen im Dateinamen, nicht in einer Datenbank. Das Archiv
+lässt sich im Finder durchsuchen, über Spotlight, auf einem NAS oder an einem Windows-Rechner — und
+es bleibt lesbar, falls es die App einmal nicht mehr gibt. Texterkennung und Vorschläge laufen
+lokal über Apples eingebaute Engine und Apple Intelligence; kein Dokument wird irgendwohin
+hochgeladen.
+
+**Für wen:** Alle mit aufbewahrungswürdigem Papierkram — Steuerunterlagen, Verträge, Arztbriefe —
+die Ordnung wollen, ohne diese Dokumente einem Cloud-Dienst zu übergeben.
+
+---
+
+## Über den Entwickler
+
+Julian Kahnert ist Softwareentwickler, arbeitet vor allem mit Swift und auf der Infrastrukturseite
+mit Kubernetes und Helm. PDF Archiver startete er 2018 aus eigenem Bedarf: Er wollte ein
+Dokumentenarchiv, das in zehn Jahren noch lesbar ist — ohne Abhängigkeit von einer Datenbank, einem
+Abo oder dem Fortbestehen einer Firma. Seitdem entwickelt und pflegt er die App in seiner Freizeit.
+Neben dem Programmieren interessiert er sich für Podcasts, Musik und Kochen.
+
+https://juliankahnert.de · https://github.com/JulianKahnert
+
+---
+
+## Die App testen
+
+Schreib an **press@pdf-archiver.io**, dann bekommst du einen Promo-Code für den vollen
+Funktionsumfang, ohne Bedingungen. Fragen zur Funktionsweise beantworte ich gern, zusätzliche
+Screenshots auch.
+
+---
+
+## Was in diesem Kit liegt
+
+```
+icon/
+  app-icon.svg              App-Icon, hell
+  app-icon-dark.svg         App-Icon, dunkel
+  app-icon-1024.png         App-Icon, hell, 1024 px
+  app-icon-dark-1024.png    App-Icon, dunkel, 1024 px
+```
+
+---
+
+## Nutzungshinweise
+
+App-Icon, Screenshots und Wortmarke dürfen in redaktioneller Berichterstattung über PDF Archiver
+frei verwendet werden. Icon und Wortmarke bitte nicht verändern. Die App heißt „PDF Archiver" —
+bitte die Schreibweise beibehalten.
