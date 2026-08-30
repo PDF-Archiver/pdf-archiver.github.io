@@ -286,7 +286,12 @@ pre {
 
 /* Scoped under `.site-nav` so it outweighs `.site-nav a`, which would otherwise
    paint the pill's label in the same colour as its background. */
+/* Inline-flex, not inline: an inline box's vertical padding only paints, so the pill
+   would overflow the header frame instead of keeping the frame's 0.55rem gap all round. */
 .site-nav .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
     background: var(--accent);
     color: #fff;
     padding: 0.55rem 1.2rem;
