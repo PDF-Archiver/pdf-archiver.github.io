@@ -12,13 +12,12 @@ extension Node where Context == HTML.BodyContext {
 
         return .group(
             .hero(in: language, on: site),
-            .grammarRule("--"),
+            .grammarRule(),
             .workflow(strings),
             .spotlight(strings),
-            .grammarRule("__"),
+            .grammarRule(),
             .keepCard(strings),
             .promises(strings),
-            .platforms(strings),
             .testimonials(strings),
             .trial(strings),
             .help(in: language, on: site)
@@ -89,9 +88,9 @@ private extension Node where Context == HTML.BodyContext {
         )
     }
 
-    /// The separators of the naming scheme, reused as the page's section dividers.
-    static func grammarRule(_ symbol: String) -> Node {
-        .p(.class("grammar-rule wrap"), .span(.text(symbol)))
+    /// The separator of the naming scheme, reused as the page's section divider.
+    static func grammarRule() -> Node {
+        .p(.class("grammar-rule wrap"), .span(.text("__")))
     }
 
     static func workflow(_ strings: SiteStrings) -> Node {
@@ -140,25 +139,16 @@ private extension Node where Context == HTML.BodyContext {
                         .h3(.class("spotlight-title"), .text(strings.spotlightTitle)),
                         .forEach(strings.spotlightBody) { .p(.text($0)) }
                     ),
-                    .macWindow()
+                    .img(
+                        .class("spotlight-shot"),
+                        .src(strings.spotlightImagePath),
+                        .alt(strings.spotlightImageAlt)
+                    )
                 )
             )
         )
     }
 
-    /// A Mac window holding the place of the tagging screenshot until it exists.
-    static func macWindow() -> Node {
-        .div(
-            .class("mockup-mac"),
-            .div(
-                .class("mockup-mac-bar"),
-                .forEach(["#ff5f57", "#febc2e", "#28c840"]) { colour in
-                    .span(.class("mockup-mac-dot"), .style("background:\(colour)"))
-                }
-            ),
-            .div(.class("mockup-mac-body"))
-        )
-    }
 
     static func keepCard(_ strings: SiteStrings) -> Node {
         .section(
@@ -226,16 +216,6 @@ private extension Node where Context == HTML.BodyContext {
         )
     }
 
-    static func platforms(_ strings: SiteStrings) -> Node {
-        .section(
-            .class("platforms-wrap"),
-            .div(
-                .class("wrap narrow"),
-                .h2(.class("section-title"), .text(strings.platformsTitle)),
-                .p(.class("section-lead"), .text(strings.platformsBody))
-            )
-        )
-    }
 
     static func testimonials(_ strings: SiteStrings) -> Node {
         .section(

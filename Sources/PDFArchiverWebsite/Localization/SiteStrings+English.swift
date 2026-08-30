@@ -37,8 +37,9 @@ extension SiteStrings {
                 title: "Tag it.",
                 lead: "Date, description, tags.",
                 body: """
-                Apple Intelligence suggests all three, on your device. Check them, press ⌘S. The \
-                document is renamed and moved to your archive.
+                Apple Intelligence suggests all three, on your device. On the Mac, ↹ moves \
+                between fields — check them, press ⌘S, and the document is renamed and moved to \
+                your archive.
                 """
             ),
             Step(
@@ -53,17 +54,19 @@ extension SiteStrings {
         ],
         searchChips: ["_bill", "-lease", "energy"],
 
-        spotlightTitle: "Tag with your keyboard, not your mouse.",
+        spotlightTitle: "On Mac, iPhone, iPad and Apple Vision Pro.",
         spotlightBody: [
             """
-            On the Mac, ↹ moves between fields. Apple Intelligence has already filled in a date, a \
-            description, and tags — check them, fix what's off, press ⌘S.
+            Widgets show what's still untagged. Shortcuts automate what you do often. The share \
+            sheet takes documents from any other app.
             """,
             """
             Already have PDFs? Drop them in — from your scanner, a mail attachment, your downloads \
             folder.
             """
         ],
+        spotlightImagePath: "/assets/img/screenshots/archive-iphone-en.png",
+        spotlightImageAlt: "The PDF Archiver archive on an iPhone, listing documents with their dates and tags",
 
         keepTitle: "Keep it.",
         keepLead: """
@@ -159,12 +162,6 @@ extension SiteStrings {
         trialBody: """
         Two weeks free. No account, no credit card. After the trial you can subscribe, or buy the \
         app once and keep it.
-        """,
-
-        platformsTitle: "On Mac, iPhone, iPad and Apple Vision Pro.",
-        platformsBody: """
-        Widgets show what's still untagged. Shortcuts automate what you do often. The share sheet \
-        takes documents from any other app.
         """,
 
         helpTitle: "Questions?",

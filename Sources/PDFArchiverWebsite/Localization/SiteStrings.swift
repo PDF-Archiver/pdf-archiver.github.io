@@ -60,6 +60,8 @@ struct SiteStrings {
 
     let spotlightTitle: String
     let spotlightBody: [String]
+    let spotlightImagePath: String
+    let spotlightImageAlt: String
 
     let keepTitle: String
     let keepLead: String
@@ -75,9 +77,6 @@ struct SiteStrings {
 
     let trialTitle: String
     let trialBody: String
-
-    let platformsTitle: String
-    let platformsBody: String
 
     let helpTitle: String
     let helpBody: String

@@ -21,8 +21,6 @@
     --surface-sunk: var(--paper-sunk);
     --accent: var(--coral);
 
-    --ph-a: #f3eae8;
-    --ph-b: #ebdcd9;
 
     --wrap: 72rem;
     --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -38,8 +36,6 @@
         --text-soft: #a3aebc;
         --rule: #2c3644;
         --accent: var(--coral-bright);
-        --ph-a: #232c38;
-        --ph-b: #1d2530;
     }
 }
 
@@ -138,13 +134,15 @@ pre {
     text-align: center;
 }
 
-/* The filename's own separators, reused as the page's section dividers. */
+/* The filename's own separator, reused as the page's section divider.
+   `margin-block`, not `margin`: a blanket `margin: 0` would cancel the `margin-inline: auto`
+   this element inherits from `.wrap` and push the whole divider off-centre. */
 .grammar-rule {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.9rem;
-    margin: 0;
+    margin-block: 0;
     padding-block: 0.25rem;
     color: var(--text-soft);
 }
@@ -588,33 +586,19 @@ pre {
     }
 }
 
-.mockup-mac {
+/* The screenshot is a bare capture, so the rounding and shadow give it its device edge.
+   Cropped from the top: the first rows of the archive carry the message. */
+.spotlight-shot {
     width: 100%;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 24px 50px -30px rgba(20, 28, 39, 0.3);
-    border: 1px solid var(--rule);
-    background: var(--surface);
-}
-
-.mockup-mac-bar {
-    height: 36px;
-    background: var(--surface-sunk);
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    padding-inline: 14px;
-}
-
-.mockup-mac-dot {
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-}
-
-.mockup-mac-body {
-    aspect-ratio: 16 / 10;
-    background: repeating-linear-gradient(135deg, var(--ph-a) 0 14px, var(--ph-b) 14px 28px);
+    max-width: 22rem;
+    max-height: 30rem;
+    margin-inline: auto;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 1.5rem;
+    box-shadow: 0 30px 60px -30px rgba(20, 28, 39, 0.5);
+    /* The crop would otherwise cut a row in half; fading it out reads as "the list goes on". */
+    mask-image: linear-gradient(to bottom, #000 80%, transparent);
 }
 
 /* ---------- Keep it: the arc closes, same filename, at rest ---------- */
@@ -754,12 +738,6 @@ pre {
     margin: 0.35rem 0 0;
     color: var(--text-soft);
     font-size: 0.94rem;
-}
-
-/* ---------- Platforms ---------- */
-
-.platforms-wrap {
-    padding-block: clamp(1rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem);
 }
 
 /* ---------- Testimonials ---------- */

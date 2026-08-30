@@ -37,8 +37,9 @@ extension SiteStrings {
                 title: "Tag it.",
                 lead: "Datum, Beschreibung, Tags.",
                 body: """
-                Apple Intelligence schlägt dir alle drei vor, auf dem Gerät. Prüfen, ⌘S drücken. \
-                Das Dokument wandert umbenannt ins Archiv.
+                Apple Intelligence schlägt dir alle drei vor, auf dem Gerät. Am Mac springst du \
+                mit ↹ durch die Felder — prüfen, ⌘S drücken, und das Dokument wandert umbenannt \
+                ins Archiv.
                 """
             ),
             Step(
@@ -53,17 +54,19 @@ extension SiteStrings {
         ],
         searchChips: ["_rechnung", "-mietvertrag", "energie"],
 
-        spotlightTitle: "Verschlagworten mit der Tastatur, nicht der Maus.",
+        spotlightTitle: "Auf Mac, iPhone, iPad und Apple Vision Pro.",
         spotlightBody: [
             """
-            Am Mac springst du mit ↹ durch die Felder. Apple Intelligence hat Datum, Beschreibung \
-            und Tags schon eingetragen — prüfen, korrigieren, ⌘S drücken.
+            Widgets zeigen, was noch ungetaggt ist. Kurzbefehle automatisieren, was du oft machst. \
+            Über das Teilen-Menü kommen Dokumente aus jeder anderen App herein.
             """,
             """
             Du hast schon PDFs? Leg sie dazu — vom Scanner, aus dem Mail-Anhang, aus dem \
             Download-Ordner.
             """
         ],
+        spotlightImagePath: "/assets/img/screenshots/archive-iphone-de.png",
+        spotlightImageAlt: "Das Archiv von PDF Archiver auf einem iPhone, mit Dokumenten samt Datum und Tags",
 
         keepTitle: "Keep it.",
         keepLead: """
@@ -160,12 +163,6 @@ extension SiteStrings {
         trialBody: """
         Zwei Wochen kostenlos. Kein Konto, keine Kreditkarte. Nach der Testphase kannst du ein \
         Abo abschließen oder die App einmalig kaufen.
-        """,
-
-        platformsTitle: "Auf Mac, iPhone, iPad und Apple Vision Pro.",
-        platformsBody: """
-        Widgets zeigen, was noch ungetaggt ist. Kurzbefehle automatisieren, was du oft machst. \
-        Über das Teilen-Menü kommen Dokumente aus jeder anderen App herein.
         """,
 
         helpTitle: "Fragen?",
