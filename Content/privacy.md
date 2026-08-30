@@ -1,5 +1,6 @@
 ---
 title: Privacy Policy
+description: How PDF Archiver handles your data: documents stay on your device, there is no account and no PDF Archiver server to send them to.
 ---
 
 ## 1. An overview of data protection

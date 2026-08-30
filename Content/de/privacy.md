@@ -1,5 +1,6 @@
 ---
 title: Datenschutzerklärung
+description: Wie PDF Archiver mit deinen Daten umgeht: Dokumente bleiben auf deinem Gerät, es gibt kein Konto und keinen PDF-Archiver-Server.
 ---
 
 ## 1. Datenschutz auf einen Blick

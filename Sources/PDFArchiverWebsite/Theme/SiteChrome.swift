@@ -7,7 +7,7 @@ extension Node where Context == HTML.BodyContext {
                            in language: SiteLanguage,
                            context: PublishingContext<PDFArchiverWebsite>) -> Node {
         let strings = language.strings
-        let homeURL = language.homePath.absoluteString
+        let homeURL = language.homePath.directoryPath
 
         return .header(
             .class("site-header"),
@@ -24,7 +24,7 @@ extension Node where Context == HTML.BodyContext {
                     .attribute(named: "aria-label", value: strings.navigationLabel),
                     .ul(
                         .li(.a(.href("\(homeURL)#features"), .text(strings.navFeatures))),
-                        .li(.a(.href(language.path(for: "faq").absoluteString), .text(strings.navFAQ))),
+                        .li(.a(.href(language.path(for: "faq").directoryPath), .text(strings.navFAQ))),
                         .languageToggle(for: path, in: language, context: context),
                         .li(.a(.class("nav-cta"), .href(strings.appStoreURL), .text(strings.navDownload)))
                     )
@@ -51,7 +51,7 @@ extension Node where Context == HTML.BodyContext {
                         let target = language.path(for: sharedPath)
 
                         return .unwrap(locationTitle(at: target, in: context)) { title in
-                            .li(.a(.href(target.absoluteString), .text(title)))
+                            .li(.a(.href(target.directoryPath), .text(title)))
                         }
                     },
                     .li(.a(.href(context.site.githubURL.absoluteString), .text("GitHub"))),
@@ -82,7 +82,7 @@ extension Node where Context == HTML.ListContext {
                                          .attribute(named: "aria-hidden", value: "true"),
                                          .text("|"))),
                     .a(
-                        .href(counterpart(of: path, in: other, context: context).absoluteString),
+                        .href(counterpart(of: path, in: other, context: context).directoryPath),
                         .attribute(named: "hreflang", value: other.rawValue),
                         .attribute(named: "aria-label", value: name),
                         .if(other == language, .attribute(named: "aria-current", value: "page")),

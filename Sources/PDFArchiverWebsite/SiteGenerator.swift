@@ -15,7 +15,8 @@ enum SiteGenerator {
             .moveGermanIndexPageToLanguageRoot(),
             .sortItems(in: .faq, by: \.path),
             .generateHTML(withTheme: .pdfArchiver),
-            .generateSiteMap(excluding: ["404"]),
+            .removeFAQEntryPages(),
+            .generateCanonicalSiteMap(excluding: PDFArchiverWebsite.faqEntryFolders.union(["404"])),
             .moveNotFoundPageToRoot()
         ])
     }

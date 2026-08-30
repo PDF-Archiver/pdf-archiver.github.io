@@ -1,5 +1,6 @@
 ---
 title: Terms of Use
+description: The terms of use for PDF Archiver — licence, trial period, purchase and the limits of liability.
 ---
 
 ## Terms of Use

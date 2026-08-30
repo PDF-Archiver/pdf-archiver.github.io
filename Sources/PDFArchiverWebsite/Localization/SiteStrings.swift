@@ -40,6 +40,9 @@ struct SiteStrings {
     }
 
     let siteTitle: String
+    /// The home page's `<title>`. Unlike the hero claim it has to carry the words people search
+    /// for, because it is the line they read in the result list.
+    let homeTitle: String
     let selectLanguage: String
     let navigationLabel: String
     let germanName: String
