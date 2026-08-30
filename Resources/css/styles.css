@@ -944,9 +944,11 @@ pre {
     padding-block: clamp(2.5rem, 5vw, 3.5rem);
     color: var(--text-soft);
     font-size: 0.92rem;
+    text-align: center;
 }
 
 .footer-links {
+    justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem 1.4rem;
     padding-bottom: 1.25rem;
