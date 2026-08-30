@@ -14,8 +14,8 @@ extension SiteStrings {
 
         heroEyebrow: "seit 2018 · open source",
         heroLead: """
-        Ein Archiv, das die App überdauert. Keine Datenbank, kein Server, kein Lock-in — nur \
-        Ordner und Dateien, die dir gehören.
+        Ein Archiv, das die App überdauert. Keine\u{00A0}Datenbank, kein\u{00A0}Server, \
+        kein\u{00A0}Lock-in — nur Ordner und Dateien, die dir gehören.
         """,
         heroSecondaryCTA: "So funktioniert es",
         trustLine: "Nichts verlässt dein Gerät · Zwei Wochen kostenlos, ohne Konto",

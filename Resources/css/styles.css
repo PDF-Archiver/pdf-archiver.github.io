@@ -532,7 +532,7 @@ pre {
 /* A subtitle, not a second heading: size keeps it above the body copy, while the lighter
    weight and softer colour stop it competing with the step title. */
 .feature-card .feature-lead {
-    margin: 0.5rem 0 0.9rem;
+    margin: 0.5rem 0 1.35rem;
     font-size: 1.05rem;
     font-weight: 400;
     color: var(--text-soft);
@@ -930,6 +930,12 @@ pre {
     padding: 0.55rem 0.75rem;
     border-bottom: 1px solid var(--rule);
     text-align: start;
+    vertical-align: top;
+}
+
+/* Dates and short labels keep to one line; only the last column wraps. */
+.prose td:not(:last-child) {
+    white-space: nowrap;
 }
 
 .faq-entry {

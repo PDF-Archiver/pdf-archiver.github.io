@@ -14,8 +14,8 @@ extension SiteStrings {
 
         heroEyebrow: "since 2018 · open source",
         heroLead: """
-        An archive that outlasts the app. No database, no server, no lock-in — just folders and \
-        files that stay yours.
+        An archive that outlasts the app. No\u{00A0}database, no\u{00A0}server, \
+        no\u{00A0}lock-in — just folders and files that stay yours.
         """,
         heroSecondaryCTA: "See how it works",
         trustLine: "Nothing leaves your device · Two weeks free, no account",
