@@ -1,7 +1,7 @@
 extension SiteStrings {
     static let german = SiteStrings(
         siteTitle: "PDF Archiver",
-        homeTitle: "PDF Archiver — Dokumente scannen und archivieren auf dem Mac",
+        homeTitle: "PDF Archiver — Dokumente scannen und archivieren auf Mac und iPhone",
         selectLanguage: "Sprache auswählen",
         navigationLabel: "Hauptnavigation",
         germanName: "Deutsch",
