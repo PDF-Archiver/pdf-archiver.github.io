@@ -77,7 +77,7 @@ private extension Node where Context == HTML.BodyContext {
     /// on a single paper band.
     static func articlePage(title: String, intro: Node, content: Node) -> Node {
         .section(
-            .class("band band-paper"),
+            .class("prose-wrap"),
             .div(
                 .class("wrap narrow prose"),
                 .h1(.text(title)),

@@ -1,12 +1,12 @@
 /* PDF Archiver — pdf-archiver.io
-   Deep navy bands against warm paper, with the filename as the one loud element. */
+   Warm paper throughout, one dark card for "Keep it.", and the filename as the page's
+   signature: typed out in the hero, at rest at the end, its separators reused as dividers. */
 
 :root {
     color-scheme: light dark;
 
     /* Brand: the navy of the app icon, the coral of the app's accent colour. */
     --ink: #141c27;
-    --slate: #222d3c;
     --paper: #fbf7f6;
     --paper-sunk: #f3eae8;
     --coral: #ca414f;
@@ -15,38 +15,31 @@
     --text: #23282f;
     --text-soft: #5c626b;
     --rule: #e6dbd8;
-
-    --on-dark: #eef1f5;
-    --on-dark-soft: #a2aebd;
-    --on-dark-rule: #33404f;
+    --card: #fff;
 
     --surface: var(--paper);
     --surface-sunk: var(--paper-sunk);
     --accent: var(--coral);
 
-    --wrap: 72rem;
-    --wrap-narrow: 44rem;
-    --radius: clamp(1.25rem, 3vw, 2.25rem);
-    --band-space: clamp(4rem, 9vw, 7rem);
+    --ph-a: #f3eae8;
+    --ph-b: #ebdcd9;
 
-    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --wrap: 72rem;
+    --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        /* The dark band has to stay clearly darker than the ground, or the whole
-           band rhythm collapses in dark mode. */
-        --ink: #0c1017;
-        --slate: #1c2634;
-        --paper: #1e2833;
-        --paper-sunk: #263140;
+        --paper: #161d26;
+        --paper-sunk: #1f2833;
+        --card: #1c2531;
         --text: #e7ebf0;
         --text-soft: #a3aebc;
-        --rule: #313c49;
-        --surface: var(--paper);
-        --surface-sunk: var(--paper-sunk);
+        --rule: #2c3644;
         --accent: var(--coral-bright);
+        --ph-a: #232c38;
+        --ph-b: #1d2530;
     }
 }
 
@@ -54,6 +47,10 @@
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -70,7 +67,7 @@ h1,
 h2,
 h3 {
     margin: 0;
-    line-height: 1.1;
+    line-height: 1.08;
     letter-spacing: -0.02em;
     text-wrap: balance;
 }
@@ -84,19 +81,17 @@ a {
     text-underline-offset: 0.18em;
 }
 
-a:hover {
-    color: var(--coral-bright);
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 :focus-visible {
-    outline: 2px solid var(--coral-bright);
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 4px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
 }
 
 code,
@@ -115,77 +110,157 @@ pre {
 }
 
 .wrap.narrow {
-    max-width: var(--wrap-narrow);
+    max-width: 44rem;
 }
 
-.band {
-    padding-block: var(--band-space);
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
 }
 
-.band-paper {
-    background: var(--surface);
+.section-title {
+    font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+    font-weight: 700;
+    color: var(--text);
+    text-align: center;
 }
 
-/* Adjacent paper bands would otherwise stack two full band paddings into one gap. */
-.band-paper + .band-paper {
-    padding-top: 0;
+.section-lead {
+    margin: 0.6rem auto 0;
+    max-width: 32em;
+    color: var(--text-soft);
+    font-size: 1.05rem;
+    text-align: center;
 }
 
-/* Dark bands are inset cards on the paper ground — the rounding is what gives the page
-   its rhythm when scrolling. */
-.band-dark {
-    background: var(--ink);
-    color: var(--on-dark);
-    border-radius: var(--radius);
-    margin-inline: clamp(0px, 1.5vw, 1rem);
+/* The filename's own separators, reused as the page's section dividers. */
+.grammar-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    margin: 0;
+    padding-block: 0.25rem;
+    color: var(--text-soft);
 }
 
-.band-dark h1,
-.band-dark h2,
-.band-dark h3 {
+.grammar-rule::before,
+.grammar-rule::after {
+    content: "";
+    flex: 1;
+    max-width: 8rem;
+    height: 1px;
+    background: var(--rule);
+}
+
+.grammar-rule span {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.7rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 12px 24px -10px color-mix(in srgb, var(--accent) 70%, transparent);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px -10px color-mix(in srgb, var(--accent) 70%, transparent);
     color: #fff;
 }
 
-/* Buttons carry their own colour — excluding them here keeps `.button` from being
-   overridden by this more specific rule. */
-.band-dark a:not(.button) {
-    color: var(--coral-bright);
-}
-
-/* The deeper brand red goes muddy on navy, so the button takes the app's accent there. */
-.band-dark .button {
-    background: var(--coral-bright);
-    color: var(--ink);
-}
-
-.band-dark .button:hover {
-    background: #fff;
-    color: var(--ink);
-}
-
-.band-dark .button-ghost {
+.button-ghost {
     background: transparent;
-    color: #fff;
+    color: var(--text);
+    box-shadow: inset 0 0 0 1.5px var(--rule);
 }
 
-/* ---------- Header ---------- */
+.button-ghost:hover {
+    background: var(--surface-sunk);
+    color: var(--text);
+    box-shadow: inset 0 0 0 1.5px var(--rule);
+}
+
+.badge-appstore {
+    display: inline-flex;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.badge-appstore img {
+    height: 48px;
+    width: auto;
+}
+
+.badge-appstore:hover {
+    transform: translateY(-2px);
+    opacity: 0.88;
+}
+
+/* ---------- Header: transparent at rest, a floating pill once scrolled ---------- */
 
 .site-header {
-    padding-block: 1.1rem;
+    padding-block: 1.3rem;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: transparent;
+    transition: padding-block 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-header-inner {
     display: flex;
     align-items: center;
     gap: clamp(1rem, 4vw, 2.5rem);
-    flex-wrap: wrap;
+    border-radius: 999px;
+    background: transparent;
+    transition:
+        max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        padding-block 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        padding-inline 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        gap 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.site-header.is-scrolled {
+    padding-block: 0.7rem;
+}
+
+.site-header.is-scrolled .site-header-inner {
+    max-width: min(54rem, 94vw);
+    padding-block: 0.55rem;
+    padding-inline: 1.2rem 0.55rem;
+    gap: clamp(0.75rem, 3vw, 1.75rem);
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    box-shadow:
+        0 18px 40px -18px rgba(20, 28, 39, 0.35),
+        inset 0 0 0 1px color-mix(in srgb, var(--ink) 10%, transparent);
 }
 
 .site-name {
     display: inline-flex;
     align-items: center;
-    gap: 0.55rem;
-    font-weight: 700;
+    gap: 0.6rem;
+    font-weight: 800;
     font-size: 1.05rem;
     letter-spacing: -0.01em;
     color: var(--text);
@@ -193,9 +268,10 @@ pre {
 }
 
 .site-icon {
-    width: 26px;
-    height: 26px;
-    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    flex: none;
 }
 
 .site-nav {
@@ -205,32 +281,44 @@ pre {
 .site-nav ul,
 .language-switcher,
 .footer-links,
-.help-links,
-.chips {
+.help-links {
+    display: flex;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem 1.4rem;
+}
+
+.site-nav ul {
+    gap: clamp(1rem, 3vw, 2rem);
 }
 
 .site-nav a {
     color: var(--text-soft);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
 .site-nav a:hover {
     color: var(--accent);
 }
 
-.nav-cta {
-    color: var(--accent) !important;
-    font-weight: 600;
+/* Scoped under `.site-nav` so it outweighs `.site-nav a`, which would otherwise
+   paint the pill's label in the same colour as its background. */
+.site-nav .nav-cta {
+    background: var(--accent);
+    color: #fff;
+    padding: 0.55rem 1.2rem;
+    border-radius: 999px;
 }
 
-.language-nav ul {
+.site-nav .nav-cta:hover {
+    background: var(--coral-bright);
+    color: #fff;
+}
+
+.language-switcher {
     gap: 0.6rem;
     font-size: 0.9rem;
 }
@@ -242,37 +330,51 @@ pre {
 
 .language-switcher [aria-current="page"] {
     color: var(--text);
-    font-weight: 600;
+    font-weight: 700;
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero: the product demonstrates itself ---------- */
 
 .hero {
-    padding-block: clamp(3.5rem, 9vw, 6.5rem);
+    padding-block: clamp(4rem, 9vw, 6.5rem) clamp(3rem, 7vw, 5rem);
+    text-align: center;
 }
 
-.hero-inner {
-    max-width: 54rem;
+.hero-copy {
+    max-width: 40rem;
+    margin-inline: auto;
 }
 
 .hero-title {
-    font-size: clamp(2.75rem, 7.5vw, 5.25rem);
-    font-weight: 800;
-    letter-spacing: -0.035em;
+    font-size: clamp(2.5rem, 5.6vw, 4rem);
+    font-weight: 700;
+    color: var(--text);
+}
+
+.hero-title .accent {
+    color: var(--accent);
 }
 
 .hero-lead {
-    margin-top: 1.4rem;
-    max-width: 34em;
-    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
-    line-height: 1.45;
-    color: var(--on-dark-soft);
+    margin: 1.25rem auto 0;
+    max-width: 32em;
+    font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+    color: var(--text-soft);
+}
+
+.hero-cta-row {
+    margin-top: 1.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
 }
 
 .trust-line {
-    margin: 1.5rem 0 0;
-    font-size: 0.92rem;
-    color: var(--on-dark-soft);
+    margin-top: 1.3rem;
+    font-size: 0.88rem;
+    color: var(--text-soft);
 }
 
 /* The Mastodon verification link has to be in the markup, not on display. */
@@ -284,88 +386,160 @@ pre {
     clip-path: inset(50%);
 }
 
-/* ---------- Buttons ---------- */
+/* ---------- The signature: the filename, typed out ---------- */
 
-.button {
-    display: inline-block;
-    padding: 0.85rem 1.6rem;
-    border-radius: 999px;
-    background: var(--coral);
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.15s ease, transform 0.15s ease;
+.sig-card {
+    margin: clamp(3.5rem, 7vw, 5.5rem) auto 0;
+    max-width: 40rem;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 1.5rem;
+    padding: clamp(1.25rem, 4vw, 2.25rem);
+    box-shadow: 0 24px 50px -32px rgba(20, 28, 39, 0.22);
 }
 
-.button:hover {
-    background: var(--coral-bright);
-    color: #fff;
-    transform: translateY(-1px);
+/* Container query units size the filename to the card's actual rendered width, at any
+   viewport, instead of a viewport-relative guess. */
+.sig-line-wrap {
+    min-width: 0;
+    overflow-x: auto;
+    container-type: inline-size;
 }
 
-.button-ghost {
-    background: transparent;
-    color: #fff;
-    box-shadow: inset 0 0 0 1.5px var(--on-dark-rule);
+.sig-reveal {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    clip-path: inset(0 100% 0 0);
+    animation: reveal-type 1.7s steps(46, end) 0.4s both;
 }
 
-.button-ghost:hover {
-    background: var(--slate);
-    color: #fff;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .button {
-        transition: none;
-    }
-
-    .button:hover {
-        transform: none;
+@keyframes reveal-type {
+    to {
+        clip-path: inset(0 0 0 0);
     }
 }
 
-/* ---------- Workflow steps ---------- */
-
-.steps {
-    display: grid;
-    gap: clamp(2.5rem, 5vw, 3.5rem);
-    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-}
-
-.step-title {
-    font-size: clamp(2rem, 4vw, 2.9rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    color: var(--accent);
-}
-
-.band-dark .step-title {
-    color: var(--coral-bright);
-}
-
-.step-lead {
-    margin: 0.7rem 0 1rem;
-    font-size: 1.15rem;
+.sig-line {
+    display: inline-flex;
+    align-items: flex-start;
+    font-family: var(--font-mono);
+    font-size: clamp(0.55rem, 3.4cqw, 2rem);
     font-weight: 600;
-    line-height: 1.35;
+    white-space: nowrap;
+    text-align: left;
 }
 
-.step p:last-child {
-    margin-bottom: 0;
+.sig-part {
+    display: flex;
+    flex-direction: column;
 }
 
-.step p,
-.keep-body p {
+/* Value and label share a flex column, so the label sits exactly under its value. */
+.sig-label {
+    margin-top: 0.55rem;
+    padding-top: 0.4rem;
+    border-top: 1.5px solid currentcolor;
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: labels-in 0.4s ease both;
+}
+
+@keyframes labels-in {
+    to {
+        opacity: 0.75;
+    }
+}
+
+/* Each label appears the moment the wipe finishes typing the word above it. */
+.sig-date {
     color: var(--text-soft);
 }
 
-.band-dark .keep-body p {
-    color: var(--on-dark-soft);
+.sig-date .sig-label {
+    animation-delay: 0.78s;
+}
+
+.sig-desc {
+    color: var(--text);
+}
+
+.sig-desc .sig-label {
+    animation-delay: 1.48s;
+}
+
+.sig-tags {
+    color: var(--accent);
+}
+
+.sig-tags .sig-label {
+    animation-delay: 1.96s;
+}
+
+.sig-sep,
+.sig-ext {
+    color: #b9c2cc;
+    align-self: flex-start;
+}
+
+/* ---------- Workflow cards ---------- */
+
+.features-wrap {
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.feature-cards {
+    margin-top: 2.75rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+}
+
+.feature-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 1.25rem;
+    padding: clamp(1.5rem, 4vw, 2rem);
+}
+
+.feature-card-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--surface-sunk);
+    padding: 0.3rem 0.65rem;
+    border-radius: 0.55rem;
+    margin-bottom: 1.25rem;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.feature-card .feature-lead {
+    margin: 0.5rem 0 0.75rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.feature-card p:not(.feature-lead) {
+    margin-bottom: 0;
+    color: var(--text-soft);
+    font-size: 0.96rem;
 }
 
 .chips {
-    margin-top: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: 1rem;
 }
 
 .chips code {
@@ -374,20 +548,105 @@ pre {
     border-radius: 999px;
     background: var(--surface-sunk);
     color: var(--accent);
-    font-size: 0.9rem;
+    font-size: 0.84rem;
 }
 
-/* ---------- Keep it: the filename, taken apart ---------- */
+/* ---------- Spotlight ---------- */
 
-.keep-inner {
-    max-width: 58rem;
+/* Tight against the cards above — same chapter, no divider — but the full rhythm below,
+   so the "__" divider sits centred in its gap. */
+.spotlight-wrap {
+    padding-block: clamp(1rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem);
+}
+
+.spotlight {
+    background: var(--surface-sunk);
+    border-radius: 1.5rem;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: center;
+}
+
+.spotlight-title {
+    font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+    font-weight: 700;
+}
+
+.spotlight p {
+    color: var(--text-soft);
+}
+
+.spotlight p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .spotlight {
+        grid-template-columns: 1fr;
+    }
+}
+
+.mockup-mac {
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 24px 50px -30px rgba(20, 28, 39, 0.3);
+    border: 1px solid var(--rule);
+    background: var(--surface);
+}
+
+.mockup-mac-bar {
+    height: 36px;
+    background: var(--surface-sunk);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding-inline: 14px;
+}
+
+.mockup-mac-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.mockup-mac-body {
+    aspect-ratio: 16 / 10;
+    background: repeating-linear-gradient(135deg, var(--ph-a) 0 14px, var(--ph-b) 14px 28px);
+}
+
+/* ---------- Keep it: the arc closes, same filename, at rest ---------- */
+
+.keep-wrap {
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+/* Light like the rest of the page — only the mono blocks inside stay dark, because that
+   is where the filename's colour coding needs the contrast. */
+.keep-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 1.5rem;
+    padding: clamp(2rem, 5vw, 3.5rem);
+}
+
+.keep-card .section-title {
+    text-align: start;
+}
+
+.keep-lead {
+    margin-top: 0.6rem;
+    color: var(--text-soft);
+    font-weight: 600;
 }
 
 .filename {
-    margin: 2.5rem 0;
-    padding: clamp(1.25rem, 3vw, 2rem);
-    background: var(--slate);
-    border-radius: calc(var(--radius) / 1.6);
+    margin: 2rem 0;
+    padding: clamp(1.1rem, 3vw, 1.75rem);
+    background: var(--ink);
+    border-radius: 1rem;
     overflow-x: auto;
 }
 
@@ -395,7 +654,7 @@ pre {
     display: flex;
     align-items: flex-start;
     font-family: var(--font-mono);
-    font-size: clamp(0.95rem, 2.1vw, 1.45rem);
+    font-size: clamp(0.9rem, 2vw, 1.35rem);
     white-space: nowrap;
 }
 
@@ -408,22 +667,20 @@ pre {
     font-weight: 600;
 }
 
-/* The label hangs under its part on a rule, so the name reads as one string but its three
-   fields stay separable. */
 .filename-label {
-    margin-top: 0.6rem;
+    margin-top: 0.55rem;
     padding-top: 0.4rem;
     border-top: 1.5px solid currentcolor;
     font-family: var(--font-body);
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.09em;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    opacity: 0.75;
+    opacity: 0.7;
 }
 
 .part-date {
-    color: var(--on-dark-soft);
+    color: #a2aebd;
 }
 
 .part-desc {
@@ -436,128 +693,188 @@ pre {
 }
 
 .filename-sep {
-    color: #6b7787;
-}
-
-.filename-ext {
-    align-self: flex-start;
+    color: #566073;
 }
 
 .tree {
     margin: 0;
-    padding: clamp(1rem, 2.5vw, 1.5rem);
-    background: var(--slate);
-    border-radius: calc(var(--radius) / 1.6);
-    color: var(--on-dark-soft);
-    font-size: 0.88rem;
+    padding: clamp(1rem, 2.5vw, 1.4rem);
+    background: var(--ink);
+    border-radius: 1rem;
+    color: #a2aebd;
+    font-size: 0.85rem;
     line-height: 1.6;
     overflow-x: auto;
 }
 
+.keep-body p {
+    color: var(--text-soft);
+}
+
 /* ---------- Promises ---------- */
 
-.section-title {
-    font-size: clamp(1.75rem, 3.5vw, 2.6rem);
-    font-weight: 700;
+.promises-wrap {
+    padding-block: clamp(4rem, 8vw, 6rem);
 }
 
 .promises {
-    list-style: none;
-    margin: 2.5rem 0 0;
+    margin: 2.75rem 0 0;
     padding: 0;
+    list-style: none;
     display: grid;
-    gap: clamp(1.75rem, 4vw, 2.75rem);
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.75rem 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
-.promises h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
+.promise-item {
+    display: flex;
+    gap: 1rem;
 }
 
-.promises p {
-    margin: 0.5rem 0 0;
-    color: var(--text-soft);
-}
-
-/* ---------- Trial ---------- */
-
-.trial {
-    padding: clamp(2rem, 5vw, 3.5rem);
+.promise-icon {
+    flex: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
     background: var(--surface-sunk);
-    border-radius: var(--radius);
-    text-align: center;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
 }
 
-.trial-lead {
-    margin-top: 1rem;
-    font-size: 1.2rem;
+.promise-item h3 {
+    font-size: 1rem;
     font-weight: 600;
 }
 
-.trial p:not(.trial-lead) {
-    max-width: 34em;
-    margin-inline: auto;
+.promise-item p {
+    margin: 0.35rem 0 0;
     color: var(--text-soft);
+    font-size: 0.94rem;
 }
 
-.trial-note {
-    margin-top: 1.5rem;
-    font-size: 0.95rem;
+/* ---------- Platforms ---------- */
+
+.platforms-wrap {
+    padding-block: clamp(1rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem);
 }
 
 /* ---------- Testimonials ---------- */
 
+.testimonials-wrap {
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
 .testimonials {
-    list-style: none;
-    margin: 2.5rem 0 0;
+    margin: 2.75rem 0 0;
     padding: 0;
+    list-style: none;
     display: grid;
-    gap: clamp(1.5rem, 3vw, 2rem);
+    gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
 }
 
 .testimonials figure {
     height: 100%;
     margin: 0;
-    padding: clamp(1.5rem, 3vw, 2rem);
-    background: var(--surface-sunk);
-    border-radius: calc(var(--radius) / 1.4);
+    padding: clamp(1.5rem, 3.5vw, 1.75rem);
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 1.25rem;
+}
+
+.t-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
 }
 
 .testimonials blockquote {
     margin: 0;
 }
 
-.testimonials p {
+.testimonials blockquote p {
     margin: 0;
-    font-size: 0.98rem;
+    font-size: 0.97rem;
 }
 
 .testimonials figcaption {
-    margin-top: 1.1rem;
+    margin-top: 1rem;
+    font-family: var(--font-mono);
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: var(--accent);
+}
+
+/* ---------- Trial ---------- */
+
+.trial-wrap {
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.trial {
+    text-align: center;
+    padding: clamp(2.5rem, 6vw, 4rem);
+    border-radius: 1.5rem;
+    background: var(--surface-sunk);
+}
+
+.trial p {
+    max-width: 30em;
+    margin-inline: auto;
+    color: var(--text-soft);
+}
+
+.trial .badge-appstore {
+    margin-inline: auto;
 }
 
 /* ---------- Help ---------- */
 
-.help .button-ghost {
-    margin-top: 0.5rem;
+.help-wrap {
+    padding-block: clamp(1rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem);
+    text-align: center;
+}
+
+.help-cta {
+    margin-top: 1.5rem;
 }
 
 .help-fallback {
     margin-top: 2rem;
-    color: var(--on-dark-soft);
+    color: var(--text-soft);
+    font-size: 0.95rem;
 }
 
 .help-links {
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 0.5rem 1.4rem;
     font-size: 0.95rem;
 }
 
-/* ---------- Prose pages ---------- */
+/* ---------- Prose pages: FAQ, legal texts, 404 ---------- */
+
+.prose-wrap {
+    padding-block: clamp(3rem, 7vw, 5rem);
+}
 
 .prose h1 {
     font-size: clamp(2rem, 4.5vw, 3rem);
@@ -631,7 +948,7 @@ pre {
 
 .faq-entry h2 {
     margin-top: 0;
-    scroll-margin-top: 1.5rem;
+    scroll-margin-top: 5rem;
 }
 
 /* ---------- Footer ---------- */
@@ -643,6 +960,7 @@ pre {
 }
 
 .footer-links {
+    flex-wrap: wrap;
     gap: 0.5rem 1.4rem;
     padding-bottom: 1.25rem;
     margin-bottom: 1.25rem;
@@ -661,4 +979,38 @@ pre {
 .no-tracking,
 .copyright {
     margin: 0.35rem 0;
+}
+
+@media (max-width: 720px) {
+    .site-nav ul li:not(:has(.nav-cta)) {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .button,
+    .badge-appstore,
+    .site-header,
+    .site-header-inner {
+        transition: none;
+    }
+
+    .button:hover,
+    .badge-appstore:hover {
+        transform: none;
+    }
+
+    .sig-reveal {
+        animation: none;
+        clip-path: inset(0 0 0 0);
+    }
+
+    .sig-label {
+        animation: none;
+        opacity: 0.75;
+    }
 }

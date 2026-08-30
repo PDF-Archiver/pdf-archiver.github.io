@@ -12,69 +12,74 @@ extension SiteStrings {
         appStoreURL: "https://apps.apple.com/de/app/pdf-archiver/id1433801905",
         downloadButton: "Im App Store laden",
 
+        heroEyebrow: "seit 2018 · open source",
         heroLead: """
         Ein Archiv, das die App überdauert. Keine Datenbank, kein Server, kein Lock-in — nur \
         Ordner und Dateien, die dir gehören.
         """,
-        trustLine: "Seit 2018 · Open Source · Nichts verlässt dein Gerät",
+        heroSecondaryCTA: "So funktioniert es",
+        trustLine: "Nichts verlässt dein Gerät · Zwei Wochen kostenlos, ohne Konto",
 
-        workflowSteps: [
+        workflowTitle: "Drei Schritte, vom Blatt ins Archiv",
+        workflowLead: "Kein Workflow zum Lernen. Halten, prüfen, fertig.",
+        steps: [
             Step(
+                tag: "01_scan",
                 title: "Scan it.",
                 lead: "Halte dein iPhone über die Seite.",
-                body: [
-                    """
-                    Der Scan landet zugeschnitten und gerade in deiner Inbox. Die Texterkennung \
-                    läuft auf deinem Gerät, mit Apples eingebauter Engine. Nichts wird \
-                    hochgeladen. Nichts wartet auf einem Server.
-                    """,
-                    """
-                    Du hast schon PDFs? Leg sie dazu — vom Scanner, aus dem Mail-Anhang, aus dem \
-                    Download-Ordner.
-                    """
-                ]
+                body: """
+                Der Scan landet zugeschnitten und gerade in deiner Inbox. Die Texterkennung läuft \
+                auf deinem Gerät — nichts wird hochgeladen, nichts wartet auf einem Server.
+                """
             ),
             Step(
+                tag: "02_tag",
                 title: "Tag it.",
-                lead: "Gib dem Dokument ein Datum, eine Beschreibung und ein paar Tags.",
-                body: [
-                    """
-                    Apple Intelligence schlägt dir alle drei vor, auf dem Gerät. Prüfen, \
-                    korrigieren, ⌘S. Das Dokument wandert umbenannt ins Archiv.
-                    """,
-                    "Am Mac springst du mit ↹ durch die Felder. Deine Hände bleiben auf der Tastatur."
-                ]
+                lead: "Datum, Beschreibung, Tags.",
+                body: """
+                Apple Intelligence schlägt dir alle drei vor, auf dem Gerät. Prüfen, ⌘S drücken. \
+                Das Dokument wandert umbenannt ins Archiv.
+                """
             ),
             Step(
+                tag: "03_find",
                 title: "Find it.",
-                lead: "Such nach einem Tag, einer Beschreibung oder dem Text im Dokument.",
-                body: [
-                    "Der Text im Dokument ist echter Text, kein Bild davon. Markieren, kopieren, durchsuchen.",
-                    """
-                    Das funktioniert in PDF Archiver. Es funktioniert genauso in Spotlight, im \
-                    Finder und in jedem Dateimanager, den du gerade offen hast — weil die \
-                    Suchbegriffe Teil des Dateinamens sind.
-                    """
-                ]
+                lead: "Such nach einem Tag oder dem Text im Dokument.",
+                body: """
+                Das funktioniert in PDF Archiver, in Spotlight, im Finder und in jedem \
+                Dateimanager, den du gerade offen hast.
+                """
             )
         ],
+        searchChips: ["_rechnung", "-mietvertrag", "energie"],
 
-        keepStep: Step(
-            title: "Keep it.",
-            lead: "Dein Archiv ist ein Ordner voller PDFs, nach Jahren sortiert.",
-            body: [
-                """
-                Datum, Beschreibung, Tags — im Dateinamen. Keine Großbuchstaben, keine \
-                Leerzeichen, keine Umlaute, damit die Namen jedes Dateisystem überstehen, in \
-                dem sie landen.
-                """,
-                """
-                Kopier den Ordner auf eine Backup-Platte, ein NAS, einen Windows-Rechner. Er \
-                bleibt lesbar. In zehn Jahren auch noch — mit oder ohne diese App.
-                """
-            ]
-        ),
+        spotlightTitle: "Verschlagworten mit der Tastatur, nicht der Maus.",
+        spotlightBody: [
+            """
+            Am Mac springst du mit ↹ durch die Felder. Apple Intelligence hat Datum, Beschreibung \
+            und Tags schon eingetragen — prüfen, korrigieren, ⌘S drücken.
+            """,
+            """
+            Du hast schon PDFs? Leg sie dazu — vom Scanner, aus dem Mail-Anhang, aus dem \
+            Download-Ordner.
+            """
+        ],
 
+        keepTitle: "Keep it.",
+        keepLead: """
+        Dein Archiv ist ein Ordner voller PDFs, nach Jahren sortiert. Das ist der Dateiname von \
+        oben, zur Ruhe gekommen.
+        """,
+        keepBody: [
+            """
+            Datum, Beschreibung, Tags — im Dateinamen. Keine Großbuchstaben, keine Leerzeichen, \
+            keine Umlaute, damit die Namen jedes Dateisystem überstehen, in dem sie landen.
+            """,
+            """
+            Kopier den Ordner auf eine Backup-Platte, ein NAS, einen Windows-Rechner. Er bleibt \
+            lesbar. In zehn Jahren auch noch — mit oder ohne diese App.
+            """
+        ],
         filenameExample: FilenameExample(
             date: "2026-03-12",
             description: "stromabrechnung",
@@ -83,7 +88,6 @@ extension SiteStrings {
             descriptionLabel: "Beschreibung",
             tagsLabel: "Tags"
         ),
-
         archiveTree: """
         Archive/
         ├── 2017/
@@ -93,20 +97,15 @@ extension SiteStrings {
             └── 2026-04-02--mietvertrag__wohnung_vertrag.pdf
         """,
 
-        searchChips: ["_rechnung", "-mietvertrag", "energie"],
-
         promisesTitle: "Was das konkret heißt",
         promises: [
             Promise(
                 title: "Alles bleibt auf deinem Gerät.",
-                body: """
-                Deine Dokumente werden auf deinem Mac oder iPhone gelesen, erkannt und benannt. Es \
-                gibt keinen PDF-Archiver-Server, an den sie gehen könnten.
-                """
+                body: "Es gibt keinen PDF-Archiver-Server, an den deine Dokumente gehen könnten."
             ),
             Promise(
                 title: "Kein Konto.",
-                body: "Keine Anmeldung, kein Passwort, keine E-Mail-Adresse. App laden und loslegen."
+                body: "Keine Anmeldung, kein Passwort, keine E-Mail-Adresse."
             ),
             Promise(
                 title: "Du entscheidest, wo die Dateien liegen.",
@@ -114,46 +113,22 @@ extension SiteStrings {
             ),
             Promise(
                 title: "Open Source.",
-                body: """
-                Der Code liegt auf GitHub. Wenn du wissen willst, was die App mit deinen \
-                Dokumenten macht, lies ihn nach.
-                """
+                body: "Der Code liegt auf GitHub, falls du nachsehen möchtest."
             ),
             Promise(
                 title: "Seit 2018.",
-                body: """
-                Erste Version im Februar 2018, bis heute gepflegt. Ein Entwickler, acht Jahre.
-                """
+                body: "Ein Entwickler, bis heute mit Updates."
             ),
             Promise(
                 title: "Es antwortet ein Mensch.",
-                body: """
-                Fragen landen bei einem Entwickler, nicht in einer Ticket-Warteschlange. Meist \
-                gibt es innerhalb weniger Stunden eine Antwort.
-                """
+                body: "Fragen landen bei einem Entwickler, nicht in einer Ticket-Warteschlange."
             )
         ],
-
-        trialTitle: "Erst ausprobieren.",
-        trialLead: "Zwei Wochen kostenlos. Kein Konto, keine Kreditkarte.",
-        trialBody: """
-        Nach der Testphase kannst du ein Abo abschließen oder die App einmalig kaufen. Was das \
-        kostet, steht im App Store.
-        """,
-        trialNote: """
-        Kündigen kannst du jederzeit. Deine Dokumente bleiben so oder so lesbar — es sind PDFs in \
-        einem Ordner.
-        """,
-
-        platformsTitle: "Auf Mac, iPhone, iPad und Apple Vision Pro.",
-        platformsBody: """
-        Widgets zeigen, was noch ungetaggt ist. Kurzbefehle automatisieren, was du oft machst. \
-        Über das Teilen-Menü kommen Dokumente aus jeder anderen App herein.
-        """,
 
         testimonialsTitle: "Was Nutzer sagen",
         testimonials: [
             Testimonial(
+                initials: "iF",
                 source: "iFun",
                 statement: """
                 Die Mac-App nutzt eine einfache Dateinamens-Konvention, die Schlagworte, Daten und \
@@ -163,6 +138,7 @@ extension SiteStrings {
                 """
             ),
             Testimonial(
+                initials: "SA",
                 source: "Sir Apfelot",
                 statement: """
                 Mit dem PDF Archiver habe ich es endlich geschafft, ein bisschen Ordnung und \
@@ -171,6 +147,7 @@ extension SiteStrings {
                 """
             ),
             Testimonial(
+                initials: "JP",
                 source: "Jörg P.",
                 statement: """
                 Bis jetzt lagen alle PDFs mit kryptischen Dateinamen in einem einzigen Ordner. Mit \
@@ -178,6 +155,18 @@ extension SiteStrings {
                 """
             )
         ],
+
+        trialTitle: "Erst ausprobieren.",
+        trialBody: """
+        Zwei Wochen kostenlos. Kein Konto, keine Kreditkarte. Nach der Testphase kannst du ein \
+        Abo abschließen oder die App einmalig kaufen.
+        """,
+
+        platformsTitle: "Auf Mac, iPhone, iPad und Apple Vision Pro.",
+        platformsBody: """
+        Widgets zeigen, was noch ungetaggt ist. Kurzbefehle automatisieren, was du oft machst. \
+        Über das Teilen-Menü kommen Dokumente aus jeder anderen App herein.
+        """,
 
         helpTitle: "Fragen?",
         helpBody: "In den FAQ stehen die Antworten auf das, was am häufigsten gefragt wird.",

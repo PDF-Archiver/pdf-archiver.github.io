@@ -4,19 +4,23 @@ import Publish
 extension Node where Context == HTML.BodyContext {
     /// The home page, built entirely from the translated strings.
     ///
-    /// It alternates dark and light bands: the hero and the "Keep it." payoff sit on deep navy,
-    /// the workflow and the supporting sections on paper.
+    /// Light throughout, with "Keep it." as the single dark card. The filename opens the page as
+    /// a self-typing artifact and closes it at rest, and its own `--` / `__` grammar doubles as
+    /// the section dividers in between.
     static func homeContent(in language: SiteLanguage, on site: PDFArchiverWebsite) -> Node {
         let strings = language.strings
 
         return .group(
             .hero(in: language, on: site),
-            .workflow(in: language),
-            .keepBand(in: language),
+            .grammarRule("--"),
+            .workflow(strings),
+            .spotlight(strings),
+            .grammarRule("__"),
+            .keepCard(strings),
             .promises(strings),
-            .trial(strings),
             .platforms(strings),
             .testimonials(strings),
+            .trial(strings),
             .help(in: language, on: site)
         )
     }
@@ -27,71 +31,156 @@ private extension Node where Context == HTML.BodyContext {
         let strings = language.strings
 
         return .section(
-            .class("band band-dark hero"),
+            .class("hero"),
             .div(
-                .class("wrap hero-inner"),
-                .h1(.class("hero-title"), .text(strings.heroHeadline)),
-                .p(.class("hero-lead"), .text(strings.heroLead)),
-                .appStoreButton(strings),
-                .p(.class("trust-line"), .text(strings.trustLine)),
-                // Mastodon only verifies a profile link if the linked page answers with `rel="me"`.
-                .a(
-                    .class("verify-link"),
-                    .attribute(named: "rel", value: "me"),
-                    .href(site.mastodonURL.absoluteString),
-                    .text("Mastodon")
+                .class("wrap"),
+                .div(
+                    .class("hero-copy"),
+                    .span(.class("eyebrow"), .text(strings.heroEyebrow)),
+                    .h1(
+                        .class("hero-title"),
+                        .text("\(strings.heroTitleLead) "),
+                        .span(.class("accent"), .text(strings.heroTitleAccent))
+                    ),
+                    .p(.class("hero-lead"), .text(strings.heroLead)),
+                    .div(
+                        .class("hero-cta-row"),
+                        .a(.class("button"), .href(strings.appStoreURL), .text(strings.downloadButton)),
+                        .a(.class("button button-ghost"), .href("#features"), .text(strings.heroSecondaryCTA))
+                    ),
+                    .p(.class("trust-line"), .text(strings.trustLine)),
+                    // Mastodon only verifies a profile link if the linked page answers with `rel="me"`.
+                    .a(
+                        .class("verify-link"),
+                        .attribute(named: "rel", value: "me"),
+                        .href(site.mastodonURL.absoluteString),
+                        .text("Mastodon")
+                    )
+                ),
+                .div(
+                    .class("sig-card"),
+                    .div(
+                        .class("sig-line-wrap"),
+                        .span(.class("sig-reveal"), .signatureLine(strings.filenameExample))
+                    )
                 )
             )
         )
     }
 
-    static func workflow(in language: SiteLanguage) -> Node {
-        let strings = language.strings
+    /// The hero's filename. Same structure as the one in "Keep it.", but typed out on load.
+    static func signatureLine(_ example: SiteStrings.FilenameExample) -> Node {
+        .span(
+            .class("sig-line"),
+            .signaturePart(value: example.date, label: example.dateLabel, kind: "date"),
+            .span(.class("sig-sep"), .text("--")),
+            .signaturePart(value: example.description, label: example.descriptionLabel, kind: "desc"),
+            .span(.class("sig-sep"), .text("__")),
+            .signaturePart(value: example.tags, label: example.tagsLabel, kind: "tags"),
+            .span(.class("sig-sep sig-ext"), .text(".pdf"))
+        )
+    }
 
-        return .section(
-            .class("band band-paper"),
+    static func signaturePart(value: String, label: String, kind: String) -> Node {
+        .span(
+            .class("sig-part sig-\(kind)"),
+            .span(.class("sig-value"), .text(value)),
+            .span(.class("sig-label"), .text(label))
+        )
+    }
+
+    /// The separators of the naming scheme, reused as the page's section dividers.
+    static func grammarRule(_ symbol: String) -> Node {
+        .p(.class("grammar-rule wrap"), .span(.text(symbol)))
+    }
+
+    static func workflow(_ strings: SiteStrings) -> Node {
+        .section(
+            .class("features-wrap"),
             .id("features"),
             .div(
-                .class("wrap steps"),
-                .forEach(strings.workflowSteps.indices) { index in
-                    let step = strings.workflowSteps[index]
-                    let isFindStep = index == strings.workflowSteps.count - 1
-
-                    return .article(
-                        .class("step"),
-                        .h2(.class("step-title"), .text(step.title)),
-                        .p(.class("step-lead"), .text(step.lead)),
-                        .forEach(step.body) { .p(.text($0)) },
-                        .if(isFindStep, .searchChips(strings.searchChips))
-                    )
-                }
-            )
-        )
-    }
-
-    /// The payoff: the filename taken apart, then the archive it produces.
-    static func keepBand(in language: SiteLanguage) -> Node {
-        let strings = language.strings
-        let step = strings.keepStep
-
-        return .section(
-            .class("band band-dark keep"),
-            .div(
-                .class("wrap keep-inner"),
-                .h2(.class("step-title"), .text(step.title)),
-                .p(.class("step-lead"), .text(step.lead)),
-                .filenameBreakdown(strings.filenameExample),
+                .class("wrap"),
+                .h2(.class("section-title"), .text(strings.workflowTitle)),
+                .p(.class("section-lead"), .text(strings.workflowLead)),
                 .div(
-                    .class("keep-body"),
-                    .forEach(step.body) { .p(.text($0)) }
-                ),
-                .pre(.class("tree"), .code(.text(strings.archiveTree)))
+                    .class("feature-cards"),
+                    .forEach(strings.steps.indices) { index in
+                        let step = strings.steps[index]
+                        let isFindStep = index == strings.steps.count - 1
+
+                        return .article(
+                            .class("feature-card"),
+                            .div(.class("feature-card-tag"), .text(step.tag)),
+                            .h3(.text(step.title)),
+                            .p(.class("feature-lead"), .text(step.lead)),
+                            .p(.text(step.body)),
+                            .if(isFindStep, .searchChips(strings.searchChips))
+                        )
+                    }
+                )
             )
         )
     }
 
-    /// The signature element: the example filename with its three parts named underneath.
-    static func filenameBreakdown(_ example: SiteStrings.FilenameExample) -> Node {
+    static func searchChips(_ chips: [String]) -> Node {
+        .div(
+            .class("chips"),
+            .forEach(chips) { .code(.text($0)) }
+        )
+    }
+
+    static func spotlight(_ strings: SiteStrings) -> Node {
+        .section(
+            .class("spotlight-wrap"),
+            .div(
+                .class("wrap"),
+                .div(
+                    .class("spotlight"),
+                    .div(
+                        .h3(.class("spotlight-title"), .text(strings.spotlightTitle)),
+                        .forEach(strings.spotlightBody) { .p(.text($0)) }
+                    ),
+                    .macWindow()
+                )
+            )
+        )
+    }
+
+    /// A Mac window holding the place of the tagging screenshot until it exists.
+    static func macWindow() -> Node {
+        .div(
+            .class("mockup-mac"),
+            .div(
+                .class("mockup-mac-bar"),
+                .forEach(["#ff5f57", "#febc2e", "#28c840"]) { colour in
+                    .span(.class("mockup-mac-dot"), .style("background:\(colour)"))
+                }
+            ),
+            .div(.class("mockup-mac-body"))
+        )
+    }
+
+    static func keepCard(_ strings: SiteStrings) -> Node {
+        .section(
+            .class("keep-wrap"),
+            .div(
+                .class("wrap"),
+                .div(
+                    .class("keep-card"),
+                    .h2(.class("section-title"), .text(strings.keepTitle)),
+                    .p(.class("keep-lead"), .text(strings.keepLead)),
+                    .filenameFigure(strings.filenameExample),
+                    .div(
+                        .class("keep-body"),
+                        .forEach(strings.keepBody) { .p(.text($0)) }
+                    ),
+                    .pre(.class("tree"), .code(.text(strings.archiveTree)))
+                )
+            )
+        )
+    }
+
+    static func filenameFigure(_ example: SiteStrings.FilenameExample) -> Node {
         .figure(
             .class("filename"),
             .div(
@@ -101,7 +190,7 @@ private extension Node where Context == HTML.BodyContext {
                 .filenamePart(value: example.description, label: example.descriptionLabel, kind: "desc"),
                 .span(.class("filename-sep"), .text("__")),
                 .filenamePart(value: example.tags, label: example.tagsLabel, kind: "tags"),
-                .span(.class("filename-sep filename-ext"), .text(".pdf"))
+                .span(.class("filename-sep"), .text(".pdf"))
             )
         )
     }
@@ -114,16 +203,9 @@ private extension Node where Context == HTML.BodyContext {
         )
     }
 
-    static func searchChips(_ chips: [String]) -> Node {
-        .ul(
-            .class("chips"),
-            .forEach(chips) { .li(.code(.text($0))) }
-        )
-    }
-
     static func promises(_ strings: SiteStrings) -> Node {
         .section(
-            .class("band band-paper"),
+            .class("promises-wrap"),
             .div(
                 .class("wrap"),
                 .h2(.class("section-title"), .text(strings.promisesTitle)),
@@ -131,9 +213,48 @@ private extension Node where Context == HTML.BodyContext {
                     .class("promises"),
                     .forEach(strings.promises) { promise in
                         .li(
-                            .h3(.text(promise.title)),
-                            .p(.text(promise.body))
+                            .class("promise-item"),
+                            .div(.class("promise-icon"), .attribute(named: "aria-hidden", value: "true"), .text("✓")),
+                            .div(
+                                .h3(.text(promise.title)),
+                                .p(.text(promise.body))
+                            )
                         )
+                    }
+                )
+            )
+        )
+    }
+
+    static func platforms(_ strings: SiteStrings) -> Node {
+        .section(
+            .class("platforms-wrap"),
+            .div(
+                .class("wrap narrow"),
+                .h2(.class("section-title"), .text(strings.platformsTitle)),
+                .p(.class("section-lead"), .text(strings.platformsBody))
+            )
+        )
+    }
+
+    static func testimonials(_ strings: SiteStrings) -> Node {
+        .section(
+            .class("testimonials-wrap"),
+            .div(
+                .class("wrap"),
+                .h2(.class("section-title"), .text(strings.testimonialsTitle)),
+                .ul(
+                    .class("testimonials"),
+                    .forEach(strings.testimonials) { testimonial in
+                        .li(.figure(
+                            .div(
+                                .class("t-head"),
+                                .span(.class("avatar"), .attribute(named: "aria-hidden", value: "true"),
+                                      .text(testimonial.initials))
+                            ),
+                            .blockquote(.p(.text(testimonial.statement))),
+                            .figcaption(.text(testimonial.source))
+                        ))
                     }
                 )
             )
@@ -142,49 +263,19 @@ private extension Node where Context == HTML.BodyContext {
 
     static func trial(_ strings: SiteStrings) -> Node {
         .section(
-            .class("band band-paper"),
+            .class("trial-wrap"),
             .id("download"),
             .div(
-                .class("wrap"),
+                .class("wrap narrow"),
                 .div(
                     .class("trial"),
                     .h2(.class("section-title"), .text(strings.trialTitle)),
-                    .p(.class("trial-lead"), .text(strings.trialLead)),
                     .p(.text(strings.trialBody)),
-                    .appStoreButton(strings),
-                    .p(.class("trial-note"), .text(strings.trialNote))
-                )
-            )
-        )
-    }
-
-    static func platforms(_ strings: SiteStrings) -> Node {
-        .section(
-            .class("band band-paper"),
-            .div(
-                .class("wrap narrow"),
-                .h2(.class("section-title"), .text(strings.platformsTitle)),
-                .p(.text(strings.platformsBody))
-            )
-        )
-    }
-
-    static func testimonials(_ strings: SiteStrings) -> Node {
-        .section(
-            .class("band band-paper"),
-            .div(
-                .class("wrap"),
-                .h2(.class("section-title"), .text(strings.testimonialsTitle)),
-                .ul(
-                    .class("testimonials"),
-                    .forEach(strings.testimonials) { testimonial in
-                        .li(
-                            .figure(
-                                .blockquote(.p(.text(testimonial.statement))),
-                                .figcaption(.text(testimonial.source))
-                            )
-                        )
-                    }
+                    .a(
+                        .class("badge-appstore"),
+                        .href(strings.appStoreURL),
+                        .img(.src("/assets/img/appstore-badge.svg"), .alt(strings.downloadButton))
+                    )
                 )
             )
         )
@@ -194,16 +285,19 @@ private extension Node where Context == HTML.BodyContext {
         let strings = language.strings
 
         return .section(
-            .class("band band-dark help"),
+            .class("help-wrap"),
             .div(
                 .class("wrap narrow"),
                 .h2(.class("section-title"), .text(strings.helpTitle)),
-                .p(.text(strings.helpBody)),
-                .p(.a(
-                    .class("button button-ghost"),
-                    .href(language.path(for: "faq").absoluteString),
-                    .text(strings.helpFAQLink)
-                )),
+                .p(.class("section-lead"), .text(strings.helpBody)),
+                .p(
+                    .class("help-cta"),
+                    .a(
+                        .class("button button-ghost"),
+                        .href(language.path(for: "faq").absoluteString),
+                        .text(strings.helpFAQLink)
+                    )
+                ),
                 .p(.class("help-fallback"), .text(strings.helpFallback)),
                 .ul(
                     .class("help-links"),
@@ -213,13 +307,5 @@ private extension Node where Context == HTML.BodyContext {
                 )
             )
         )
-    }
-
-    static func appStoreButton(_ strings: SiteStrings) -> Node {
-        .p(.a(
-            .class("button"),
-            .href(strings.appStoreURL),
-            .text(strings.downloadButton)
-        ))
     }
 }

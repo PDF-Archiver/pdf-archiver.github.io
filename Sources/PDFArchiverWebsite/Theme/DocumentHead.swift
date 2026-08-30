@@ -8,7 +8,7 @@ extension Node where Context == HTML.DocumentContext {
         let strings = language.strings
         // The home pages are titled after the site itself — no point in naming it twice.
         let isSiteTitle = location.title.isEmpty || location.title == strings.siteTitle
-        let title = isSiteTitle ? "\(strings.heroHeadline) — \(strings.siteTitle)"
+        let title = isSiteTitle ? "\(strings.heroTitleLead) \(strings.heroTitleAccent) — \(strings.siteTitle)"
                                 : "\(location.title) | \(strings.siteTitle)"
         let description = location.description.isEmpty ? language.metaDescription : location.description
 
@@ -37,6 +37,8 @@ extension Node where Context == HTML.DocumentContext {
             .link(.rel(.shortcutIcon), .href("/assets/img/favicon/favicon.ico")),
             .alternateLanguageLinks(for: location.path),
             .stylesheet("/css/styles.css"),
+            // Adds `.is-scrolled` to the header, which morphs it into a floating pill.
+            .script(.src("/assets/js/header-morph.js"), .defer()),
             .structuredData(for: site, in: language)
         )
     }

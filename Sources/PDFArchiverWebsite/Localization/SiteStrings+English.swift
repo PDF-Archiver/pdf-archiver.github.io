@@ -12,68 +12,73 @@ extension SiteStrings {
         appStoreURL: "https://apps.apple.com/app/pdf-archiver/id1433801905",
         downloadButton: "Download on the App Store",
 
+        heroEyebrow: "since 2018 · open source",
         heroLead: """
         An archive that outlasts the app. No database, no server, no lock-in — just folders and \
         files that stay yours.
         """,
-        trustLine: "Built since 2018 · Open source · Nothing leaves your device",
+        heroSecondaryCTA: "See how it works",
+        trustLine: "Nothing leaves your device · Two weeks free, no account",
 
-        workflowSteps: [
+        workflowTitle: "Three steps, start to finish",
+        workflowLead: "No workflow to learn. Point, check, done.",
+        steps: [
             Step(
+                tag: "01_scan",
                 title: "Scan it.",
                 lead: "Point your iPhone at the page.",
-                body: [
-                    """
-                    The scan lands in your inbox, cropped and straight. Text recognition runs on \
-                    your device, with Apple's built-in engine. Nothing is uploaded. Nothing waits \
-                    on a server.
-                    """,
-                    """
-                    Already have PDFs? Drop them in — from your scanner, a mail attachment, your \
-                    downloads folder.
-                    """
-                ]
+                body: """
+                The scan lands in your inbox, cropped and straight. Text recognition runs on your \
+                device — nothing is uploaded, nothing waits on a server.
+                """
             ),
             Step(
+                tag: "02_tag",
                 title: "Tag it.",
-                lead: "Give the document a date, a description, and a few tags.",
-                body: [
-                    """
-                    Apple Intelligence suggests all three, on your device. Check them, fix what's \
-                    off, press ⌘S. The document is renamed and moved to your archive.
-                    """,
-                    "On the Mac, ↹ moves between fields. Your hands never leave the keyboard."
-                ]
+                lead: "Date, description, tags.",
+                body: """
+                Apple Intelligence suggests all three, on your device. Check them, press ⌘S. The \
+                document is renamed and moved to your archive.
+                """
             ),
             Step(
+                tag: "03_find",
                 title: "Find it.",
-                lead: "Search a tag, a description, or the text inside.",
-                body: [
-                    "The text inside is real text, not a picture of text. Select it, copy it, search it.",
-                    """
-                    This works in PDF Archiver. It also works in Spotlight, in the Finder, and in \
-                    whatever file manager you happen to open — because the search terms are part \
-                    of the filename.
-                    """
-                ]
+                lead: "Search a tag, or the text inside.",
+                body: """
+                It works in PDF Archiver, in Spotlight, in the Finder, and in whatever file \
+                manager you happen to open.
+                """
             )
         ],
+        searchChips: ["_bill", "-lease", "energy"],
 
-        keepStep: Step(
-            title: "Keep it.",
-            lead: "Your archive is a folder of PDFs, sorted by year.",
-            body: [
-                """
-                Date, description, tags — written into the name. No capitals, no spaces, no \
-                umlauts, so the names survive every filesystem they land on.
-                """,
-                """
-                Copy the folder to a backup drive, a NAS, a Windows machine. It stays \
-                readable. In ten years, it still will be — with or without this app.
-                """
-            ]
-        ),
+        spotlightTitle: "Tag with your keyboard, not your mouse.",
+        spotlightBody: [
+            """
+            On the Mac, ↹ moves between fields. Apple Intelligence has already filled in a date, a \
+            description, and tags — check them, fix what's off, press ⌘S.
+            """,
+            """
+            Already have PDFs? Drop them in — from your scanner, a mail attachment, your downloads \
+            folder.
+            """
+        ],
 
+        keepTitle: "Keep it.",
+        keepLead: """
+        Your archive is a folder of PDFs, sorted by year. This is the filename from above, at rest.
+        """,
+        keepBody: [
+            """
+            Date, description, tags — written into the name. No capitals, no spaces, no umlauts, \
+            so the names survive every filesystem they land on.
+            """,
+            """
+            Copy the folder to a backup drive, a NAS, a Windows machine. It stays readable. In ten \
+            years, it still will be — with or without this app.
+            """
+        ],
         filenameExample: FilenameExample(
             date: "2026-03-12",
             description: "electricity-bill",
@@ -82,7 +87,6 @@ extension SiteStrings {
             descriptionLabel: "Description",
             tagsLabel: "Tags"
         ),
-
         archiveTree: """
         Archive/
         ├── 2017/
@@ -92,20 +96,15 @@ extension SiteStrings {
             └── 2026-04-02--lease-agreement__flat_contract.pdf
         """,
 
-        searchChips: ["_bill", "-lease", "energy"],
-
         promisesTitle: "What that means in practice",
         promises: [
             Promise(
                 title: "Everything stays on your device.",
-                body: """
-                Documents are read, recognized and named on your Mac or iPhone. There is no PDF \
-                Archiver server to send them to.
-                """
+                body: "There is no PDF Archiver server to send documents to."
             ),
             Promise(
                 title: "No account.",
-                body: "No sign-up, no password, no email address. Download the app and start."
+                body: "No sign-up, no password, no email address."
             ),
             Promise(
                 title: "You choose where files live.",
@@ -113,47 +112,22 @@ extension SiteStrings {
             ),
             Promise(
                 title: "Open source.",
-                body: """
-                The code is on GitHub. If you want to know what the app does with your documents, \
-                read it.
-                """
+                body: "The code is on GitHub, if you want to check."
             ),
             Promise(
                 title: "Built since 2018.",
-                body: """
-                First release in February 2018, still shipping updates today. One developer, \
-                eight years.
-                """
+                body: "One developer, still shipping updates today."
             ),
             Promise(
                 title: "A person answers.",
-                body: """
-                Questions go to one developer, not a ticket queue. Most get a reply within a few \
-                hours.
-                """
+                body: "Questions go to one developer, not a ticket queue."
             )
         ],
-
-        trialTitle: "Try it first.",
-        trialLead: "Two weeks free. No account, no credit card.",
-        trialBody: """
-        After the trial you can subscribe, or buy the app once and keep it. The App Store shows \
-        what applies where you are.
-        """,
-        trialNote: """
-        Cancel whenever you like. Your documents stay readable either way — they are just PDFs in \
-        a folder.
-        """,
-
-        platformsTitle: "On Mac, iPhone, iPad and Apple Vision Pro.",
-        platformsBody: """
-        Widgets show what's still untagged. Shortcuts automate what you do often. The share sheet \
-        takes documents from any other app.
-        """,
 
         testimonialsTitle: "What users say",
         testimonials: [
             Testimonial(
+                initials: "iF",
                 source: "iFun",
                 statement: """
                 The Mac app uses a simple file name convention, which simply notes keywords, data \
@@ -163,6 +137,7 @@ extension SiteStrings {
                 """
             ),
             Testimonial(
+                initials: "SA",
                 source: "Sir Apfelot",
                 statement: """
                 With the PDF Archiver I have finally managed to bring some order and structure to \
@@ -171,6 +146,7 @@ extension SiteStrings {
                 """
             ),
             Testimonial(
+                initials: "JP",
                 source: "Jörg P.",
                 statement: """
                 Until now, all PDFs with cryptic file names were stored in a single folder. With \
@@ -178,6 +154,18 @@ extension SiteStrings {
                 """
             )
         ],
+
+        trialTitle: "Try it first.",
+        trialBody: """
+        Two weeks free. No account, no credit card. After the trial you can subscribe, or buy the \
+        app once and keep it.
+        """,
+
+        platformsTitle: "On Mac, iPhone, iPad and Apple Vision Pro.",
+        platformsBody: """
+        Widgets show what's still untagged. Shortcuts automate what you do often. The share sheet \
+        takes documents from any other app.
+        """,
 
         helpTitle: "Questions?",
         helpBody: "The FAQ answers the ones we get most.",
