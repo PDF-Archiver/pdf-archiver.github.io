@@ -18,7 +18,7 @@ PDF Archiver scans, tags and archives documents on Mac, iPhone and iPad. Date, d
 | --- | --- |
 | Developer | Julian Kahnert |
 | Category | Productivity / document management |
-| Platforms | iPhone, iPad (iOS 18+), Mac (macOS 15.6+), Apple Vision Pro (visionOS 2.0+) |
+| Platforms | iPhone, iPad (iOS 18+), Mac (macOS 15.6+) |
 | First release | February 2018 |
 | Languages | German, English |
 | Licence | Open source, code on GitHub |

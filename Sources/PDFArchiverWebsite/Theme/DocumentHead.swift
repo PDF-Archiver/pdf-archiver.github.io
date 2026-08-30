@@ -64,7 +64,7 @@ private extension Node where Context == HTML.HeadContext {
         let json = """
         {"@context":"https://schema.org","@type":"SoftwareApplication",\
         "name":"\(site.name)","applicationCategory":"ProductivityApplication",\
-        "operatingSystem":"iOS 18, macOS 15.6, visionOS 2.0",\
+        "operatingSystem":"iOS 18, macOS 15.6",\
         "url":"\(site.url.absoluteString)","downloadUrl":"\(language.strings.appStoreURL)",\
         "author":{"@type":"Person","name":"\(language.strings.copyrightHolder)"}}
         """

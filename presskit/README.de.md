@@ -21,7 +21,7 @@ Gerät. Open Source, seit 2018 von einem Entwickler gepflegt.
 | Name | PDF Archiver |
 | Entwickler | Julian Kahnert |
 | Kategorie | Produktivität / Dokumentenverwaltung |
-| Plattformen | iPhone, iPad (iOS 18+), Mac (macOS 15.6+), Apple Vision Pro (visionOS 2.0+) |
+| Plattformen | iPhone, iPad (iOS 18+), Mac (macOS 15.6+) |
 | Erstveröffentlichung | Februar 2018 |
 | Sprachen | Deutsch, Englisch |
 | Lizenz | Open Source, Quellcode auf GitHub |
