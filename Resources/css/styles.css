@@ -1,0 +1,1015 @@
+/* PDF Archiver — pdf-archiver.io
+   Warm paper throughout, one dark card for "Keep it.", and the filename as the page's
+   signature: typed out in the hero, at rest at the end, its separators reused as dividers. */
+
+:root {
+    color-scheme: light dark;
+
+    /* Brand: the navy of the app icon, the coral of the app's accent colour. */
+    --ink: #141c27;
+    --paper: #fbf7f6;
+    --paper-sunk: #f3eae8;
+    --coral: #ca414f;
+    --coral-bright: #e66967;
+
+    --text: #23282f;
+    --text-soft: #5c626b;
+    --rule: #e6dbd8;
+    --card: #fff;
+
+    --surface: var(--paper);
+    --surface-sunk: var(--paper-sunk);
+    --accent: var(--coral);
+
+
+    --wrap: 72rem;
+    --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper: #161d26;
+        --paper-sunk: #1f2833;
+        --card: #1c2531;
+        --text: #e7ebf0;
+        --text-soft: #a3aebc;
+        --rule: #2c3644;
+        --accent: var(--coral-bright);
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+p {
+    margin: 0 0 1.1em;
+}
+
+a {
+    color: var(--accent);
+    text-underline-offset: 0.18em;
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+code,
+kbd,
+pre {
+    font-family: var(--font-mono);
+}
+
+/* ---------- Layout ---------- */
+
+.wrap {
+    width: 100%;
+    max-width: var(--wrap);
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+.wrap.narrow {
+    max-width: 44rem;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.section-title {
+    font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+    font-weight: 700;
+    color: var(--text);
+    text-align: center;
+}
+
+.section-lead {
+    margin: 0.6rem auto 0;
+    max-width: 32em;
+    color: var(--text-soft);
+    font-size: 1.05rem;
+    text-align: center;
+}
+
+/* `margin-block`, not `margin`: a blanket reset would cancel the `margin-inline: auto`
+   this element inherits from `.wrap` and push the divider off-centre. */
+.divider {
+    margin-block: 0;
+    border: 0;
+    border-top: 1px solid var(--rule);
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.7rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 12px 24px -10px color-mix(in srgb, var(--accent) 70%, transparent);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px -10px color-mix(in srgb, var(--accent) 70%, transparent);
+    color: #fff;
+}
+
+.button-ghost {
+    background: transparent;
+    color: var(--text);
+    box-shadow: inset 0 0 0 1.5px var(--rule);
+}
+
+.button-ghost:hover {
+    background: var(--surface-sunk);
+    color: var(--text);
+    box-shadow: inset 0 0 0 1.5px var(--rule);
+}
+
+.badge-appstore {
+    display: inline-flex;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.badge-appstore img {
+    height: 48px;
+    width: auto;
+}
+
+.badge-appstore:hover {
+    transform: translateY(-2px);
+    opacity: 0.88;
+}
+
+/* ---------- Header: transparent at rest, a floating pill once scrolled ---------- */
+
+.site-header {
+    padding-block: 1.3rem;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: transparent;
+    transition: padding-block 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-header-inner {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 4vw, 2.5rem);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: transparent;
+    transition:
+        border-color 0.4s ease,
+        max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        padding-block 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        padding-inline 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        gap 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.site-header.is-scrolled {
+    padding-block: 0.7rem;
+}
+
+.site-header.is-scrolled .site-header-inner {
+    max-width: min(54rem, 94vw);
+    padding-block: 0.55rem;
+    padding-inline: 1.2rem 0.55rem;
+    gap: clamp(0.75rem, 3vw, 1.75rem);
+    border-color: var(--rule);
+    background: color-mix(in srgb, var(--card) 97%, transparent);
+    backdrop-filter: blur(24px) saturate(1.6);
+    -webkit-backdrop-filter: blur(24px) saturate(1.6);
+    box-shadow:
+        0 10px 20px -8px rgba(20, 28, 39, 0.22),
+        0 28px 55px -22px rgba(20, 28, 39, 0.4);
+}
+
+.site-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.site-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    flex: none;
+}
+
+.site-nav {
+    margin-inline-start: auto;
+}
+
+.site-nav ul,
+.footer-links,
+.help-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav ul {
+    gap: clamp(1rem, 3vw, 2rem);
+}
+
+.site-nav a {
+    color: var(--text-soft);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.site-nav a:hover {
+    color: var(--accent);
+}
+
+/* Scoped under `.site-nav` so it outweighs `.site-nav a`, which would otherwise
+   paint the pill's label in the same colour as its background. */
+/* Inline-flex, not inline: an inline box's vertical padding only paints, so the pill
+   would overflow the header frame instead of keeping the frame's 0.55rem gap all round. */
+.site-nav .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.55rem 1.2rem;
+    border-radius: 999px;
+}
+
+.site-nav .nav-cta:hover {
+    background: var(--coral-bright);
+    color: #fff;
+}
+
+/* Quiet on purpose: it sits inside the navigation and should never pull attention away
+   from the download button next to it. */
+.language-toggle {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+}
+
+.language-toggle a {
+    color: var(--text-soft);
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 0.75;
+}
+
+.language-toggle a:hover {
+    color: var(--accent);
+    opacity: 1;
+}
+
+.language-toggle [aria-current="page"] {
+    color: var(--text);
+    font-weight: 700;
+    opacity: 1;
+}
+
+.language-sep {
+    color: var(--rule);
+}
+
+/* ---------- Hero: the product demonstrates itself ---------- */
+
+.hero {
+    padding-block: clamp(4rem, 9vw, 6.5rem) clamp(3rem, 7vw, 5rem);
+    text-align: center;
+}
+
+.hero-copy {
+    max-width: 40rem;
+    margin-inline: auto;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5.6vw, 4rem);
+    font-weight: 700;
+    color: var(--text);
+}
+
+.hero-title .accent {
+    color: var(--accent);
+}
+
+.hero-lead {
+    margin: 1.25rem auto 0;
+    max-width: 32em;
+    font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+    color: var(--text-soft);
+}
+
+.hero-cta-row {
+    margin-top: 1.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.trust-line {
+    margin-top: 1.3rem;
+    font-size: 0.88rem;
+    color: var(--text-soft);
+}
+
+/* The Mastodon verification link has to be in the markup, not on display. */
+.verify-link {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+/* ---------- The signature: the filename, typed out ---------- */
+
+.sig-card {
+    margin: clamp(3.5rem, 7vw, 5.5rem) auto 0;
+    max-width: 40rem;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 1.5rem;
+    padding: clamp(1.25rem, 4vw, 2.25rem);
+    box-shadow: 0 24px 50px -32px rgba(20, 28, 39, 0.22);
+}
+
+/* Container query units size the filename to the card's actual rendered width, at any
+   viewport, instead of a viewport-relative guess. */
+.sig-line-wrap {
+    min-width: 0;
+    overflow-x: auto;
+    container-type: inline-size;
+}
+
+.sig-reveal {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    clip-path: inset(0 100% 0 0);
+    animation: reveal-type 1.7s steps(46, end) 0.4s both;
+}
+
+@keyframes reveal-type {
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.sig-line {
+    display: inline-flex;
+    align-items: flex-start;
+    font-family: var(--font-mono);
+    /* Monospace advances at about 0.6em, so this is the largest size at which the whole
+       name still fits the card — whatever its length in this language. */
+    font-size: clamp(0.5rem, calc(155cqw / var(--sig-chars, 46)), 2rem);
+    font-weight: 600;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.sig-part {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Value and label share a flex column, so the label sits exactly under its value. */
+.sig-label {
+    margin-top: 0.55rem;
+    padding-top: 0.4rem;
+    border-top: 1.5px solid currentcolor;
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: labels-in 0.4s ease both;
+}
+
+@keyframes labels-in {
+    to {
+        opacity: 0.75;
+    }
+}
+
+/* Each label appears the moment the wipe finishes typing the word above it. */
+.sig-date {
+    color: var(--text-soft);
+}
+
+.sig-date .sig-label {
+    animation-delay: 0.78s;
+}
+
+.sig-desc {
+    color: var(--text);
+}
+
+.sig-desc .sig-label {
+    animation-delay: 1.48s;
+}
+
+.sig-tags {
+    color: var(--accent);
+}
+
+.sig-tags .sig-label {
+    animation-delay: 1.96s;
+}
+
+.sig-sep,
+.sig-ext {
+    color: #b9c2cc;
+    align-self: flex-start;
+}
+
+/* ---------- Workflow cards ---------- */
+
+.features-wrap {
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.feature-cards {
+    margin-top: 2.75rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+}
+
+.feature-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 1.25rem;
+    padding: clamp(1.5rem, 4vw, 2rem);
+}
+
+.feature-card-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--surface-sunk);
+    border-radius: 50%;
+    margin-bottom: 1.25rem;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* A subtitle, not a second heading: size keeps it above the body copy, while the lighter
+   weight and softer colour stop it competing with the step title. */
+.feature-card .feature-lead {
+    margin: 0.5rem 0 1.35rem;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text-soft);
+}
+
+.feature-card p:not(.feature-lead) {
+    margin-bottom: 0;
+    color: var(--text-soft);
+    font-size: 0.96rem;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.chips code {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    background: var(--surface-sunk);
+    color: var(--accent);
+    font-size: 0.84rem;
+}
+
+/* ---------- Spotlight ---------- */
+
+/* Tight against the cards above — same chapter, no divider — but the full rhythm below,
+   so the "__" divider sits centred in its gap. */
+.spotlight-wrap {
+    padding-block: clamp(1rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem);
+}
+
+.spotlight {
+    background: var(--surface-sunk);
+    border: 1px solid var(--rule);
+    border-radius: 1.5rem;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: center;
+}
+
+.spotlight-title {
+    margin-bottom: 0.7rem;
+    font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+    font-weight: 700;
+}
+
+.spotlight p {
+    color: var(--text-soft);
+}
+
+.spotlight p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .spotlight {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* The screenshot is a bare capture, so the rounding and shadow give it its device edge.
+   Cropped from the top: the first rows of the archive carry the message. */
+.spotlight-shot {
+    width: 100%;
+    max-width: 22rem;
+    max-height: 30rem;
+    margin-inline: auto;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 1.5rem;
+    box-shadow: 0 30px 60px -30px rgba(20, 28, 39, 0.5);
+    /* The crop would otherwise cut a row in half; fading it out reads as "the list goes on". */
+    mask-image: linear-gradient(to bottom, #000 80%, transparent);
+}
+
+/* ---------- Keep it: the arc closes, same filename, at rest ---------- */
+
+.keep-wrap {
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+/* Light like the rest of the page — only the mono blocks inside stay dark, because that
+   is where the filename's colour coding needs the contrast. */
+.keep-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 1.5rem;
+    padding: clamp(2rem, 5vw, 3.5rem);
+}
+
+.keep-card .section-title {
+    text-align: start;
+}
+
+.keep-lead {
+    margin-top: 0.6rem;
+    color: var(--text-soft);
+    font-weight: 600;
+}
+
+.filename {
+    margin: 2rem 0;
+    padding: clamp(1.1rem, 3vw, 1.75rem);
+    background: var(--ink);
+    border-radius: 1rem;
+    overflow-x: auto;
+}
+
+.filename-line {
+    display: flex;
+    align-items: flex-start;
+    font-family: var(--font-mono);
+    font-size: clamp(0.9rem, 2vw, 1.35rem);
+    white-space: nowrap;
+}
+
+.filename-part {
+    display: flex;
+    flex-direction: column;
+}
+
+.filename-value {
+    font-weight: 600;
+}
+
+.filename-label {
+    margin-top: 0.55rem;
+    padding-top: 0.4rem;
+    border-top: 1.5px solid currentcolor;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.part-date {
+    color: #a2aebd;
+}
+
+.part-desc {
+    color: #fff;
+}
+
+/* Tags are coral here and in the search chips above — same colour, same idea. */
+.part-tags {
+    color: var(--coral-bright);
+}
+
+.filename-sep {
+    color: #566073;
+}
+
+.tree {
+    margin: 0;
+    padding: clamp(1rem, 2.5vw, 1.4rem);
+    background: var(--ink);
+    border-radius: 1rem;
+    color: #a2aebd;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    overflow-x: auto;
+}
+
+.keep-body p {
+    color: var(--text-soft);
+}
+
+/* ---------- Promises ---------- */
+
+.promises-wrap {
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.promises {
+    margin: 2.75rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 1.75rem 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.promise-item {
+    display: flex;
+    gap: 1rem;
+}
+
+.promise-icon {
+    flex: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: var(--surface-sunk);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.promise-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.promise-item p {
+    margin: 0.35rem 0 0;
+    color: var(--text-soft);
+    font-size: 0.94rem;
+}
+
+/* ---------- Testimonials ---------- */
+
+.testimonials-wrap {
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.testimonials {
+    margin: 2.75rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+}
+
+.testimonials figure {
+    height: 100%;
+    margin: 0;
+    padding: clamp(1.5rem, 3.5vw, 1.75rem);
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 1.25rem;
+}
+
+.t-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.testimonials blockquote {
+    margin: 0;
+}
+
+.testimonials blockquote p {
+    margin: 0;
+    font-size: 0.97rem;
+}
+
+.testimonials figcaption {
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--accent);
+}
+
+/* ---------- Trial ---------- */
+
+.trial-wrap {
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.trial {
+    text-align: center;
+    padding: clamp(2.5rem, 6vw, 4rem);
+    border: 1px solid var(--rule);
+    border-radius: 1.5rem;
+    background: var(--surface-sunk);
+}
+
+.trial p {
+    max-width: 30em;
+    margin-inline: auto;
+    color: var(--text-soft);
+}
+
+.trial .badge-appstore {
+    margin-inline: auto;
+}
+
+/* ---------- Help ---------- */
+
+.help-wrap {
+    padding-block: clamp(1rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem);
+    text-align: center;
+}
+
+.help-cta {
+    margin-top: 1.5rem;
+}
+
+.help-fallback {
+    margin-top: 2rem;
+    color: var(--text-soft);
+    font-size: 0.95rem;
+}
+
+.help-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.4rem;
+    font-size: 0.95rem;
+}
+
+/* ---------- Prose pages: FAQ, legal texts, 404 ---------- */
+
+.prose-wrap {
+    padding-block: clamp(3rem, 7vw, 5rem);
+}
+
+.prose h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.prose h2 {
+    margin-top: 2.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.prose h3 {
+    margin-top: 1.75rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.prose ul,
+.prose ol {
+    padding-inline-start: 1.3rem;
+}
+
+.prose li {
+    margin-bottom: 0.4rem;
+}
+
+.prose pre {
+    padding: 1rem 1.25rem;
+    background: var(--surface-sunk);
+    border-radius: 0.75rem;
+    font-size: 0.85rem;
+    overflow-x: auto;
+}
+
+.prose :not(pre) > code {
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    background: var(--surface-sunk);
+    font-size: 0.9em;
+}
+
+.prose kbd {
+    padding: 0.15em 0.45em;
+    border: 1px solid var(--rule);
+    border-bottom-width: 2px;
+    border-radius: 5px;
+    background: var(--surface-sunk);
+    font-size: 0.85em;
+}
+
+.prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.prose th,
+.prose td {
+    padding: 0.55rem 0.75rem;
+    border-bottom: 1px solid var(--rule);
+    text-align: start;
+    vertical-align: top;
+}
+
+/* Dates and short labels keep to one line; only the last column wraps. */
+.prose td:not(:last-child) {
+    white-space: nowrap;
+}
+
+.faq-entry {
+    padding-top: 2.25rem;
+    border-top: 1px solid var(--rule);
+    margin-top: 2.25rem;
+}
+
+.faq-entry h2 {
+    margin-top: 0;
+    scroll-margin-top: 5rem;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    padding-block: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--text-soft);
+    font-size: 0.92rem;
+    text-align: center;
+}
+
+.footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.4rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+.footer-links a {
+    color: var(--text-soft);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.copyright {
+    margin: 0.35rem 0;
+}
+
+@media (max-width: 720px) {
+    .site-nav ul li:not(:has(.nav-cta)) {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .button,
+    .badge-appstore,
+    .site-header,
+    .site-header-inner {
+        transition: none;
+    }
+
+    .button:hover,
+    .badge-appstore:hover {
+        transform: none;
+    }
+
+    .sig-reveal {
+        animation: none;
+        clip-path: inset(0 0 0 0);
+    }
+
+    .sig-label {
+        animation: none;
+        opacity: 0.75;
+    }
+}
