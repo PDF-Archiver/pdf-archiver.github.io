@@ -25,6 +25,7 @@ extension Node where Context == HTML.BodyContext {
                     .ul(
                         .li(.a(.href("\(homeURL)#features"), .text(strings.navFeatures))),
                         .li(.a(.href(language.path(for: "faq").absoluteString), .text(strings.navFAQ))),
+                        .languageToggle(for: path, in: language, context: context),
                         .li(.a(.class("nav-cta"), .href(strings.appStoreURL), .text(strings.navDownload)))
                     )
                 )
@@ -32,27 +33,6 @@ extension Node where Context == HTML.BodyContext {
         )
     }
 
-    /// A small toggle pinned to the right edge of the page, out of the header's way.
-    static func languageToggle(for path: Path,
-                               in language: SiteLanguage,
-                               context: PublishingContext<PDFArchiverWebsite>) -> Node {
-        let strings = language.strings
-
-        return .nav(
-            .class("language-toggle"),
-            .attribute(named: "aria-label", value: strings.selectLanguage),
-            .ul(
-                .forEach(SiteLanguage.allCases) { other in
-                    .li(.a(
-                        .href(counterpart(of: path, in: other, context: context).absoluteString),
-                        .attribute(named: "hreflang", value: other.rawValue),
-                        .if(other == language, .attribute(named: "aria-current", value: "page")),
-                        .text(other.rawValue.uppercased())
-                    ))
-                }
-            )
-        )
-    }
 
     static func siteFooter(for path: Path,
                            in language: SiteLanguage,
@@ -81,6 +61,38 @@ extension Node where Context == HTML.BodyContext {
             )
         )
     }
+}
+
+extension Node where Context == HTML.ListContext {
+    /// The quiet `de|en` next to the download button.
+    static func languageToggle(for path: Path,
+                               in language: SiteLanguage,
+                               context: PublishingContext<PDFArchiverWebsite>) -> Node {
+        let strings = language.strings
+        let order = SiteLanguage.switcherOrder
+
+        return .li(
+            .class("language-toggle"),
+            .forEach(order.indices) { index in
+                let other = order[index]
+                let name = other == .german ? strings.germanName : strings.englishName
+
+                return .group(
+                    .if(index > 0, .span(.class("language-sep"),
+                                         .attribute(named: "aria-hidden", value: "true"),
+                                         .text("|"))),
+                    .a(
+                        .href(counterpart(of: path, in: other, context: context).absoluteString),
+                        .attribute(named: "hreflang", value: other.rawValue),
+                        .attribute(named: "aria-label", value: name),
+                        .if(other == language, .attribute(named: "aria-current", value: "page")),
+                        .text(other.rawValue)
+                    )
+                )
+            }
+        )
+    }
+
 }
 
 /// The other language's version of a location, falling back to that language's home page

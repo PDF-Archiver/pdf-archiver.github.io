@@ -50,7 +50,6 @@ private extension PDFArchiverHTMLFactory {
             .siteHead(for: location, on: context.site, in: language),
             .body(
                 .siteHeader(for: location.path, in: language, context: context),
-                .languageToggle(for: location.path, in: language, context: context),
                 .main(body),
                 .siteFooter(for: location.path, in: language, context: context)
             )

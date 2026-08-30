@@ -15,6 +15,9 @@ enum SiteLanguage: String, CaseIterable {
         self = prefix == SiteLanguage.german.rawValue ? .german : .english
     }
 
+    /// The order the switcher lists the languages in, independent of `allCases`.
+    static let switcherOrder: [SiteLanguage] = [.german, .english]
+
     var plotLanguage: Language {
         switch self {
         case .english:
