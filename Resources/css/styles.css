@@ -1,0 +1,102 @@
+/* Neutral scaffolding only — the visual design is a separate piece of work. */
+
+:root {
+    --text: #222;
+    --muted: #666;
+    --accent: #d9334e;
+    --background: #fff;
+    --border: #e5e5e5;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 48rem;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--background);
+}
+
+a {
+    color: var(--accent);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header,
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+header {
+    border-bottom: 1px solid var(--border);
+}
+
+footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+}
+
+.site-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav ul,
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+[aria-current="page"] {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+section {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+blockquote {
+    margin: 0;
+    font-style: italic;
+}
+
+.features,
+.testimonials ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.testimonials img {
+    max-width: 5rem;
+    border-radius: 50%;
+}

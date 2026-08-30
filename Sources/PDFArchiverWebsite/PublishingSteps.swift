@@ -1,0 +1,30 @@
+import Foundation
+import Publish
+
+extension PublishingStep where Site == PDFArchiverWebsite {
+    /// Changelog dates are plain `yyyy-MM-dd`. The locale has to be set first: assigning it
+    /// afterwards makes `DateFormatter` re-derive the format from the locale's own template.
+    static func configureDateParsing() -> Self {
+        step(named: "Configure date parsing") { context in
+            context.dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            context.dateFormatter.dateFormat = "yyyy-MM-dd"
+        }
+    }
+
+    /// Markdown pages keep their file name, so `Content/de/index.md` would land on `/de/index`.
+    static func moveGermanIndexPageToLanguageRoot() -> Self {
+        step(named: "Move the German index page to /de") { context in
+            try context.mutatePage(at: "de/index") { $0.path = "de" }
+        }
+    }
+
+    /// GitHub Pages only serves its error page from `/404.html`, while Publish writes every
+    /// location as `<path>/index.html`.
+    static func moveNotFoundPageToRoot() -> Self {
+        step(named: "Move the 404 page to /404.html") { context in
+            let generated = try context.outputFile(at: "404/index.html")
+            try context.createOutputFile(at: "404.html").write(generated.readAsString())
+            try context.outputFolder(at: "404").delete()
+        }
+    }
+}
