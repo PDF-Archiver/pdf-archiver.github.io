@@ -1,11 +1,53 @@
-/* Neutral scaffolding only — the visual design is a separate piece of work. */
+/* PDF Archiver — pdf-archiver.io
+   Deep navy bands against warm paper, with the filename as the one loud element. */
 
 :root {
-    --text: #222;
-    --muted: #666;
-    --accent: #d9334e;
-    --background: #fff;
-    --border: #e5e5e5;
+    color-scheme: light dark;
+
+    /* Brand: the navy of the app icon, the coral of the app's accent colour. */
+    --ink: #141c27;
+    --slate: #222d3c;
+    --paper: #fbf7f6;
+    --paper-sunk: #f3eae8;
+    --coral: #ca414f;
+    --coral-bright: #e66967;
+
+    --text: #23282f;
+    --text-soft: #5c626b;
+    --rule: #e6dbd8;
+
+    --on-dark: #eef1f5;
+    --on-dark-soft: #a2aebd;
+    --on-dark-rule: #33404f;
+
+    --surface: var(--paper);
+    --surface-sunk: var(--paper-sunk);
+    --accent: var(--coral);
+
+    --wrap: 72rem;
+    --wrap-narrow: 44rem;
+    --radius: clamp(1.25rem, 3vw, 2.25rem);
+    --band-space: clamp(4rem, 9vw, 7rem);
+
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* The dark band has to stay clearly darker than the ground, or the whole
+           band rhythm collapses in dark mode. */
+        --ink: #0c1017;
+        --slate: #1c2634;
+        --paper: #1e2833;
+        --paper-sunk: #263140;
+        --text: #e7ebf0;
+        --text-soft: #a3aebc;
+        --rule: #313c49;
+        --surface: var(--paper);
+        --surface-sunk: var(--paper-sunk);
+        --accent: var(--coral-bright);
+    }
 }
 
 *,
@@ -15,17 +57,41 @@
 }
 
 body {
-    margin: 0 auto;
-    padding: 1rem;
-    max-width: 48rem;
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-    line-height: 1.6;
+    margin: 0;
+    background: var(--surface);
     color: var(--text);
-    background: var(--background);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+p {
+    margin: 0 0 1.1em;
 }
 
 a {
     color: var(--accent);
+    text-underline-offset: 0.18em;
+}
+
+a:hover {
+    color: var(--coral-bright);
+}
+
+:focus-visible {
+    outline: 2px solid var(--coral-bright);
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
 img {
@@ -33,70 +99,576 @@ img {
     height: auto;
 }
 
-header,
-footer {
+code,
+kbd,
+pre {
+    font-family: var(--font-mono);
+}
+
+/* ---------- Layout ---------- */
+
+.wrap {
+    width: 100%;
+    max-width: var(--wrap);
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+.wrap.narrow {
+    max-width: var(--wrap-narrow);
+}
+
+.band {
+    padding-block: var(--band-space);
+}
+
+.band-paper {
+    background: var(--surface);
+}
+
+/* Adjacent paper bands would otherwise stack two full band paddings into one gap. */
+.band-paper + .band-paper {
+    padding-top: 0;
+}
+
+/* Dark bands are inset cards on the paper ground — the rounding is what gives the page
+   its rhythm when scrolling. */
+.band-dark {
+    background: var(--ink);
+    color: var(--on-dark);
+    border-radius: var(--radius);
+    margin-inline: clamp(0px, 1.5vw, 1rem);
+}
+
+.band-dark h1,
+.band-dark h2,
+.band-dark h3 {
+    color: #fff;
+}
+
+/* Buttons carry their own colour — excluding them here keeps `.button` from being
+   overridden by this more specific rule. */
+.band-dark a:not(.button) {
+    color: var(--coral-bright);
+}
+
+/* The deeper brand red goes muddy on navy, so the button takes the app's accent there. */
+.band-dark .button {
+    background: var(--coral-bright);
+    color: var(--ink);
+}
+
+.band-dark .button:hover {
+    background: #fff;
+    color: var(--ink);
+}
+
+.band-dark .button-ghost {
+    background: transparent;
+    color: #fff;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+    padding-block: 1.1rem;
+}
+
+.site-header-inner {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem 0;
-}
-
-header {
-    border-bottom: 1px solid var(--border);
-}
-
-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
+    gap: clamp(1rem, 4vw, 2.5rem);
+    flex-wrap: wrap;
 }
 
 .site-name {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.55rem;
     font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+    color: var(--text);
     text-decoration: none;
 }
 
-nav ul,
-footer ul {
+.site-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+}
+
+.site-nav {
+    margin-inline-start: auto;
+}
+
+.site-nav ul,
+.language-switcher,
+.footer-links,
+.help-links,
+.chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    gap: 0.4rem 1.4rem;
 }
 
-[aria-current="page"] {
-    color: var(--muted);
+.site-nav a {
+    color: var(--text-soft);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.site-nav a:hover {
+    color: var(--accent);
+}
+
+.nav-cta {
+    color: var(--accent) !important;
+    font-weight: 600;
+}
+
+.language-nav ul {
+    gap: 0.6rem;
+    font-size: 0.9rem;
+}
+
+.language-switcher a {
+    color: var(--text-soft);
     text-decoration: none;
 }
 
-section {
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--border);
+.language-switcher [aria-current="page"] {
+    color: var(--text);
+    font-weight: 600;
 }
 
-blockquote {
-    margin: 0;
-    font-style: italic;
+/* ---------- Hero ---------- */
+
+.hero {
+    padding-block: clamp(3.5rem, 9vw, 6.5rem);
 }
 
-.features,
-.testimonials ul {
+.hero-inner {
+    max-width: 54rem;
+}
+
+.hero-title {
+    font-size: clamp(2.75rem, 7.5vw, 5.25rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+}
+
+.hero-lead {
+    margin-top: 1.4rem;
+    max-width: 34em;
+    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+    line-height: 1.45;
+    color: var(--on-dark-soft);
+}
+
+.trust-line {
+    margin: 1.5rem 0 0;
+    font-size: 0.92rem;
+    color: var(--on-dark-soft);
+}
+
+/* The Mastodon verification link has to be in the markup, not on display. */
+.verify-link {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+    display: inline-block;
+    padding: 0.85rem 1.6rem;
+    border-radius: 999px;
+    background: var(--coral);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.button:hover {
+    background: var(--coral-bright);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.button-ghost {
+    background: transparent;
+    color: #fff;
+    box-shadow: inset 0 0 0 1.5px var(--on-dark-rule);
+}
+
+.button-ghost:hover {
+    background: var(--slate);
+    color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .button {
+        transition: none;
+    }
+
+    .button:hover {
+        transform: none;
+    }
+}
+
+/* ---------- Workflow steps ---------- */
+
+.steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 1.5rem;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+}
+
+.step-title {
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+}
+
+.band-dark .step-title {
+    color: var(--coral-bright);
+}
+
+.step-lead {
+    margin: 0.7rem 0 1rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.step p:last-child {
+    margin-bottom: 0;
+}
+
+.step p,
+.keep-body p {
+    color: var(--text-soft);
+}
+
+.band-dark .keep-body p {
+    color: var(--on-dark-soft);
+}
+
+.chips {
+    margin-top: 1.2rem;
+    gap: 0.5rem;
+}
+
+.chips code {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    background: var(--surface-sunk);
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+/* ---------- Keep it: the filename, taken apart ---------- */
+
+.keep-inner {
+    max-width: 58rem;
+}
+
+.filename {
+    margin: 2.5rem 0;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    background: var(--slate);
+    border-radius: calc(var(--radius) / 1.6);
+    overflow-x: auto;
+}
+
+.filename-line {
+    display: flex;
+    align-items: flex-start;
+    font-family: var(--font-mono);
+    font-size: clamp(0.95rem, 2.1vw, 1.45rem);
+    white-space: nowrap;
+}
+
+.filename-part {
+    display: flex;
+    flex-direction: column;
+}
+
+.filename-value {
+    font-weight: 600;
+}
+
+/* The label hangs under its part on a rule, so the name reads as one string but its three
+   fields stay separable. */
+.filename-label {
+    margin-top: 0.6rem;
+    padding-top: 0.4rem;
+    border-top: 1.5px solid currentcolor;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+.part-date {
+    color: var(--on-dark-soft);
+}
+
+.part-desc {
+    color: #fff;
+}
+
+/* Tags are coral here and in the search chips above — same colour, same idea. */
+.part-tags {
+    color: var(--coral-bright);
+}
+
+.filename-sep {
+    color: #6b7787;
+}
+
+.filename-ext {
+    align-self: flex-start;
+}
+
+.tree {
+    margin: 0;
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+    background: var(--slate);
+    border-radius: calc(var(--radius) / 1.6);
+    color: var(--on-dark-soft);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    overflow-x: auto;
+}
+
+/* ---------- Promises ---------- */
+
+.section-title {
+    font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+}
+
+.promises {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: clamp(1.75rem, 4vw, 2.75rem);
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.promises h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.promises p {
+    margin: 0.5rem 0 0;
+    color: var(--text-soft);
+}
+
+/* ---------- Trial ---------- */
+
+.trial {
+    padding: clamp(2rem, 5vw, 3.5rem);
+    background: var(--surface-sunk);
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.trial-lead {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.trial p:not(.trial-lead) {
+    max-width: 34em;
+    margin-inline: auto;
+    color: var(--text-soft);
+}
+
+.trial-note {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* ---------- Testimonials ---------- */
+
+.testimonials {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 2rem);
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+}
+
+.testimonials figure {
+    height: 100%;
+    margin: 0;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    background: var(--surface-sunk);
+    border-radius: calc(var(--radius) / 1.4);
+}
+
+.testimonials blockquote {
+    margin: 0;
+}
+
+.testimonials p {
+    margin: 0;
+    font-size: 0.98rem;
+}
+
+.testimonials figcaption {
+    margin-top: 1.1rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--accent);
+}
+
+/* ---------- Help ---------- */
+
+.help .button-ghost {
+    margin-top: 0.5rem;
+}
+
+.help-fallback {
+    margin-top: 2rem;
+    color: var(--on-dark-soft);
+}
+
+.help-links {
+    gap: 0.5rem 1.4rem;
+    font-size: 0.95rem;
+}
+
+/* ---------- Prose pages ---------- */
+
+.prose h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.prose h2 {
+    margin-top: 2.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.prose h3 {
+    margin-top: 1.75rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.prose ul,
+.prose ol {
+    padding-inline-start: 1.3rem;
+}
+
+.prose li {
+    margin-bottom: 0.4rem;
+}
+
+.prose pre {
+    padding: 1rem 1.25rem;
+    background: var(--surface-sunk);
+    border-radius: 0.75rem;
+    font-size: 0.85rem;
+    overflow-x: auto;
+}
+
+.prose :not(pre) > code {
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    background: var(--surface-sunk);
+    font-size: 0.9em;
+}
+
+.prose kbd {
+    padding: 0.15em 0.45em;
+    border: 1px solid var(--rule);
+    border-bottom-width: 2px;
+    border-radius: 5px;
+    background: var(--surface-sunk);
+    font-size: 0.85em;
+}
+
+.prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.prose th,
+.prose td {
+    padding: 0.55rem 0.75rem;
+    border-bottom: 1px solid var(--rule);
+    text-align: start;
+}
+
+.faq-entry {
+    padding-top: 2.25rem;
+    border-top: 1px solid var(--rule);
+    margin-top: 2.25rem;
+}
+
+.faq-entry h2 {
+    margin-top: 0;
+    scroll-margin-top: 1.5rem;
+}
+
+.changelog {
     padding: 0;
     list-style: none;
 }
 
-.testimonials img {
-    max-width: 5rem;
-    border-radius: 50%;
+.changelog li {
+    padding-block: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    padding-block: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--text-soft);
+    font-size: 0.92rem;
+}
+
+.footer-links {
+    gap: 0.5rem 1.4rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+.footer-links a {
+    color: var(--text-soft);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.no-tracking,
+.copyright {
+    margin: 0.35rem 0;
 }
