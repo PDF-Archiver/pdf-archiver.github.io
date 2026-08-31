@@ -17,7 +17,7 @@ struct PDFArchiverWebsite: Website {
     let name = "PDF Archiver"
     let description = "Scan it. Tag it. Find it."
     let language: Language = .english
-    var imagePath: Path? { "assets/img/opengraph-preview.png" }
+    var imagePath: Path? { "assets/img/opengraph-preview.jpg" }
     // The full icon set is declared in the document head, so Publish must not add a second one.
     var favicon: Favicon? { nil }
     var tagHTMLConfig: TagHTMLConfiguration? { nil }
