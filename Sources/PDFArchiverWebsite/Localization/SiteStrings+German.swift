@@ -26,7 +26,7 @@ extension SiteStrings {
         steps: [
             Step(
                 tag: "1",
-                title: "Scan it.",
+                title: "Scan\u{00A0}it.",
                 lead: "Halte dein iPhone über die Seite.",
                 body: """
                 Der Scan landet zugeschnitten und gerade in deiner Inbox. Die Texterkennung läuft \
@@ -35,7 +35,7 @@ extension SiteStrings {
             ),
             Step(
                 tag: "2",
-                title: "Tag it.",
+                title: "Tag\u{00A0}it.",
                 lead: "Datum, Beschreibung, Tags.",
                 body: """
                 Apple Intelligence schlägt dir alle drei vor, auf dem Gerät. Am Mac springst du \
@@ -45,7 +45,7 @@ extension SiteStrings {
             ),
             Step(
                 tag: "3",
-                title: "Find it.",
+                title: "Find\u{00A0}it.",
                 lead: "Such nach einem Tag oder dem Text im Dokument.",
                 body: """
                 Das funktioniert in PDF Archiver, in Spotlight, im Finder und in jedem \
@@ -69,7 +69,7 @@ extension SiteStrings {
         spotlightImagePath: "/assets/img/screenshots/archive-iphone-de.png",
         spotlightImageAlt: "Das Archiv von PDF Archiver auf einem iPhone, mit Dokumenten samt Datum und Tags",
 
-        keepTitle: "Keep it.",
+        keepTitle: "Keep\u{00A0}it.",
         keepLead: """
         Dein Archiv ist ein Ordner voller PDFs, nach Jahren sortiert. Das ist der Dateiname von \
         oben, zur Ruhe gekommen.

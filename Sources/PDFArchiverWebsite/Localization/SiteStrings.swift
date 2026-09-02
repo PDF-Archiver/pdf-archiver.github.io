@@ -2,6 +2,9 @@
 ///
 /// Page titles and body copy of the content pages are not in here — they live in the front matter
 /// and body of the Markdown files.
+///
+/// Every beat of the claim — `Scan it.`, `Tag it.`, `Find it.`, `Keep it.` — holds a non-breaking
+/// space before `it.`, so a narrow column can never split one across two lines.
 struct SiteStrings {
     /// One of the three steps the workflow section is built from.
     struct Step {
@@ -56,8 +59,8 @@ struct SiteStrings {
 
     let heroEyebrow: String
     /// The claim is not translated. Its last beat is set in the accent colour.
-    let heroTitleLead = "Scan it. Tag it."
-    let heroTitleAccent = "Find it."
+    let heroTitleLead = "Scan\u{00A0}it. Tag\u{00A0}it."
+    let heroTitleAccent = "Find\u{00A0}it."
     let heroLead: String
     let heroSecondaryCTA: String
     let trustLine: String
