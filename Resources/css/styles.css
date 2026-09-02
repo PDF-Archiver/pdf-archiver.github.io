@@ -2,6 +2,24 @@
    Warm paper throughout, one dark card for "Keep it.", and the filename as the page's
    signature: typed out in the hero, at rest at the end, its separators reused as dividers. */
 
+/* Charter, Matthew Carter's 1987 text face. Bitstream gave it to the X Consortium for any use;
+   its licence has to travel with the files, so it sits next to them as charter-license.txt. */
+@font-face {
+    font-family: Charter;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/fonts/charter-regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: Charter;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/assets/fonts/charter-bold.woff2") format("woff2");
+}
+
 :root {
     color-scheme: light dark;
 
@@ -23,6 +41,7 @@
 
 
     --wrap: 72rem;
+    --font-heading: Charter, Georgia, "Times New Roman", serif;
     --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
@@ -63,6 +82,7 @@ h1,
 h2,
 h3 {
     margin: 0;
+    font-family: var(--font-heading);
     line-height: 1.08;
     letter-spacing: -0.02em;
     text-wrap: balance;
