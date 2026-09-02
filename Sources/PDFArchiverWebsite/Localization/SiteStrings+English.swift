@@ -26,7 +26,7 @@ extension SiteStrings {
         steps: [
             Step(
                 tag: "1",
-                title: "Scan it.",
+                title: "Scan\u{00A0}it.",
                 lead: "Point your iPhone at the page.",
                 body: """
                 The scan lands in your inbox, cropped and straight. Text recognition runs on your \
@@ -35,7 +35,7 @@ extension SiteStrings {
             ),
             Step(
                 tag: "2",
-                title: "Tag it.",
+                title: "Tag\u{00A0}it.",
                 lead: "Date, description, tags.",
                 body: """
                 Apple Intelligence suggests all three, on your device. On the Mac, ↹ moves \
@@ -45,7 +45,7 @@ extension SiteStrings {
             ),
             Step(
                 tag: "3",
-                title: "Find it.",
+                title: "Find\u{00A0}it.",
                 lead: "Search a tag, or the text inside.",
                 body: """
                 It works in PDF Archiver, in Spotlight, in the Finder, and in whatever file \
@@ -69,7 +69,7 @@ extension SiteStrings {
         spotlightImagePath: "/assets/img/screenshots/archive-iphone-en.png",
         spotlightImageAlt: "The PDF Archiver archive on an iPhone, listing documents with their dates and tags",
 
-        keepTitle: "Keep it.",
+        keepTitle: "Keep\u{00A0}it.",
         keepLead: """
         Your archive is a folder of PDFs, sorted by year. This is the filename from above, at rest.
         """,
