@@ -66,8 +66,18 @@ extension SiteStrings {
             Download-Ordner.
             """
         ],
-        spotlightImagePath: "/assets/img/screenshots/archive-iphone-de.png",
-        spotlightImageAlt: "Das Archiv von PDF Archiver auf einem iPhone, mit Dokumenten samt Datum und Tags",
+        spotlightShots: [
+            Screenshot(
+                device: "mac",
+                path: "/assets/img/screenshots/tagging-mac-de.png",
+                alt: "Ein gescannter Beleg wird am Mac getaggt: das Dokument neben Datum, Beschreibung und Tags"
+            ),
+            Screenshot(
+                device: "iphone",
+                path: "/assets/img/screenshots/archive-iphone-de.png",
+                alt: "Dasselbe Archiv auf einem iPhone, mit Dokumenten samt Datum und Tags"
+            )
+        ],
 
         keepTitle: "Keep\u{00A0}it.",
         keepLead: """

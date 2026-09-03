@@ -136,19 +136,21 @@ private extension Node where Context == HTML.BodyContext {
                 .div(
                     .class("spotlight"),
                     .div(
+                        .class("spotlight-copy"),
                         .h3(.class("spotlight-title"), .text(strings.spotlightTitle)),
                         .forEach(strings.spotlightBody) { .p(.text($0)) }
                     ),
-                    .img(
-                        .class("spotlight-shot"),
-                        .src(strings.spotlightImagePath),
-                        .alt(strings.spotlightImageAlt),
-                        // The intrinsic size of the screenshot: it reserves the box before the
-                        // image arrives, so the section below it does not jump.
-                        .attribute(named: "width", value: "1320"),
-                        .attribute(named: "height", value: "2868"),
-                        .attribute(named: "loading", value: "lazy"),
-                        .attribute(named: "decoding", value: "async")
+                    .div(
+                        .class("device-row"),
+                        .forEach(strings.spotlightShots) { shot in
+                            .img(
+                                .class("device-shot device-\(shot.device)"),
+                                .src(shot.path),
+                                .alt(shot.alt),
+                                .attribute(named: "loading", value: "lazy"),
+                                .attribute(named: "decoding", value: "async")
+                            )
+                        }
                     )
                 )
             )

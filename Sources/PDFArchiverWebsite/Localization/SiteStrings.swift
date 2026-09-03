@@ -36,6 +36,14 @@ struct SiteStrings {
         let body: String
     }
 
+    /// One capture in the spotlight's device row.
+    struct Screenshot {
+        /// Names the `.device-<value>` class the stylesheet sizes and rounds the shot by.
+        let device: String
+        let path: String
+        let alt: String
+    }
+
     struct Testimonial {
         let initials: String
         let source: String
@@ -72,8 +80,8 @@ struct SiteStrings {
 
     let spotlightTitle: String
     let spotlightBody: [String]
-    let spotlightImagePath: String
-    let spotlightImageAlt: String
+    /// Mac and iPhone, in the order the row puts them in.
+    let spotlightShots: [Screenshot]
 
     let keepTitle: String
     let keepLead: String
