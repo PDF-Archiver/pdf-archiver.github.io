@@ -80,7 +80,24 @@ icon/
   app-icon-dark.svg         App icon, dark
   app-icon-1024.png         App icon, light, 1024 px
   app-icon-dark-1024.png    App icon, dark, 1024 px
+
+screenshots/en/              English interface
+screenshots/de/              German interface
+  mac-archive.png           The archive, searched by tag
+  mac-tagging.png           A scanned receipt beside its date, description and tags
+  mac-document.png          A document open in the archive
+  ipad-archive.png          The archive on iPad
+  ipad-tagging.png          Tagging on iPad
+  ipad-inbox.png            The inbox of untagged scans
+  ipad-statistics.png       Documents per year and the most used tags
+  iphone-archive.png        The archive on iPhone
+  iphone-tagging.png        Tagging on iPhone
+  iphone-inbox.png          The inbox on iPhone
+  iphone-statistics.png     Statistics on iPhone
 ```
+
+Screenshots are unframed captures at full device resolution, so they can be placed in a
+device frame or cropped as needed.
 
 ---
 

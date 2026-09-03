@@ -82,7 +82,24 @@ icon/
   app-icon-dark.svg         App-Icon, dunkel
   app-icon-1024.png         App-Icon, hell, 1024 px
   app-icon-dark-1024.png    App-Icon, dunkel, 1024 px
+
+screenshots/de/              Deutsche Oberfläche
+screenshots/en/              Englische Oberfläche
+  mac-archive.png           Das Archiv, nach einem Tag durchsucht
+  mac-tagging.png           Ein gescannter Beleg neben Datum, Beschreibung und Tags
+  mac-document.png          Ein geöffnetes Dokument im Archiv
+  ipad-archive.png          Das Archiv auf dem iPad
+  ipad-tagging.png          Taggen auf dem iPad
+  ipad-inbox.png            Der Eingang mit noch ungetaggten Scans
+  ipad-statistics.png       Dokumente pro Jahr und die häufigsten Tags
+  iphone-archive.png        Das Archiv auf dem iPhone
+  iphone-tagging.png        Taggen auf dem iPhone
+  iphone-inbox.png          Der Eingang auf dem iPhone
+  iphone-statistics.png     Statistiken auf dem iPhone
 ```
+
+Die Screenshots sind ungerahmte Aufnahmen in voller Geräteauflösung und lassen sich damit
+frei in einen Geräterahmen setzen oder beschneiden.
 
 ---
 
