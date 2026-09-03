@@ -1,6 +1,6 @@
 ---
 title: Datenschutzerklärung
-description: Wie PDF Archiver mit deinen Daten umgeht: Dokumente bleiben auf deinem Gerät, es gibt kein Konto und keinen PDF-Archiver-Server.
+description: Wie PDF Archiver mit deinen Daten umgeht: Dokumente bleiben auf deinem Gerät, es gibt kein Konto und keinen PDF-Archiver-Server.
 ---
 
 ## 1. Datenschutz auf einen Blick
@@ -23,7 +23,7 @@ Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Komm
 
 ### Log-Daten/Absturz-Berichte
 
-Der Provider der Seiten/PDF Archiver/PDF Archive Viewer erheben und speichern Informationen in so genannten Log-Daten bzw. Crash-Reports, die Ihr Browser/die App an Sentry übermittelt. Dies sind:
+Der Provider der Seiten/PDF Archiver/PDF Archive Viewer erheben und speichern Informationen in so genannten Log-Daten bzw. Crash-Reports, die Ihr Browser/die App an Sentry übermittelt. Dies sind:
 
 - Browsertyp und Browserversion
 - Gerätename

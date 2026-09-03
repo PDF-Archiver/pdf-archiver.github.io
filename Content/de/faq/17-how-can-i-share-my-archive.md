@@ -5,7 +5,7 @@ title: Wie kann ich meinen Archiv-Ordner teilen?
 Über iCloud Drive:
 
 1. Lege einen neuen Ordner in iCloud Drive an und teile ihn.
-2. Gehe in PDF Archiver zu **Einstellungen → Speicherort → Ordner auswählen**.
+2. Gehe in PDF Archiver zu **Einstellungen → Speicherort → Ordner auswählen**.
 3. Wähle den geteilten Ordner aus.
 
 Der Inhalt deines Archivs wird in den neuen Ordner verschoben.

@@ -1,7 +1,7 @@
 extension SiteStrings {
     static let german = SiteStrings(
-        siteTitle: "PDF Archiver",
-        homeTitle: "PDF Archiver — Dokumente scannen und archivieren auf Mac und iPhone",
+        siteTitle: "PDF\u{00A0}Archiver",
+        homeTitle: "PDF\u{00A0}Archiver — Dokumente scannen und archivieren auf Mac und iPhone",
         selectLanguage: "Sprache auswählen",
         navigationLabel: "Hauptnavigation",
         germanName: "Deutsch",
@@ -48,7 +48,7 @@ extension SiteStrings {
                 title: "Find\u{00A0}it.",
                 lead: "Such nach einem Tag oder dem Text im Dokument.",
                 body: """
-                Das funktioniert in PDF Archiver, in Spotlight, im Finder und in jedem \
+                Das funktioniert in PDF\u{00A0}Archiver, in Spotlight, im Finder und in jedem \
                 Dateimanager, den du gerade offen hast.
                 """
             )
@@ -155,7 +155,7 @@ extension SiteStrings {
                 initials: "SA",
                 source: "Sir Apfelot",
                 statement: """
-                Mit dem PDF Archiver habe ich es endlich geschafft, ein bisschen Ordnung und \
+                Mit dem PDF\u{00A0}Archiver habe ich es endlich geschafft, ein bisschen Ordnung und \
                 Struktur in meine PDF-Sammlung mit Belegen, Verträgen und anderen Dokumenten zu \
                 bringen, die ich seit 2014 aufgebaut habe.
                 """
@@ -165,7 +165,7 @@ extension SiteStrings {
                 source: "Jörg P.",
                 statement: """
                 Bis jetzt lagen alle PDFs mit kryptischen Dateinamen in einem einzigen Ordner. Mit \
-                Hilfe von PDF Archiver habe ich endlich meine Buchhaltung strukturieren können.
+                Hilfe von PDF\u{00A0}Archiver habe ich endlich meine Buchhaltung strukturieren können.
                 """
             )
         ],

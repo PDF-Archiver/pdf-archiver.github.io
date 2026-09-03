@@ -5,7 +5,7 @@ title: How can I share my archive folder?
 You can share your archive through iCloud Drive:
 
 1. Create a new folder in iCloud Drive and share it.
-2. In PDF Archiver, go to **Settings → Storage → Select Folder**.
+2. In PDF Archiver, go to **Settings → Storage → Select Folder**.
 3. Choose the shared folder.
 
 The contents of your archive are moved to the new folder.

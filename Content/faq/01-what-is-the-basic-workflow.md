@@ -2,7 +2,7 @@
 title: What is the basic workflow?
 ---
 
-- Open PDF Archiver.
+- Open PDF Archiver.
 - Choose where your archive lives: **Settings → Storage** (iCloud Drive, a local folder, or a folder you pick).
 - Open the **Inbox** tab to see untagged documents.
 - Add documents with the camera or by importing files.

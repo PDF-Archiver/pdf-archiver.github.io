@@ -86,12 +86,12 @@ private extension SiteLanguage {
         switch self {
         case .english:
             return """
-            PDF Archiver scans, tags and archives your documents as searchable PDFs — entirely on \
+            PDF\u{00A0}Archiver scans, tags and archives your documents as searchable PDFs — entirely on \
             your Mac, iPhone or iPad. Open source, no cloud required. Two weeks free.
             """
         case .german:
             return """
-            PDF Archiver scannt, taggt und archiviert deine Dokumente als durchsuchbare PDFs — \
+            PDF\u{00A0}Archiver scannt, taggt und archiviert deine Dokumente als durchsuchbare PDFs — \
             komplett auf deinem Gerät. Open Source, ohne Cloud-Zwang. Zwei Wochen gratis.
             """
         }
