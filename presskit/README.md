@@ -1,13 +1,13 @@
-# PDF Archiver — Press Kit
+# PDF Archiver — Press Kit
 
-Everything in this kit may be used freely in editorial coverage of PDF Archiver.
+Everything in this kit may be used freely in editorial coverage of PDF Archiver.
 Questions, review copies and additional material: **press@pdf-archiver.io**
 
 ---
 
 ## In one paragraph
 
-PDF Archiver scans, tags and archives documents on Mac, iPhone and iPad. Date, description and
+PDF Archiver scans, tags and archives documents on Mac, iPhone and iPad. Date, description and
 tags are written into the filename, so an archive stays searchable in the Finder or through
 Spotlight — with or without the app. Text recognition and suggestions run entirely on the device.
 Open source, built and maintained by one developer since 2018.
@@ -18,7 +18,7 @@ Open source, built and maintained by one developer since 2018.
 
 | | |
 |---|---|
-| Name | PDF Archiver |
+| Name | PDF Archiver |
 | Developer | Julian Kahnert |
 | Category | Productivity / document management |
 | Platforms | iPhone, iPad (iOS 18+), Mac (macOS 15.6+) |
@@ -35,10 +35,10 @@ Open source, built and maintained by one developer since 2018.
 
 ## What it does
 
-**In one sentence:** PDF Archiver turns a pile of scans into an archive that stays searchable
+**In one sentence:** PDF Archiver turns a pile of scans into an archive that stays searchable
 even without the app.
 
-**How it works:** You scan a document or drop in a PDF. PDF Archiver recognizes the text on your
+**How it works:** You scan a document or drop in a PDF. PDF Archiver recognizes the text on your
 device and suggests a date, a description and tags. You confirm, and the file is renamed —
 `2026-03-12--electricity-bill__energy_bill.pdf` — and filed into a folder sorted by year.
 
@@ -55,7 +55,7 @@ who wants order without handing those documents to a cloud service.
 ## About the developer
 
 Julian Kahnert is a software developer working in Swift and, on the infrastructure side, with
-Kubernetes and Helm. He started PDF Archiver in 2018 out of his own need: a document archive that
+Kubernetes and Helm. He started PDF Archiver in 2018 out of his own need: a document archive that
 would still be readable in ten years, without depending on a database, a subscription, or a
 company staying in business. He has built and maintained the app in his spare time ever since.
 Besides programming, he is interested in podcasts, music and cooking.
@@ -100,6 +100,6 @@ icon/
 
 ## Usage
 
-App icon, screenshots and the wordmark may be used freely in editorial coverage of PDF Archiver.
-Please do not alter the icon or the wordmark. The app is called "PDF Archiver" — please keep the
+App icon, screenshots and the wordmark may be used freely in editorial coverage of PDF Archiver.
+Please do not alter the icon or the wordmark. The app is called "PDF Archiver" — please keep the
 spelling.

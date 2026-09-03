@@ -2,7 +2,7 @@
 title: Wie sieht der grundsätzliche Ablauf aus?
 ---
 
-- Öffne PDF Archiver.
+- Öffne PDF Archiver.
 - Lege fest, wo dein Archiv liegt: **Einstellungen → Speicherort** (iCloud Drive, ein lokaler Ordner oder ein Ordner deiner Wahl).
 - Öffne den Tab **Inbox**, dort stehen die ungetaggten Dokumente.
 - Füge Dokumente per Kamera oder Dateiimport hinzu.

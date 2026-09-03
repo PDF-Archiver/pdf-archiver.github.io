@@ -2,7 +2,7 @@
 title: Wie sichere ich meine Dokumente?
 ---
 
-**PDF Archiver ist keine Backup-Lösung.** Die App bringt Ordnung in deine Dokumente, sie legt sie aber nirgends sicher ab. Festplatten fallen aus, Dateien werden versehentlich gelöscht, Ransomware gibt es auch. Mach Backups.
+**PDF Archiver ist keine Backup-Lösung.** Die App bringt Ordnung in deine Dokumente, sie legt sie aber nirgends sicher ab. Festplatten fallen aus, Dateien werden versehentlich gelöscht, Ransomware gibt es auch. Mach Backups.
 
 Wir empfehlen die **3-2-1-Regel**:
 

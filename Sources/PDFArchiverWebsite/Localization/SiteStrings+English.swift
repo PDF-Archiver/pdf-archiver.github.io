@@ -1,7 +1,7 @@
 extension SiteStrings {
     static let english = SiteStrings(
-        siteTitle: "PDF Archiver",
-        homeTitle: "PDF Archiver — scan and archive documents on Mac and iPhone",
+        siteTitle: "PDF\u{00A0}Archiver",
+        homeTitle: "PDF\u{00A0}Archiver — scan and archive documents on Mac and iPhone",
         selectLanguage: "Select language",
         navigationLabel: "Main navigation",
         germanName: "Deutsch",
@@ -48,7 +48,7 @@ extension SiteStrings {
                 title: "Find\u{00A0}it.",
                 lead: "Search a tag, or the text inside.",
                 body: """
-                It works in PDF Archiver, in Spotlight, in the Finder, and in whatever file \
+                It works in PDF\u{00A0}Archiver, in Spotlight, in the Finder, and in whatever file \
                 manager you happen to open.
                 """
             )
@@ -114,7 +114,7 @@ extension SiteStrings {
         promises: [
             Promise(
                 title: "Everything stays on your device.",
-                body: "There is no PDF Archiver server to send documents to."
+                body: "There is no PDF\u{00A0}Archiver server to send documents to."
             ),
             Promise(
                 title: "No account.",
@@ -154,7 +154,7 @@ extension SiteStrings {
                 initials: "SA",
                 source: "Sir Apfelot",
                 statement: """
-                With the PDF Archiver I have finally managed to bring some order and structure to \
+                With the PDF\u{00A0}Archiver I have finally managed to bring some order and structure to \
                 my PDF collection with documents, contracts and other documents that I have been \
                 building since 2014.
                 """
@@ -164,7 +164,7 @@ extension SiteStrings {
                 source: "Jörg P.",
                 statement: """
                 Until now, all PDFs with cryptic file names were stored in a single folder. With \
-                the help of PDF Archiver I have finally been able to structure my accounting.
+                the help of PDF\u{00A0}Archiver I have finally been able to structure my accounting.
                 """
             )
         ],

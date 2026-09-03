@@ -1,6 +1,6 @@
 ---
 title: Impressum
-description: Wer hinter PDF Archiver steht: Betreiber von pdf-archiver.io mit Anschrift und Kontaktdaten.
+description: Wer hinter PDF Archiver steht: Betreiber von pdf-archiver.io mit Anschrift und Kontaktdaten.
 ---
 
 ## Angaben gemäß § 5 TMG:

@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-description: How PDF Archiver handles your data: documents stay on your device, there is no account and no PDF Archiver server to send them to.
+description: How PDF Archiver handles your data: documents stay on your device, there is no account and no PDF Archiver server to send them to.
 ---
 
 ## 1. An overview of data protection
@@ -23,7 +23,7 @@ Please note that data transmitted via the internet (e.g. via email communication
 
 ### Log Data/Crash Reports
 
-The website provider/PDF Archiver/PDF Archive Viewer collect and store information that your browser/the app transmits to Sentry in "log files" or crash reports. These are:
+The website provider/PDF Archiver/PDF Archive Viewer collect and store information that your browser/the app transmits to Sentry in "log files" or crash reports. These are:
 
 - Browser type and browser version
 - Device name

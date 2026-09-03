@@ -2,7 +2,7 @@
 title: How do I back up my documents?
 ---
 
-**PDF Archiver is not a backup solution.** It organizes your documents; it does not copy them anywhere safe. Hardware fails, files get deleted by accident, ransomware happens. Keep backups.
+**PDF Archiver is not a backup solution.** It organizes your documents; it does not copy them anywhere safe. Hardware fails, files get deleted by accident, ransomware happens. Keep backups.
 
 We recommend the **3-2-1 strategy**:
 
