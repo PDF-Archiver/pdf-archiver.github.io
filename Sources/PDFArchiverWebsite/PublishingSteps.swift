@@ -16,6 +16,10 @@ extension PublishingStep where Site == PDFArchiverWebsite {
             let root = try context.folder(at: "")
             let destination = try context.outputFolder(at: "").path + "presskit.zip"
 
+            // `zip` adds to an archive that already exists, and `Output/` survives a local build,
+            // so a file deleted from `presskit/` would otherwise stay in the kit forever.
+            try? FileManager.default.removeItem(atPath: destination)
+
             let zip = Process()
             zip.executableURL = URL(fileURLWithPath: "/usr/bin/zip")
             // -X drops the resource forks and __MACOSX entries the Finder would add.
