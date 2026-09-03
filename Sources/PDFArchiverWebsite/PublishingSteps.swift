@@ -16,10 +16,15 @@ extension PublishingStep where Site == PDFArchiverWebsite {
             let root = try context.folder(at: "")
             let destination = try context.outputFolder(at: "").path + "presskit.zip"
 
+            // `zip` adds to an archive that already exists, and `Output/` survives a local build,
+            // so a file deleted from `presskit/` would otherwise stay in the kit forever.
+            try? FileManager.default.removeItem(atPath: destination)
+
             let zip = Process()
             zip.executableURL = URL(fileURLWithPath: "/usr/bin/zip")
-            // -X drops the resource forks and __MACOSX entries the Finder would add.
-            zip.arguments = ["-r", "-q", "-X", destination, "presskit"]
+            // -X drops the resource forks and __MACOSX entries the Finder would add; .DS_Store is
+            // git-ignored, so it only ever reaches the archive from a local build.
+            zip.arguments = ["-r", "-q", "-X", destination, "presskit", "-x", "*.DS_Store"]
             zip.currentDirectoryURL = URL(fileURLWithPath: root.path)
 
             try zip.run()
