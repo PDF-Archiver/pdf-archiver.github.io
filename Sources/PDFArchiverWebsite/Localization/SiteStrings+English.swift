@@ -66,8 +66,18 @@ extension SiteStrings {
             folder.
             """
         ],
-        spotlightImagePath: "/assets/img/screenshots/archive-iphone-en.png",
-        spotlightImageAlt: "The PDF Archiver archive on an iPhone, listing documents with their dates and tags",
+        spotlightShots: [
+            Screenshot(
+                device: "mac",
+                path: "/assets/img/screenshots/tagging-mac-en.png",
+                alt: "Tagging a scanned receipt on a Mac: the document beside its date, description and tags"
+            ),
+            Screenshot(
+                device: "iphone",
+                path: "/assets/img/screenshots/archive-iphone-en.png",
+                alt: "The same archive on an iPhone, listing documents with their dates and tags"
+            )
+        ],
 
         keepTitle: "Keep\u{00A0}it.",
         keepLead: """

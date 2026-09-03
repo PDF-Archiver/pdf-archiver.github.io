@@ -593,10 +593,10 @@ pre {
     border: 1px solid var(--rule);
     border-radius: 1.5rem;
     padding: clamp(2rem, 5vw, 3.5rem);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(2rem, 5vw, 3.5rem);
-    align-items: center;
+}
+
+.spotlight-copy {
+    max-width: 34em;
 }
 
 .spotlight-title {
@@ -613,25 +613,46 @@ pre {
     margin-bottom: 0;
 }
 
-@media (max-width: 800px) {
-    .spotlight {
-        grid-template-columns: 1fr;
-    }
+/* Window and phone standing on one line. At this size the silhouettes carry the section's
+   claim, not the pixels — so they are sized to be told apart, not to be read. */
+.device-row {
+    margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 2.25rem);
 }
 
-/* The screenshot is a bare capture, so the rounding and shadow give it its device edge.
-   Cropped from the top: the first rows of the archive carry the message. */
-.spotlight-shot {
-    width: 100%;
-    max-width: 22rem;
-    max-height: 30rem;
-    margin-inline: auto;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 1.5rem;
+/* Bare captures: the rounding and the shadow are what give them a device edge. The
+   aspect ratio holds the box before the image arrives, so the section below cannot jump. */
+.device-shot {
+    height: auto;
     box-shadow: 0 30px 60px -30px rgba(20, 28, 39, 0.5);
-    /* The crop would otherwise cut a row in half; fading it out reads as "the list goes on". */
-    mask-image: linear-gradient(to bottom, #000 80%, transparent);
+}
+
+/* The capture carries the window's own squircle corners as alpha, which a circular radius can
+   never match — so the radius here only shapes the shadow, and the corners come from the file. */
+.device-mac {
+    width: 58%;
+    aspect-ratio: 1440 / 900;
+    border-radius: 1.15rem;
+}
+
+.device-iphone {
+    width: 18%;
+    aspect-ratio: 630 / 1368;
+    border-radius: 1rem;
+}
+
+/* Narrow enough that the pair would shrink out of recognition; they take more of the row. */
+@media (max-width: 700px) {
+    .device-mac {
+        width: 66%;
+    }
+
+    .device-iphone {
+        width: 21%;
+    }
 }
 
 /* ---------- Keep it: the arc closes, same filename, at rest ---------- */
