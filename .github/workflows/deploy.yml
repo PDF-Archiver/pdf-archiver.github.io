@@ -22,7 +22,11 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
+      # Without `lfs`, checkout writes pointer files: `Resources/` would be copied to the site
+      # verbatim as text, the press kit would zip text, and the build would still pass.
       - uses: actions/checkout@v7
+        with:
+          lfs: true
 
       - uses: actions/cache@v6
         with:
