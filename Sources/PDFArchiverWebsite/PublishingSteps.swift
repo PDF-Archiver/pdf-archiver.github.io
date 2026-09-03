@@ -22,8 +22,9 @@ extension PublishingStep where Site == PDFArchiverWebsite {
 
             let zip = Process()
             zip.executableURL = URL(fileURLWithPath: "/usr/bin/zip")
-            // -X drops the resource forks and __MACOSX entries the Finder would add.
-            zip.arguments = ["-r", "-q", "-X", destination, "presskit"]
+            // -X drops the resource forks and __MACOSX entries the Finder would add; .DS_Store is
+            // git-ignored, so it only ever reaches the archive from a local build.
+            zip.arguments = ["-r", "-q", "-X", destination, "presskit", "-x", "*.DS_Store"]
             zip.currentDirectoryURL = URL(fileURLWithPath: root.path)
 
             try zip.run()
