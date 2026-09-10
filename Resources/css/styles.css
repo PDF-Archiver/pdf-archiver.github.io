@@ -39,6 +39,13 @@
     --surface-sunk: var(--paper-sunk);
     --accent: var(--coral);
 
+    /* White on --coral-bright is 3.19:1, so the solid coral fills keep the darker coral in
+       both modes; --accent stays mode-dependent because it also paints text on paper. */
+    --accent-fill: var(--coral);
+    /* --accent on --paper-sunk is 4.05:1 in the light mode, just under SC 1.4.3. */
+    --accent-on-sunk: #b8394a;
+    /* The dark filename blocks stand free on light paper; on dark paper they need a line. */
+    --ink-edge: transparent;
 
     --wrap: 72rem;
     --font-heading: Charter, Georgia, "Times New Roman", serif;
@@ -53,8 +60,11 @@
         --card: #1c2531;
         --text: #e7ebf0;
         --text-soft: #a3aebc;
-        --rule: #2c3644;
+        /* 2.83:1 against --card: below this the hairline that makes a card a card is gone. */
+        --rule: #5a6a86;
         --accent: var(--coral-bright);
+        --accent-on-sunk: var(--coral-bright);
+        --ink-edge: var(--rule);
     }
 }
 
@@ -116,6 +126,25 @@ pre {
     font-family: var(--font-mono);
 }
 
+/* Off-screen until it takes focus, so the first Tab on any page skips the header. */
+.skip-link {
+    position: fixed;
+    top: -100%;
+    inset-inline-start: 1rem;
+    z-index: 40;
+    padding: 0.7rem 1.1rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.7rem;
+    background: var(--card);
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
 /* ---------- Layout ---------- */
 
 .wrap {
@@ -154,6 +183,12 @@ pre {
     text-align: center;
 }
 
+/* Both sections are jumped to from the navigation, past a header that stays on screen. */
+#features,
+#download {
+    scroll-margin-top: 5rem;
+}
+
 /* `margin-block`, not `margin`: a blanket reset would cancel the `margin-inline: auto`
    this element inherits from `.wrap` and push the divider off-centre. */
 .divider {
@@ -170,7 +205,7 @@ pre {
     gap: 0.5rem;
     padding: 0.9rem 1.7rem;
     border-radius: 999px;
-    background: var(--accent);
+    background: var(--accent-fill);
     color: #fff;
     font-weight: 600;
     text-decoration: none;
@@ -312,14 +347,14 @@ pre {
     display: inline-flex;
     align-items: center;
     line-height: 1;
-    background: var(--accent);
+    background: var(--accent-fill);
     color: #fff;
     padding: 0.55rem 1.2rem;
     border-radius: 999px;
 }
 
 .site-nav .nav-cta:hover {
-    background: var(--coral-bright);
+    background: color-mix(in srgb, var(--accent-fill) 85%, var(--ink));
     color: #fff;
 }
 
@@ -332,7 +367,12 @@ pre {
     font-size: 0.85rem;
 }
 
+/* SC 2.5.8 asks for 24 x 24 CSS px; the bare 0.85rem label is about 17 x 22. */
 .language-toggle a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding-inline: 0.4rem;
     color: var(--text-soft);
     text-decoration: none;
     font-weight: 500;
@@ -503,9 +543,43 @@ pre {
     animation-delay: 1.96s;
 }
 
+/* On a phone the card sits below the fold, so the timed reveal is over before anyone sees
+   it. `.sig-line-wrap` scrolls horizontally and would capture an anonymous `view()`, so the
+   timeline is named on the card instead. */
+@supports (animation-timeline: view()) {
+    @media (max-width: 720px) {
+        .sig-card {
+            view-timeline-name: --sig-card;
+        }
+
+        .sig-reveal {
+            animation-timeline: --sig-card;
+            animation-range: entry 10% entry 85%;
+        }
+
+        .sig-label {
+            animation-timeline: --sig-card;
+        }
+
+        .sig-date .sig-label {
+            animation-range: entry 35% entry 50%;
+        }
+
+        .sig-desc .sig-label {
+            animation-range: entry 65% entry 80%;
+        }
+
+        .sig-tags .sig-label {
+            animation-range: entry 80% entry 95%;
+        }
+    }
+}
+
+/* The separators are what the whole section explains, so they follow the body text
+   rather than a fixed grey that only happens to work in one mode. */
 .sig-sep,
 .sig-ext {
-    color: #b9c2cc;
+    color: var(--text-soft);
     align-self: flex-start;
 }
 
@@ -538,7 +612,7 @@ pre {
     font-family: var(--font-mono);
     font-size: 0.95rem;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--accent-on-sunk);
     background: var(--surface-sunk);
     border-radius: 50%;
     margin-bottom: 1.25rem;
@@ -576,7 +650,7 @@ pre {
     padding: 0.3rem 0.7rem;
     border-radius: 999px;
     background: var(--surface-sunk);
-    color: var(--accent);
+    color: var(--accent-on-sunk);
     font-size: 0.84rem;
 }
 
@@ -684,15 +758,23 @@ pre {
     margin: 2rem 0;
     padding: clamp(1.1rem, 3vw, 1.75rem);
     background: var(--ink);
+    border: 1px solid var(--ink-edge);
     border-radius: 1rem;
+}
+
+.filename-line-wrap {
+    min-width: 0;
     overflow-x: auto;
+    container-type: inline-size;
 }
 
 .filename-line {
     display: flex;
     align-items: flex-start;
     font-family: var(--font-mono);
-    font-size: clamp(0.9rem, 2vw, 1.35rem);
+    /* Same measure as the hero: against the block's real width, so a phone shows the tags
+       instead of cutting the name off at the description. */
+    font-size: clamp(0.5rem, calc(155cqw / var(--name-chars, 46)), 1.35rem);
     white-space: nowrap;
 }
 
@@ -731,13 +813,33 @@ pre {
 }
 
 .filename-sep {
-    color: #566073;
+    color: #7c8598;
+}
+
+/* The tree cannot shrink to fit — at 51 characters a phone would land near 8 px — so it
+   scrolls. iOS Safari shows no resting scrollbar, hence the fade: it ends in the block's own
+   background, invisible where nothing is cut off and a "continues" cue where something is. */
+.tree-wrap {
+    position: relative;
+}
+
+.tree-wrap::after {
+    content: "";
+    position: absolute;
+    inset-block: 1px;
+    inset-inline-end: 1px;
+    width: 2.5rem;
+    border-start-end-radius: 1rem;
+    border-end-end-radius: 1rem;
+    background: linear-gradient(to right, transparent, var(--ink));
+    pointer-events: none;
 }
 
 .tree {
     margin: 0;
     padding: clamp(1rem, 2.5vw, 1.4rem);
     background: var(--ink);
+    border: 1px solid var(--ink-edge);
     border-radius: 1rem;
     color: #a2aebd;
     font-size: 0.85rem;
@@ -775,7 +877,7 @@ pre {
     height: 34px;
     border-radius: 9px;
     background: var(--surface-sunk);
-    color: var(--accent);
+    color: var(--accent-on-sunk);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -829,7 +931,7 @@ pre {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--accent-fill);
     color: #fff;
     display: flex;
     align-items: center;
@@ -1008,6 +1110,12 @@ pre {
     border-bottom: 1px solid var(--rule);
 }
 
+.footer-links a,
+.help-links a {
+    display: inline-block;
+    padding-block: 0.35rem;
+}
+
 .footer-links a {
     color: var(--text-soft);
     text-decoration: none;
@@ -1022,8 +1130,21 @@ pre {
 }
 
 @media (max-width: 720px) {
-    .site-nav ul li:not(:has(.nav-cta)) {
+    /* Without the toggle there is no way to the other language: the footer carries none and
+       nothing redirects by Accept-Language. */
+    .site-nav ul li:not(:has(.nav-cta)):not(.language-toggle) {
         display: none;
+    }
+
+    /* Toggle and pill now share the row with the wordmark, which needs 333 px. Below that
+       the nav drops to a second line rather than pushing the page into horizontal scroll. */
+    .site-header-inner {
+        flex-wrap: wrap;
+        row-gap: 0.5rem;
+    }
+
+    .site-nav .nav-cta {
+        padding-inline: 0.9rem;
     }
 }
 

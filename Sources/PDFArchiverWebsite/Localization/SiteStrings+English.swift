@@ -1,5 +1,6 @@
 extension SiteStrings {
     static let english = SiteStrings(
+        skipToContent: "Skip to content",
         siteTitle: "PDF\u{00A0}Archiver",
         homeTitle: "PDF\u{00A0}Archiver — scan and archive documents on Mac and iPhone",
         selectLanguage: "Select language",
@@ -38,7 +39,7 @@ extension SiteStrings {
                 title: "Tag\u{00A0}it.",
                 lead: "Date, description, tags.",
                 body: """
-                Apple Intelligence suggests all three, on your device. On the Mac, ↹ moves \
+                Apple Intelligence suggests all three, on your device. On the Mac, ⇥ moves \
                 between fields — check them, press ⌘S, and the document is renamed and moved to \
                 your archive.
                 """
@@ -126,7 +127,8 @@ extension SiteStrings {
             ),
             Promise(
                 title: "Open source.",
-                body: "The code is on GitHub, if you want to check."
+                body: "The code is on GitHub, if you want to check.",
+                repositoryLinkText: "GitHub"
             ),
             Promise(
                 title: "Built since 2018.",
@@ -144,7 +146,7 @@ extension SiteStrings {
                 initials: "iF",
                 source: "iFun",
                 statement: """
-                The Mac app uses a simple file name convention, which simply notes keywords, data \
+                The Mac app uses a simple file name convention, which simply notes keywords, dates \
                 and descriptions in the file name of the documents and can therefore be used \
                 largely independently of the operating system, cloud provider and Mac or PC \
                 application.
@@ -155,7 +157,7 @@ extension SiteStrings {
                 source: "Sir Apfelot",
                 statement: """
                 With the PDF\u{00A0}Archiver I have finally managed to bring some order and structure to \
-                my PDF collection with documents, contracts and other documents that I have been \
+                my PDF collection with receipts, contracts and other documents that I have been \
                 building since 2014.
                 """
             ),
