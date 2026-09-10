@@ -1,5 +1,6 @@
 extension SiteStrings {
     static let german = SiteStrings(
+        skipToContent: "Zum Inhalt springen",
         siteTitle: "PDF\u{00A0}Archiver",
         homeTitle: "PDF\u{00A0}Archiver — Dokumente scannen und archivieren auf Mac und iPhone",
         selectLanguage: "Sprache auswählen",
@@ -39,7 +40,7 @@ extension SiteStrings {
                 lead: "Datum, Beschreibung, Tags.",
                 body: """
                 Apple Intelligence schlägt dir alle drei vor, auf dem Gerät. Am Mac springst du \
-                mit ↹ durch die Felder — prüfen, ⌘S drücken, und das Dokument wandert umbenannt \
+                mit ⇥ durch die Felder — prüfen, ⌘S drücken, und das Dokument wandert umbenannt \
                 ins Archiv.
                 """
             ),
@@ -127,7 +128,8 @@ extension SiteStrings {
             ),
             Promise(
                 title: "Open Source.",
-                body: "Der Code liegt auf GitHub, falls du nachsehen möchtest."
+                body: "Der Code liegt auf GitHub, falls du nachsehen möchtest.",
+                repositoryLinkText: "GitHub"
             ),
             Promise(
                 title: "Seit 2018.",

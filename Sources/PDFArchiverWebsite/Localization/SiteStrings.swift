@@ -34,6 +34,8 @@ struct SiteStrings {
     struct Promise {
         let title: String
         let body: String
+        /// The word in `body` naming the source repository, which is linked to it.
+        var repositoryLinkText: String?
     }
 
     /// One capture in the spotlight's device row.
@@ -50,6 +52,7 @@ struct SiteStrings {
         let statement: String
     }
 
+    let skipToContent: String
     let siteTitle: String
     /// The home page's `<title>`. Unlike the hero claim it has to carry the words people search
     /// for, because it is the line they read in the result list.

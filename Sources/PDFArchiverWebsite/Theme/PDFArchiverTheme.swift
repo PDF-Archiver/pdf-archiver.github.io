@@ -49,8 +49,10 @@ private extension PDFArchiverHTMLFactory {
             .lang(language.plotLanguage),
             .siteHead(for: location, on: context.site, in: language),
             .body(
+                .a(.class("skip-link"), .href("#main"), .text(language.strings.skipToContent)),
                 .siteHeader(for: location.path, in: language, context: context),
-                .main(body),
+                // `tabindex` so following the skip link moves focus, not just the scroll position.
+                .main(.id("main"), .attribute(named: "tabindex", value: "-1"), body),
                 .siteFooter(for: location.path, in: language, context: context)
             )
         )

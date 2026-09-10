@@ -17,7 +17,7 @@ extension Node where Context == HTML.BodyContext {
             .spotlight(strings),
             .grammarRule(),
             .keepCard(strings),
-            .promises(strings),
+            .promises(strings, on: site),
             .testimonials(strings),
             .trial(strings),
             .help(in: language, on: site)
@@ -172,7 +172,10 @@ private extension Node where Context == HTML.BodyContext {
                         .class("keep-body"),
                         .forEach(strings.keepBody) { .p(.text($0)) }
                     ),
-                    .pre(.class("tree"), .code(.text(strings.archiveTree)))
+                    .div(
+                        .class("tree-wrap"),
+                        .pre(.class("tree"), .code(.text(strings.archiveTree)))
+                    )
                 )
             )
         )
@@ -182,13 +185,17 @@ private extension Node where Context == HTML.BodyContext {
         .figure(
             .class("filename"),
             .div(
-                .class("filename-line"),
-                .filenamePart(value: example.date, label: example.dateLabel, kind: "date"),
-                .span(.class("filename-sep"), .text("--")),
-                .filenamePart(value: example.description, label: example.descriptionLabel, kind: "desc"),
-                .span(.class("filename-sep"), .text("__")),
-                .filenamePart(value: example.tags, label: example.tagsLabel, kind: "tags"),
-                .span(.class("filename-sep"), .text(".pdf"))
+                .class("filename-line-wrap"),
+                .style("--name-chars: \(example.characterCount)"),
+                .div(
+                    .class("filename-line"),
+                    .filenamePart(value: example.date, label: example.dateLabel, kind: "date"),
+                    .span(.class("filename-sep"), .text("--")),
+                    .filenamePart(value: example.description, label: example.descriptionLabel, kind: "desc"),
+                    .span(.class("filename-sep"), .text("__")),
+                    .filenamePart(value: example.tags, label: example.tagsLabel, kind: "tags"),
+                    .span(.class("filename-sep"), .text(".pdf"))
+                )
             )
         )
     }
@@ -201,7 +208,7 @@ private extension Node where Context == HTML.BodyContext {
         )
     }
 
-    static func promises(_ strings: SiteStrings) -> Node {
+    static func promises(_ strings: SiteStrings, on site: PDFArchiverWebsite) -> Node {
         .section(
             .class("promises-wrap"),
             .div(
@@ -215,7 +222,7 @@ private extension Node where Context == HTML.BodyContext {
                             .div(.class("promise-icon"), .attribute(named: "aria-hidden", value: "true"), .text("✓")),
                             .div(
                                 .h3(.text(promise.title)),
-                                .p(.text(promise.body))
+                                .promiseBody(promise, repositoryURL: site.githubURL.absoluteString)
                             )
                         )
                     }
@@ -224,6 +231,20 @@ private extension Node where Context == HTML.BodyContext {
         )
     }
 
+
+    /// The promise body, with the word naming the repository turned into a link to it.
+    static func promiseBody(_ promise: SiteStrings.Promise, repositoryURL: String) -> Node {
+        guard let linkText = promise.repositoryLinkText,
+              let range = promise.body.range(of: linkText) else {
+            return .p(.text(promise.body))
+        }
+
+        return .p(
+            .text(String(promise.body[..<range.lowerBound])),
+            .a(.href(repositoryURL), .text(linkText)),
+            .text(String(promise.body[range.upperBound...]))
+        )
+    }
 
     static func testimonials(_ strings: SiteStrings) -> Node {
         .section(
