@@ -88,4 +88,4 @@ GitHub has implemented compliance measures for international data transfers. The
 
 ### Kickstart SDK
 
-PDF Archiver shows a banner for another app. The banner comes from Kickstart Exchange, a service through which app developers promote each other's apps, and is loaded with the Kickstart SDK. In the App Store privacy label, PDF Archiver declares two data types for this SDK: Product Interaction and Advertising Data, both Usage Data. Neither is linked to your identity, and neither is used for tracking.
+PDF Archiver shows a banner for another app, but only as long as you have no Premium. The banner comes from Kickstart Exchange, a service through which app developers promote each other's apps, and is loaded with the Kickstart SDK. In the App Store privacy label, PDF Archiver declares two data types for this SDK: Product Interaction and Advertising Data, both Usage Data. Neither is linked to your identity, and neither is used for tracking.
