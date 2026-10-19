@@ -83,3 +83,9 @@ The data will be deleted as soon as the purpose of the processing ceases to appl
 The processing of the data provided under this section is not required by law or contract. The functionality of the website is not guaranteed without the processing.
 
 GitHub has implemented compliance measures for international data transfers. These apply to all global activities where GitHub processes personal data of individuals in the EU. These measures are based on the EU Standard Contractual Clauses (SCCs). For more information, please visit: https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-data-protection-addendum#attachment-1-the-standard-contractual-clauses-processors
+
+## 5. Kickstart Exchange banner
+
+### Kickstart SDK
+
+PDF Archiver shows a banner for another app. The banner comes from Kickstart Exchange, a service through which app developers promote each other's apps, and is loaded with the Kickstart SDK. In the App Store privacy label, PDF Archiver declares two data types for this SDK: Product Interaction and Advertising Data, both Usage Data. Neither is linked to your identity, and neither is used for tracking.
