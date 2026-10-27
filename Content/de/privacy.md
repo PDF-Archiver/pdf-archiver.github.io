@@ -36,6 +36,8 @@ Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenomm
 
 Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet.
 
+Nach einem Absturz bietet PDF Archiver beim nächsten Start an, einen Absturzbericht per E-Mail an den Support zu senden; der Bericht verlässt Ihr Gerät nur, wenn Sie diese E-Mail selbst absenden.
+
 ## 4. CDN/Hosting
 
 ### Cloudflare

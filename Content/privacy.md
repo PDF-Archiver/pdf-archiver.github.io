@@ -36,6 +36,8 @@ These data will not be combined with data from other sources.
 
 The basis for data processing is Art. 6 (1) (b) DSGVO, which allows the processing of data to fulfill a contract or for measures preliminary to a contract.
 
+After a crash, PDF Archiver offers at the next launch to mail a crash report to support; the report leaves your device only when you send that mail yourself.
+
 ## 4. CDN/Hosting
 
 ### Cloudflare
