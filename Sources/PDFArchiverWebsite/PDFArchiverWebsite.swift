@@ -24,6 +24,6 @@ struct PDFArchiverWebsite: Website {
 
     let mastodonURL = URL(string: "https://chaos.social/@jtk")!
     let githubURL = URL(string: "https://github.com/PDF-Archiver/PDF-Archiver")!
-    let supportEmail = "support@pdf-archiver.io"
-    let featureRequestEmail = "feature-request@pdf-archiver.io"
+    let supportEmail = "support@kahnert.me"
+    let featureRequestEmail = "support@kahnert.me"
 }
