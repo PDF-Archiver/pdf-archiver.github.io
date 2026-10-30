@@ -4,7 +4,7 @@ description: Press kit for PDF Archiver — facts, boilerplate, app icons and h
 ---
 
 Everything here may be used freely in editorial coverage of PDF Archiver.
-Questions, review copies and additional material: [press@pdf-archiver.io](mailto:press@pdf-archiver.io)
+Questions, review copies and additional material: [support@kahnert.me](mailto:support@kahnert.me)
 
 [Download the press kit](/presskit.zip)
 
@@ -38,7 +38,7 @@ PDF Archiver scans, tags and archives documents on Mac, iPhone and iPad. Date, 
 
 ## Reviewing the app
 
-Write to [press@pdf-archiver.io](mailto:press@pdf-archiver.io) and you will get a promo code for full access, no strings attached. Happy to answer questions about how the app works, and to provide additional screenshots.
+Write to [support@kahnert.me](mailto:support@kahnert.me) and you will get a promo code for full access, no strings attached. Happy to answer questions about how the app works, and to provide additional screenshots.
 
 ## About the developer
 

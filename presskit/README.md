@@ -1,7 +1,7 @@
 # PDF Archiver — Press Kit
 
 Everything in this kit may be used freely in editorial coverage of PDF Archiver.
-Questions, review copies and additional material: **press@pdf-archiver.io**
+Questions, review copies and additional material: **support@kahnert.me**
 
 ---
 
@@ -29,7 +29,7 @@ Open source, built and maintained by one developer since 2018.
 | App Store | https://apps.apple.com/app/pdf-archiver/id1433801905 |
 | Website | https://pdf-archiver.io |
 | Source | https://github.com/PDF-Archiver/PDF-Archiver |
-| Contact | press@pdf-archiver.io |
+| Contact | support@kahnert.me |
 
 ---
 
@@ -66,7 +66,7 @@ https://juliankahnert.de · https://github.com/JulianKahnert
 
 ## Reviewing the app
 
-Write to **press@pdf-archiver.io** and you will get a promo code for full access, no strings
+Write to **support@kahnert.me** and you will get a promo code for full access, no strings
 attached. Happy to answer questions about how the app works, and to provide additional
 screenshots.
 

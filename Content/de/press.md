@@ -4,7 +4,7 @@ description: Presskit für PDF Archiver — Fakten, Kurzbeschreibung, App-Icons
 ---
 
 Alles hier darf in redaktioneller Berichterstattung über PDF Archiver frei verwendet werden.
-Fragen, Rezensionsexemplare und weiteres Material: [press@pdf-archiver.io](mailto:press@pdf-archiver.io)
+Fragen, Rezensionsexemplare und weiteres Material: [support@kahnert.me](mailto:support@kahnert.me)
 
 [Presskit herunterladen](/presskit.zip)
 
@@ -38,7 +38,7 @@ PDF Archiver scannt, verschlagwortet und archiviert Dokumente auf Mac, iPhone u
 
 ## Die App testen
 
-Schreib an [press@pdf-archiver.io](mailto:press@pdf-archiver.io), dann bekommst du einen Promo-Code für den vollen Funktionsumfang, ohne Bedingungen. Fragen zur Funktionsweise beantworte ich gern, zusätzliche Screenshots auch.
+Schreib an [support@kahnert.me](mailto:support@kahnert.me), dann bekommst du einen Promo-Code für den vollen Funktionsumfang, ohne Bedingungen. Fragen zur Funktionsweise beantworte ich gern, zusätzliche Screenshots auch.
 
 ## Über den Entwickler
 

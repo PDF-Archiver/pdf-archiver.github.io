@@ -15,7 +15,7 @@ Postfach 53 29
 
 Telefon: +49 (0) 441 55979822
 
-E-Mail: [mail@pdf-archiver.io](mailto:mail@pdf-archiver.io)
+E-Mail: [support@kahnert.me](mailto:support@kahnert.me)
 
 ## Haftung für Inhalte
 
